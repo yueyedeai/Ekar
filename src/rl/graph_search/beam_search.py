@@ -211,5 +211,6 @@ def beam_search(pn, e_s, q, e_t, kg, num_steps, beam_size,
                 p_c.append((e_name, top_k_edge_labels, var_to_numpy(top_k_action_prob)))
             path_components_list.append(p_c)
         beam_search_output['path_components_list'] = path_components_list
+        # We can use it to print the path.  --dzj
 
     return beam_search_output
