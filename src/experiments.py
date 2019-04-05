@@ -62,11 +62,10 @@ def initialize_model_directory(args, random_seed=None):
     if args.use_pretrain:
         initialization_tag += '-pretrain'
         if args.fix_embedding:
-            # initialization_tag += '(freeze)'
             initialization_tag += '-fix'
 
     # Hyperparameter signature
-    if args.model in ['rule']:
+    if args.model in ['rule']: # not used.  --dzj
         hyperparam_sig = '{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(
             args.baseline,
             args.entity_dim,
@@ -86,6 +85,7 @@ def initialize_model_directory(args, random_seed=None):
             print('* Policy Gradient Baseline: average reward baseline plus normalization')
         else:
             print('* Policy Gradient Baseline: None')
+            # we didn't use any baselines.  --dzj
         if args.action_dropout_anneal_interval < 1000:
             hyperparam_sig = '{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(
                 args.baseline,
@@ -159,7 +159,7 @@ def initialize_model_directory(args, random_seed=None):
         initialization_tag,
         hyperparam_sig
     )
-    if args.model == 'set':
+    if args.model == 'set': # not used. --dzj
         model_sub_dir += '-{}'.format(args.beam_size)
         model_sub_dir += '-{}'.format(args.num_paths_per_entity)
     if args.relation_only:
@@ -203,7 +203,7 @@ def construct_model(args):
     Construct NN graph.
     """
     kg = KnowledgeGraph(args)
-    if args.model.endswith('.gc'):
+    if args.model.endswith('.gc'):  # not used yet. --dzj
         kg.load_fuzzy_facts()
 
     if args.model in ['point', 'point.gc']:
@@ -288,6 +288,7 @@ def train(lf):
     test_metrics(lf)
 
 def inference(lf):
+    # I think we can merge this function and 'test_metrics'(writen by myself).   --dzj
     lf.batch_size = args.dev_batch_size
     lf.eval()
     if args.model == 'hypere':
@@ -396,6 +397,7 @@ def inference(lf):
 def run_ablation_studies(args):
     """
     Run the ablation study experiments reported in the paper.
+    We need to implement our own ablation studies instead of using this one.  --dzj
     """
     def set_up_lf_for_inference(args):
         initialize_model_directory(args)
@@ -622,7 +624,7 @@ def run_experiment(args):
             if args.search_random_seed:
 
                 # Search for best random seed
-
+                # I think this part should be deprecated    --dzj
                 # search log file
                 task = os.path.basename(os.path.normpath(args.data_dir))
                 out_log = '{}.{}.rss'.format(task, args.model)
@@ -701,7 +703,7 @@ def run_experiment(args):
             elif args.grid_search:
 
                 # Grid search
-
+                # This part is not being used now, but I think we can utilize it.   --dzj
                 # search log file
                 task = os.path.basename(os.path.normpath(args.data_dir))
                 out_log = '{}.{}.gs'.format(task, args.model)
@@ -810,6 +812,7 @@ def run_experiment(args):
                     inference(lf)
                 elif args.eval_by_seen_queries:
                     inference(lf)
+                # I think following codes are useless.  --dzj
                 elif args.export_to_embedding_projector:
                     export_to_embedding_projector(lf)
                 elif args.export_reward_shaping_parameters:

@@ -148,7 +148,7 @@ class LFramework(nn.Module):
                         rewards = loss['reward']
                     else:
                         rewards = torch.cat([rewards, loss['reward']])
-                    if fns is None:
+                    if fns is None:# what's this? --dzj
                         fns = loss['fn']
                     else:
                         fns = torch.cat([fns, loss['fn']])
@@ -266,35 +266,13 @@ class LFramework(nn.Module):
 
     def forward(self, examples, verbose=False):
         pred_scores = []
-        if verbose == True:
-            statistics_correct = collections.defaultdict(int)
-            statistics_returned = collections.defaultdict(int)
         for example_id in tqdm(range(0, len(examples), self.batch_size)):
             mini_batch = examples[example_id:example_id + self.batch_size]
             mini_batch_size = len(mini_batch)
             if len(mini_batch) < self.batch_size:
                 self.make_full_batch(mini_batch, self.batch_size)
-            if verbose == False:
-                pred_score = self.predict(mini_batch, verbose=verbose)
-            else:
-                pred_score, case_statistics_correct, case_statistics_returned = self.predict(mini_batch, verbose=True)
-                for k, v in case_statistics_correct.items():
-                    statistics_correct[k] += v
-                for k, v in case_statistics_returned.items():
-                    statistics_returned[k] += v
-            pred_score = pred_score.detach().cpu()
+            pred_score = self.predict(mini_batch, verbose=verbose)
             pred_scores.append(pred_score[:mini_batch_size])
-
-
-        if verbose == True:
-            with open(os.path.join(self.args.model_dir, "statistics_path_relation.txt"), "w") as f:
-                f.write("statistics_correct\n")
-                for k, v in statistics_correct.items():
-                    f.write(str(k) + ": " + str(v) + '\n')
-                f.write("statistics_returned\n")
-                for k, v in statistics_returned.items():
-                    f.write(str(k) + ": " + str(v) + '\n')
-
         scores = torch.cat(pred_scores)
         return scores
 

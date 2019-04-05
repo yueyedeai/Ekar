@@ -16,6 +16,7 @@ import src.utils.ops as ops
 from src.utils.ops import int_fill_var_cuda, var_cuda, zeros_var_cuda
 import collections
 from time import time
+from IPython import embed
 
 
 class PolicyGradient(LFramework):
@@ -25,8 +26,8 @@ class PolicyGradient(LFramework):
         # Training hyperparameters
         self.relation_only = args.relation_only
         self.use_action_space_bucketing = args.use_action_space_bucketing
-        self.num_rollouts = args.num_rollouts # ???
-        self.num_rollout_steps = args.num_rollout_steps # ???
+        self.num_rollouts = args.num_rollouts
+        self.num_rollout_steps = args.num_rollout_steps
         self.baseline = args.baseline
         self.beta = args.beta  # entropy regularization parameter
         self.gamma = args.gamma  # shrinking factor
@@ -76,6 +77,7 @@ class PolicyGradient(LFramework):
         # t0 = time()
 
         def stablize_reward(r):
+            # We don't use any baseline function yet. --dzj
             r_2D = r.view(-1, self.num_rollouts)
             if self.baseline == 'avg_reward':
                 stabled_r_2D = r_2D - r_2D.mean(dim=1, keepdim=True)
@@ -143,11 +145,11 @@ class PolicyGradient(LFramework):
         Perform multi-step rollout from the source entity conditioned on the query relation.
         :param pn: Policy network.
         :param e_s: (Variable:batch) source entity indices.
-        :param q: (Variable:batch) query embedding.
+        :param q: (Variable:batch) query relation indices.
         :param e_t: (Variable:batch) target entity indices.
         :param kg: Knowledge graph environment.
         :param num_steps: Number of rollout steps.
-        :param visualize_action_probs: If set, save action probabilities for visualization.
+        :param visualize_action_probs: If set, save action probabilities for visualization.???
         :return pred_e2: Target entities reached at the end of rollout.
         :return log_path_prob: Log probability of the sampled path.
         :return action_entropy: Entropy regularization term.
@@ -183,7 +185,7 @@ class PolicyGradient(LFramework):
 
             # t_sample_0 = time()
             sample_outcome = self.sample_action(db_outcomes, inv_offset)
-            action = sample_outcome['action_sample']
+            action = sample_outcome['action_sample']    #(next_r, next_e)
             pn.update_path(action, kg)
             action_prob = sample_outcome['action_prob']
             log_action_probs.append(ops.safe_log(action_prob))
@@ -203,7 +205,7 @@ class PolicyGradient(LFramework):
         # print ("time for transit = %.2f" % t_transit)
         # print ("time for sample = %.2f"  % t_sample)
         # print ("time for rollout = %.2f" % (time() - t0))
-        sys.stdout.flush()
+        # sys.stdout.flush()
 
         return {
             'pred_e2': pred_e2,
@@ -254,6 +256,7 @@ class PolicyGradient(LFramework):
             return sample_outcome
 
         if inv_offset is not None:
+            # deprecated.   --dzj
             next_r_list = []
             next_e_list = []
             action_dist_list = []
@@ -285,53 +288,27 @@ class PolicyGradient(LFramework):
         pred_e2s = beam_search_output['pred_e2s']
         pred_e2_scores = beam_search_output['pred_e2_scores']
         if verbose:
-            case_statistics_correct = collections.defaultdict(int)
-            case_statistics_returned = collections.defaultdict(int)
-            sys.stdout.flush()
             # print inference paths
             search_traces = beam_search_output['search_traces']
             output_beam_size = min(self.beam_size, pred_e2_scores.shape[1])
-            if (self.case_study):
-                for i in range(len(e1)):
-                    print ("********************case study")
-                    for j in range(min(20, output_beam_size)):
-                        ind = i * output_beam_size + j
-                        if pred_e2s[i][j] == kg.dummy_e:
-                            break
-                        search_trace = []
-                        relation_path = ""
-                        for k in range(len(search_traces)):
-                            search_trace.append((int(search_traces[k][0][ind]), int(search_traces[k][1][ind])))
-                            if (k > 0):
-                                relation_path += "==>" + kg.id2relation[int(search_traces[k][0][ind])]
-
-                        print('correct= {} beam {}: score = {} \n<PATH> {}'.format(e2[i][pred_e2s[i][j]],
-                            j, float(pred_e2_scores[i][j]), ops.format_path(search_trace, kg)))
-
-                        if (e2[i][pred_e2s[i][j]] > 0.1):
-                            case_statistics_correct[relation_path] += 1
-                        case_statistics_returned[relation_path] += 1
-            else:
-                for i in range(len(e1)):
-                    for j in range(output_beam_size):
-                        ind = i * output_beam_size + j
-                        if pred_e2s[i][j] == kg.dummy_e:
-                            break
-                        search_trace = []
-                        for k in range(len(search_traces)):
-                            search_trace.append((int(search_traces[k][0][ind]), int(search_traces[k][1][ind])))
-                        print('beam {}: score = {} \n<PATH> {}'.format(
-                            j, float(pred_e2_scores[i][j]), ops.format_path(search_trace, kg)))
+            for i in range(len(e1)):
+                for j in range(output_beam_size):
+                    ind = i * output_beam_size + j
+                    if pred_e2s[i][j] == kg.dummy_e:
+                        break
+                    search_trace = []
+                    for k in range(len(search_traces)):
+                        search_trace.append((int(search_traces[k][0][ind]), int(search_traces[k][1][ind])))
+                    print('beam {}: score = {} \n<PATH> {}'.format(
+                        j, float(pred_e2_scores[i][j]), ops.format_path(search_trace, kg)))
         with torch.no_grad():
             pred_scores = zeros_var_cuda([len(e1), kg.num_entities])
             for i in range(len(e1)):
                 pred_scores[i][pred_e2s[i]] = torch.exp(pred_e2_scores[i])
-        if verbose:
-            return pred_scores, case_statistics_correct, case_statistics_returned
-        else:
-            return pred_scores
+        return pred_scores
 
     def record_path_trace(self, path_trace):
+        # This part of code is problematic.
         path_length = len(path_trace)
         flattened_path_trace = [x for t in path_trace for x in t]
         path_trace_mat = torch.cat(flattened_path_trace).reshape(-1, path_length)

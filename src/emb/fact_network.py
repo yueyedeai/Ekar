@@ -130,13 +130,14 @@ class ConvE(nn.Module):
         self.bn0 = nn.BatchNorm2d(1)
         self.bn1 = nn.BatchNorm2d(self.num_out_channels)
         self.bn2 = nn.BatchNorm1d(self.entity_dim)
-        self.register_parameter('b', nn.Parameter(torch.zeros(num_entities)))
+        self.register_parameter('b', nn.Parameter(torch.zeros(num_entities))) #???
         h_out = 2 * self.emb_2D_d1 - self.w_d + 1
         w_out = self.emb_2D_d2 - self.w_d + 1
         self.feat_dim = self.num_out_channels * h_out * w_out
         self.fc = nn.Linear(self.feat_dim, self.entity_dim)
 
     def forward(self, e1, r, kg):
+        # what's the shape of e1 and r?
         E1 = kg.get_entity_embeddings(e1).view(-1, 1, self.emb_2D_d1, self.emb_2D_d2)
         R = kg.get_relation_embeddings(r).view(-1, 1, self.emb_2D_d1, self.emb_2D_d2)
         E2 = kg.get_all_entity_embeddings()

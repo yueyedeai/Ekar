@@ -166,6 +166,7 @@ class KnowledgeGraph(nn.Module):
             """
             Store action spaces in buckets.
             """
+            # It has been deprecated. I don't know why they use it...
             self.action_space_buckets = {}
             action_space_buckets_discrete = collections.defaultdict(list)
             self.entity2bucketid = torch.zeros(self.num_entities, 2).long()
@@ -266,13 +267,12 @@ class KnowledgeGraph(nn.Module):
         self.all_objects = all_objects
        
         # change the answer set into a variable
-        # ???
         def answers_to_var(d_l):
             d_v = collections.defaultdict(collections.defaultdict)
             for x in d_l:
                 for y in d_l[x]:
                     v = torch.LongTensor(list(d_l[x][y])).unsqueeze(1)
-                    d_v[x][y] = int_var_cuda(v) # ??? maybe we don't need this
+                    d_v[x][y] = int_var_cuda(v)
             return d_v
 
         # self.train_subject_vectors = answers_to_var(train_subjects)

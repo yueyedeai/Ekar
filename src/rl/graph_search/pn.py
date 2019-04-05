@@ -133,6 +133,7 @@ class GraphSearchPolicy(nn.Module):
         t_policy_nn_fun_0 = 0
         t_policy_nn_fun = 0
         if use_action_space_bucketing:
+            # deprecated.   --dzj
             """
             
             """
@@ -181,7 +182,7 @@ class GraphSearchPolicy(nn.Module):
         # print ("transit: time for policy_nn_fun = %.4f" % t_policy_nn_fun)
         # print ("transit: time for calculate probability = %.4f" % t_prob)
         # print ("transit: total time = %.4f" % (time() - t0))
-        sys.stdout.flush()
+        # sys.stdout.flush()
         return db_outcomes, inv_offset, entropy
 
     def initialize_path(self, init_action, kg):
@@ -194,7 +195,7 @@ class GraphSearchPolicy(nn.Module):
         # [num_layers, batch_size, dim]
         init_h = zeros_var_cuda([self.history_num_layers, len(init_action_embedding), self.history_dim])
         init_c = zeros_var_cuda([self.history_num_layers, len(init_action_embedding), self.history_dim])
-        self.path = [self.path_encoder(init_action_embedding, (init_h, init_c))[1]]
+        self.path = [self.path_encoder(init_action_embedding, (init_h, init_c))[1]] #???
 
     def update_path(self, action, kg, offset=None):
         """
@@ -324,15 +325,21 @@ class GraphSearchPolicy(nn.Module):
             #     action_mask *= (1 - false_negative_mask)
             #     self.validate_action_mask(action_mask)
 
-        # Prevent the agent from stopping in the middle of a path
-        stop_mask = (last_r == NO_OP_RELATION_ID).unsqueeze(1).float()
-        action_mask = (1 - stop_mask) * action_mask + stop_mask * (r_space == NO_OP_RELATION_ID).float()
-        # Prevent loops
-        # Note: avoid duplicate removal of self-loops
+        # # Prevent the agent from stopping in the middle of a path
+        # stop_mask = (last_r == NO_OP_RELATION_ID).unsqueeze(1).float()
+        # action_mask = (1 - stop_mask) * action_mask + stop_mask * (r_space == NO_OP_RELATION_ID).float()
+        # # Prevent loops
+        # # Note: avoid duplicate removal of self-loops
+        # seen_nodes_b = seen_nodes
+        # loop_mask_b = (((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0) *
+        #      (r_space != NO_OP_RELATION_ID)).float()
+        # action_mask *= (1 - loop_mask_b)
+
+        # Prevent loops and self-loops
         seen_nodes_b = seen_nodes
-        loop_mask_b = (((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0) *
-             (r_space != NO_OP_RELATION_ID)).float()
+        loop_mask_b = ((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0).float()
         action_mask *= (1 - loop_mask_b)
+        
         return (r_space, e_space), action_mask
 
     def get_ground_truth_edge_mask(self, e, r_space, e_space, e_s, q, e_t, kg):
@@ -341,6 +348,7 @@ class GraphSearchPolicy(nn.Module):
         inv_q = kg.get_inv_relation_id(q)
         inv_ground_truth_edge_mask = \
             ((e == e_t).unsqueeze(1) * (r_space == inv_q.unsqueeze(1)) * (e_space == e_s.unsqueeze(1)))
+        # (e_s.unsqueeze(1) != kg.dummy_e)?? I think it is useless. --dzj
         return ((ground_truth_edge_mask + inv_ground_truth_edge_mask) * (e_s.unsqueeze(1) != kg.dummy_e)).float()
 
     def get_answer_mask(self, e_space, e_s, q, kg):
