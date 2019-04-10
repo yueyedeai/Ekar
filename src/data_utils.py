@@ -136,8 +136,6 @@ def load_triples(data_path, entity_index_path, relation_index_path, group_exampl
                 if verbose:
                     print('Skip triple ({}) with unseen entity: {}'.format(num_skipped, line.strip())) 
                 continue
-            # if r in ['concept:agentbelongstoorganization', 'concept:teamplaysinleague']:
-            #     continue
             if group_examples_by_query:
                 e1_id, e2_id, r_id = triple2ids(e1, e2, r)
                 if e1_id not in triple_dict:

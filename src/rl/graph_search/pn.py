@@ -50,6 +50,7 @@ class GraphSearchPolicy(nn.Module):
         # Fact network modules
         self.fn = None
         self.fn_kg = None
+        self.no_ground_truth_edge_mask = args.no_ground_truth_edge_mask
         self.args = args
 
     def transit(self, e, obs, kg, use_action_space_bucketing=True, merge_aspace_batching_outcome=False):
@@ -313,7 +314,7 @@ class GraphSearchPolicy(nn.Module):
         (r_space, e_space), action_mask = action_space
         e_s, q, e_t, last_step, last_r, seen_nodes = obs
 
-        if (e_s.size() == e_t.size() and not self.args.reward_matrix):
+        if (e_s.size() == e_t.size() and not self.args.reward_matrix and not self.no_ground_truth_edge_mask):
             # Prevent the agent from selecting the ground truth edge
             ground_truth_edge_mask = self.get_ground_truth_edge_mask(e, r_space, e_space, e_s, q, e_t, kg)
             action_mask -= ground_truth_edge_mask
@@ -325,20 +326,20 @@ class GraphSearchPolicy(nn.Module):
             #     action_mask *= (1 - false_negative_mask)
             #     self.validate_action_mask(action_mask)
 
-        # # Prevent the agent from stopping in the middle of a path
-        # stop_mask = (last_r == NO_OP_RELATION_ID).unsqueeze(1).float()
-        # action_mask = (1 - stop_mask) * action_mask + stop_mask * (r_space == NO_OP_RELATION_ID).float()
-        # # Prevent loops
-        # # Note: avoid duplicate removal of self-loops
-        # seen_nodes_b = seen_nodes
-        # loop_mask_b = (((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0) *
-        #      (r_space != NO_OP_RELATION_ID)).float()
-        # action_mask *= (1 - loop_mask_b)
-
-        # Prevent loops and self-loops
+        # Prevent the agent from stopping in the middle of a path
+        stop_mask = (last_r == NO_OP_RELATION_ID).unsqueeze(1).float()
+        action_mask = (1 - stop_mask) * action_mask + stop_mask * (r_space == NO_OP_RELATION_ID).float()
+        # Prevent loops
+        # Note: avoid duplicate removal of self-loops
         seen_nodes_b = seen_nodes
-        loop_mask_b = ((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0).float()
+        loop_mask_b = (((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0) *
+             (r_space != NO_OP_RELATION_ID)).float()
         action_mask *= (1 - loop_mask_b)
+
+        # # Prevent loops and self-loops
+        # seen_nodes_b = seen_nodes
+        # loop_mask_b = ((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0).float()
+        # action_mask *= (1 - loop_mask_b)
         
         return (r_space, e_space), action_mask
 

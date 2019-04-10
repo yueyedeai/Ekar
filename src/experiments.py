@@ -179,6 +179,9 @@ def initialize_model_directory(args, random_seed=None):
     if args.use_action_space_bucketing:
         model_sub_dir += '-bucket'
 
+    if args.no_ground_truth_edge_mask:
+        model_sub_dir += '-nogtm'
+
     if args.reward_matrix:
         model_sub_dir += '-rm'
     if args.remove_rs:
@@ -194,8 +197,9 @@ def initialize_model_directory(args, random_seed=None):
 
     args.model_dir = model_dir
 
-    sys.stdout = open(os.path.join(args.model_dir, "output.txt"), "w")
-    print (args)
+    if args.train and not args.test_metrics:
+        sys.stdout = open(os.path.join(args.model_dir, "output.txt"), "w")
+        print (args)
 
 
 def construct_model(args):
@@ -239,26 +243,40 @@ def construct_model(args):
     return lf
 
 def test_metrics(lf):
+    metrics = dict()
     entity_index_path = os.path.join(args.data_dir, 'entity2id.txt')
     relation_index_path = os.path.join(args.data_dir, 'relation2id.txt')
-    if 'NELL' in args.data_dir:
-        adj_list_path = os.path.join(args.data_dir, 'adj_list.pkl')
-        seen_entities = data_utils.load_seen_entities(adj_list_path, entity_index_path)
-    else:
-        seen_entities = set()
 
-    print ("*********now test the training data")
-    train_path = os.path.join(args.data_dir, 'train.triples')
-    train_data = data_utils.load_triples(train_path, entity_index_path, relation_index_path,
-                                       group_examples_by_query=True, seen_entities=seen_entities)
-    lf.run_test_metrics(train_data)
+    if args.test_train_data:
+        print ("*********now test the training data")
+        train_path = os.path.join(args.data_dir, 'train.triples')
+        train_data = data_utils.load_triples(train_path, entity_index_path, relation_index_path,
+                                           group_examples_by_query=True)
+        metrics['train'] = lf.run_test_metrics(train_data)
 
-    if not args.test_train_data_only:
-        print("*********now test the test data")
-        test_path = os.path.join(args.data_dir, 'test.triples')
-        test_data = data_utils.load_triples(test_path, entity_index_path, relation_index_path,
-                                           group_examples_by_query=True, seen_entities=seen_entities)
-        lf.run_test_metrics(test_data)
+    if args.test_dev_data:
+        print ("*********now test the dev data")
+        dev_path = os.path.join(args.data_dir, 'dev.triples')
+        dev_data = data_utils.load_triples(dev_path, entity_index_path, relation_index_path,
+                                           group_examples_by_query=True)
+        metrics['dev'] = lf.run_test_metrics(dev_data)
+
+    print("*********now test the test data")
+    test_path = os.path.join(args.data_dir, 'test.triples')
+    test_data = data_utils.load_triples(test_path, entity_index_path, relation_index_path,
+                                       group_examples_by_query=True)
+    metrics['test'] = lf.run_test_metrics(test_data)
+    return metrics
+
+def case_study(lf):
+    entity_index_path = os.path.join(args.data_dir, 'entity2id.txt')
+    relation_index_path = os.path.join(args.data_dir, 'relation2id.txt')
+
+    print("*********case study for the test data")
+    test_path = os.path.join(args.data_dir, 'test.triples')
+    test_data = data_utils.load_triples(test_path, entity_index_path, relation_index_path,
+                                       group_examples_by_query=True)
+    lf.run_case_study(test_data)
 
 def train(lf):
     train_path = data_utils.get_train_path(args)
@@ -287,421 +305,20 @@ def train(lf):
 
     test_metrics(lf)
 
-def inference(lf):
-    # I think we can merge this function and 'test_metrics'(writen by myself).   --dzj
-    lf.batch_size = args.dev_batch_size
-    lf.eval()
-    if args.model == 'hypere':
-        conve_kg_state_dict = get_conve_kg_state_dict(torch.load(args.conve_state_dict_path))
-        lf.kg.load_state_dict(conve_kg_state_dict)
-        secondary_kg_state_dict = get_complex_kg_state_dict(torch.load(args.complex_state_dict_path))
-        lf.secondary_kg.load_state_dict(secondary_kg_state_dict)
-    elif args.model == 'triplee':
-        conve_kg_state_dict = get_conve_kg_state_dict(torch.load(args.conve_state_dict_path))
-        lf.kg.load_state_dict(conve_kg_state_dict)
-        complex_kg_state_dict = get_complex_kg_state_dict(torch.load(args.complex_state_dict_path))
-        lf.secondary_kg.load_state_dict(complex_kg_state_dict)
-        distmult_kg_state_dict = get_distmult_kg_state_dict(torch.load(args.distmult_state_dict_path))
-        lf.tertiary_kg.load_state_dict(distmult_kg_state_dict)
-    else:
-        lf.load_checkpoint(get_checkpoint_path(args))
-    entity_index_path = os.path.join(args.data_dir, 'entity2id.txt')
-    relation_index_path = os.path.join(args.data_dir, 'relation2id.txt')
-    if 'NELL' in args.data_dir:
-        adj_list_path = os.path.join(args.data_dir, 'adj_list.pkl')
-        seen_entities = data_utils.load_seen_entities(adj_list_path, entity_index_path)
-    else:
-        seen_entities = set()
-
-    eval_metrics = {
-        'dev': {},
-        'test': {}
-    }
-
-    if args.compute_map:
-        relation_sets = [
-            'concept:athletehomestadium',
-            'concept:athleteplaysforteam',
-            'concept:athleteplaysinleague',
-            'concept:athleteplayssport',
-            'concept:organizationheadquarteredincity',
-            'concept:organizationhiredperson',
-            'concept:personborninlocation',
-            'concept:teamplayssport',
-            'concept:worksfor'
-        ]
-        mps = []
-        for r in relation_sets:
-            print('* relation: {}'.format(r))
-            test_path = os.path.join(args.data_dir, 'tasks', r, 'test.pairs')
-            test_data, labels = data_utils.load_triples_with_label(
-                test_path, r, entity_index_path, relation_index_path, seen_entities=seen_entities)
-            pred_scores = lf.forward(test_data, verbose=False)
-            mp = src.eval.link_MAP(test_data, pred_scores, labels, lf.kg.all_objects, verbose=True)
-            mps.append(mp)
-        import numpy as np
-        map_ = np.mean(mps)
-        print('Overall MAP = {}'.format(map_))
-        eval_metrics['test']['avg_map'] = map
-    elif args.eval_by_relation_type:
-        dev_path = os.path.join(args.data_dir, 'dev.triples')
-        dev_data = data_utils.load_triples(dev_path, entity_index_path, relation_index_path, seen_entities=seen_entities)
-        pred_scores = lf.forward(dev_data, verbose=False)
-        to_m_rels, to_1_rels, _ = data_utils.get_relations_by_type(args.data_dir, relation_index_path)
-        relation_by_types = (to_m_rels, to_1_rels)
-        print('Dev set evaluation by relation type (partial graph)')
-        src.eval.hits_and_ranks_by_relation_type(
-            dev_data, pred_scores, lf.kg.dev_objects, relation_by_types, verbose=True)
-        print('Dev set evaluation by relation type (full graph)')
-        src.eval.hits_and_ranks_by_relation_type(
-            dev_data, pred_scores, lf.kg.all_objects, relation_by_types, verbose=True)
-    elif args.eval_by_seen_queries:
-        dev_path = os.path.join(args.data_dir, 'dev.triples')
-        dev_data = data_utils.load_triples(dev_path, entity_index_path, relation_index_path, seen_entities=seen_entities)
-        pred_scores = lf.forward(dev_data, verbose=False)
-        seen_queries = data_utils.get_seen_queries(args.data_dir, entity_index_path, relation_index_path)
-        print('Dev set evaluation by seen queries (partial graph)')
-        src.eval.hits_and_ranks_by_seen_queries(
-            dev_data, pred_scores, lf.kg.dev_objects, seen_queries, verbose=True)
-        print('Dev set evaluation by seen queries (full graph)')
-        src.eval.hits_and_ranks_by_seen_queries(
-            dev_data, pred_scores, lf.kg.all_objects, seen_queries, verbose=True)
-    else:
-        dev_path = os.path.join(args.data_dir, 'dev.triples')
-        test_path = os.path.join(args.data_dir, 'test.triples')
-        dev_data = data_utils.load_triples(
-            dev_path, entity_index_path, relation_index_path, seen_entities=seen_entities, verbose=False)
-        test_data = data_utils.load_triples(
-            test_path, entity_index_path, relation_index_path, seen_entities=seen_entities, verbose=False)
-        print('Dev set performance:')
-        pred_scores = lf.forward(dev_data, verbose=False)
-        dev_metrics = src.eval.hits_and_ranks(dev_data, pred_scores, lf.kg.dev_objects, verbose=True)
-        eval_metrics['dev'] = {}
-        eval_metrics['dev']['hits_at_1'] = dev_metrics[0]
-        eval_metrics['dev']['hits_at_3'] = dev_metrics[1]
-        eval_metrics['dev']['hits_at_5'] = dev_metrics[2]
-        eval_metrics['dev']['hits_at_10'] = dev_metrics[3]
-        eval_metrics['dev']['mrr'] = dev_metrics[4]
-        src.eval.hits_and_ranks(dev_data, pred_scores, lf.kg.all_objects, verbose=True)
-        print('Test set performance:')
-        pred_scores = lf.forward(test_data, verbose=False)
-        test_metrics = src.eval.hits_and_ranks(test_data, pred_scores, lf.kg.all_objects, verbose=True)
-        eval_metrics['test']['hits_at_1'] = test_metrics[0]
-        eval_metrics['test']['hits_at_3'] = test_metrics[1]
-        eval_metrics['test']['hits_at_5'] = test_metrics[2]
-        eval_metrics['test']['hits_at_10'] = test_metrics[3]
-        eval_metrics['test']['mrr'] = test_metrics[4]
-
-    return eval_metrics
-
-def run_ablation_studies(args):
-    """
-    Run the ablation study experiments reported in the paper.
-    We need to implement our own ablation studies instead of using this one.  --dzj
-    """
-    def set_up_lf_for_inference(args):
-        initialize_model_directory(args)
-        lf = construct_model(args)
-        lf.cuda()
-        lf.batch_size = args.dev_batch_size
-        lf.load_checkpoint(get_checkpoint_path(args))
-        lf.eval()
-        return lf
-
-    def rel_change(metrics, ab_system, kg_portion):
-        ab_system_metrics = metrics[ab_system][kg_portion]
-        base_metrics = metrics['ours'][kg_portion]
-        return int(np.round((ab_system_metrics - base_metrics) / base_metrics * 100))
-
-    entity_index_path = os.path.join(args.data_dir, 'entity2id.txt')
-    relation_index_path = os.path.join(args.data_dir, 'relation2id.txt')
-    if 'NELL' in args.data_dir:
-        adj_list_path = os.path.join(args.data_dir, 'adj_list.pkl')
-        seen_entities = data_utils.load_seen_entities(adj_list_path, entity_index_path)
-    else:
-        seen_entities = set()
-    dataset = os.path.basename(args.data_dir)
-    dev_path = os.path.join(args.data_dir, 'dev.triples')
-    dev_data = data_utils.load_triples(
-        dev_path, entity_index_path, relation_index_path, seen_entities=seen_entities, verbose=False)
-    to_m_rels, to_1_rels, (to_m_ratio, to_1_ratio) = data_utils.get_relations_by_type(args.data_dir, relation_index_path)
-    relation_by_types = (to_m_rels, to_1_rels)
-    to_m_ratio *= 100
-    to_1_ratio *= 100
-    seen_queries, (seen_ratio, unseen_ratio) = data_utils.get_seen_queries(args.data_dir, entity_index_path, relation_index_path)
-    seen_ratio *= 100
-    unseen_ratio *= 100
-
-    systems = ['ours', '-ad', '-rs']
-    mrrs, to_m_mrrs, to_1_mrrs, seen_mrrs, unseen_mrrs = {}, {}, {}, {}, {}
-    for system in systems:
-        print('** Evaluating {} system **'.format(system))
-        if system == '-ad':
-            args.action_dropout_rate = 0.0
-            if dataset == 'umls':
-                # adjust dropout hyperparameters
-                args.emb_dropout_rate = 0.3
-                args.ff_dropout_rate = 0.1
-        elif system == '-rs':
-            config_path = os.path.join('configs', '{}.sh'.format(dataset.lower()))
-            args = parser.parse_args()
-            args = data_utils.load_configs(args, config_path)
-        
-        lf = set_up_lf_for_inference(args)
-        pred_scores = lf.forward(dev_data, verbose=False)
-        _, _, _, _, mrr = src.eval.hits_and_ranks(dev_data, pred_scores, lf.kg.dev_objects, verbose=True)
-        if to_1_ratio == 0:
-            to_m_mrr = mrr
-            to_1_mrr = -1
-        else:
-            to_m_mrr, to_1_mrr = src.eval.hits_and_ranks_by_relation_type(
-                dev_data, pred_scores, lf.kg.dev_objects, relation_by_types, verbose=True)
-        seen_mrr, unseen_mrr = src.eval.hits_and_ranks_by_seen_queries(
-            dev_data, pred_scores, lf.kg.dev_objects, seen_queries, verbose=True)
-        mrrs[system] = {'': mrr * 100}
-        to_m_mrrs[system] = {'': to_m_mrr * 100}
-        to_1_mrrs[system] = {'': to_1_mrr  * 100}
-        seen_mrrs[system] = {'': seen_mrr * 100}
-        unseen_mrrs[system] = {'': unseen_mrr * 100}
-        _, _, _, _, mrr_full_kg = src.eval.hits_and_ranks(dev_data, pred_scores, lf.kg.all_objects, verbose=True)
-        if to_1_ratio == 0:
-            to_m_mrr_full_kg = mrr_full_kg
-            to_1_mrr_full_kg = -1
-        else:
-            to_m_mrr_full_kg, to_1_mrr_full_kg = src.eval.hits_and_ranks_by_relation_type(
-                dev_data, pred_scores, lf.kg.all_objects, relation_by_types, verbose=True)
-        seen_mrr_full_kg, unseen_mrr_full_kg = src.eval.hits_and_ranks_by_seen_queries(
-            dev_data, pred_scores, lf.kg.all_objects, seen_queries, verbose=True)
-        mrrs[system]['full_kg'] = mrr_full_kg * 100
-        to_m_mrrs[system]['full_kg'] = to_m_mrr_full_kg * 100
-        to_1_mrrs[system]['full_kg'] = to_1_mrr_full_kg * 100
-        seen_mrrs[system]['full_kg'] = seen_mrr_full_kg * 100
-        unseen_mrrs[system]['full_kg'] = unseen_mrr_full_kg * 100
-
-    # overall system comparison (table 3)
-    print('Partial graph evaluation')
-    print('--------------------------')
-    print('Overall system performance')
-    print('Ours(ConvE)\t-RS\t-AD')
-    print('{:.1f}\t{:.1f}\t{:.1f}'.format(mrrs['ours'][''], mrrs['-rs'][''], mrrs['-ad']['']))
-    print('--------------------------')
-    # performance w.r.t. relation types (table 4, 6)
-    print('Performance w.r.t. relation types')
-    print('\tTo-many\t\t\t\tTo-one\t\t')
-    print('%\tOurs\t-RS\t-AD\t%\tOurs\t-RS\t-AD')
-    print('{:.1f}\t{:.1f}\t{:.1f} ({:d})\t{:.1f} ({:d})\t{:.1f}\t{:.1f}\t{:.1f} ({:d})\t{:.1f} ({:d})'.format(
-        to_m_ratio, to_m_mrrs['ours'][''], to_m_mrrs['-rs'][''], rel_change(to_m_mrrs, '-rs', ''), to_m_mrrs['-ad'][''], rel_change(to_m_mrrs, '-ad', ''),
-        to_1_ratio, to_1_mrrs['ours'][''], to_1_mrrs['-rs'][''], rel_change(to_1_mrrs, '-rs', ''), to_1_mrrs['-ad'][''], rel_change(to_1_mrrs, '-ad', '')))
-    print('--------------------------')
-    # performance w.r.t. seen queries (table 5, 7)
-    print('Performance w.r.t. seen/unseen queries')
-    print('\tSeen\t\t\t\tUnseen\t\t')
-    print('%\tOurs\t-RS\t-AD\t%\tOurs\t-RS\t-AD')
-    print('{:.1f}\t{:.1f}\t{:.1f} ({:d})\t{:.1f} ({:d})\t{:.1f}\t{:.1f}\t{:.1f} ({:d})\t{:.1f} ({:d})'.format(
-        seen_ratio, seen_mrrs['ours'][''], seen_mrrs['-rs'][''], rel_change(seen_mrrs, '-rs', ''), seen_mrrs['-ad'][''], rel_change(seen_mrrs, '-ad', ''),
-        unseen_ratio, unseen_mrrs['ours'][''], unseen_mrrs['-rs'][''], rel_change(unseen_mrrs, '-rs', ''), unseen_mrrs['-ad'][''], rel_change(unseen_mrrs, '-ad', '')))
-    print()
-    print('Full graph evaluation')
-    print('--------------------------')
-    print('Overall system performance')
-    print('Ours(ConvE)\t-RS\t-AD')
-    print('{:.1f}\t{:.1f}\t{:.1f}'.format(mrrs['ours']['full_kg'], mrrs['-rs']['full_kg'], mrrs['-ad']['full_kg']))
-    print('--------------------------')
-    print('Performance w.r.t. relation types')
-    print('\tTo-many\t\t\t\tTo-one\t\t')
-    print('%\tOurs\t-RS\t-AD\t%\tOurs\t-RS\t-AD')
-    print('{:.1f}\t{:.1f}\t{:.1f} ({:d})\t{:.1f} ({:d})\t{:.1f}\t{:.1f}\t{:.1f} ({:d})\t{:.1f} ({:d})'.format(
-        to_m_ratio, to_m_mrrs['ours']['full_kg'], to_m_mrrs['-rs']['full_kg'], rel_change(to_m_mrrs, '-rs', 'full_kg'), to_m_mrrs['-ad']['full_kg'], rel_change(to_m_mrrs, '-ad', 'full_kg'),
-        to_1_ratio, to_1_mrrs['ours']['full_kg'], to_1_mrrs['-rs']['full_kg'], rel_change(to_1_mrrs, '-rs', 'full_kg'), to_1_mrrs['-ad']['full_kg'], rel_change(to_1_mrrs, '-ad', 'full_kg')))
-    print('--------------------------')
-    print('Performance w.r.t. seen/unseen queries')
-    print('\tSeen\t\t\t\tUnseen\t\t')
-    print('%\tOurs\t-RS\t-AD\t%\tOurs\t-RS\t-AD')
-    print('{:.1f}\t{:.1f}\t{:.1f} ({:d})\t{:.1f} ({:d})\t{:.1f}\t{:.1f}\t{:.1f} ({:d})\t{:.1f} ({:d})'.format(
-        seen_ratio, seen_mrrs['ours']['full_kg'], seen_mrrs['-rs']['full_kg'], rel_change(seen_mrrs, '-rs', 'full_kg'), seen_mrrs['-ad']['full_kg'], rel_change(seen_mrrs, '-ad', 'full_kg'),
-        unseen_ratio, unseen_mrrs['ours']['full_kg'], unseen_mrrs['-rs']['full_kg'], rel_change(unseen_mrrs, '-rs', 'full_kg'), unseen_mrrs['-ad']['full_kg'], rel_change(unseen_mrrs, '-ad', 'full_kg')))
-
-def export_to_embedding_projector(lf):
-    lf.load_checkpoint(get_checkpoint_path(args))
-    lf.export_to_embedding_projector()
-
-def export_reward_shaping_parameters(lf):
-    lf.load_checkpoint(get_checkpoint_path(args))
-    lf.export_reward_shaping_parameters()
-
-def export_fuzzy_facts(lf):
-    lf.load_checkpoint(get_checkpoint_path(args))
-    lf.export_fuzzy_facts()
-
-def export_error_cases(lf):
-    lf.load_checkpoint(get_checkpoint_path(args))
-    lf.batch_size = args.dev_batch_size
-    lf.eval()
-    entity_index_path = os.path.join(args.data_dir, 'entity2id.txt')
-    relation_index_path = os.path.join(args.data_dir, 'relation2id.txt')
-    dev_path = os.path.join(args.data_dir, 'dev.triples')
-    dev_data = data_utils.load_triples(dev_path, entity_index_path, relation_index_path)
-    lf.load_checkpoint(get_checkpoint_path(args))
-    print('Dev set performance:')
-    pred_scores = lf.forward(dev_data, verbose=False)
-    src.eval.hits_and_ranks(dev_data, pred_scores, lf.kg.dev_objects, verbose=True)
-    src.eval.export_error_cases(dev_data, pred_scores, lf.kg.dev_objects, os.path.join(lf.model_dir, 'error_cases.pkl'))
-
-def compute_fact_scores(lf):
-    data_dir = args.data_dir
-    train_path = os.path.join(data_dir, 'train.triples')
-    dev_path = os.path.join(data_dir, 'dev.triples')
-    test_path = os.path.join(data_dir, 'test.triples')
-    entity_index_path = os.path.join(args.data_dir, 'entity2id.txt')
-    relation_index_path = os.path.join(args.data_dir, 'relation2id.txt')
-    train_data = data_utils.load_triples(train_path, entity_index_path, relation_index_path)
-    dev_data = data_utils.load_triples(dev_path, entity_index_path, relation_index_path)
-    test_data = data_utils.load_triples(test_path, entity_index_path, relation_index_path)
-    lf.eval()
-    lf.load_checkpoint(get_checkpoint_path(args))
-    train_scores = lf.forward_fact(train_data)
-    dev_scores = lf.forward_fact(dev_data)
-    test_scores = lf.forward_fact(test_data)
-
-    print('Train set average fact score: {}'.format(float(train_scores.mean())))
-    print('Dev set average fact score: {}'.format(float(dev_scores.mean())))
-    print('Test set average fact score: {}'.format(float(test_scores.mean())))
-
 def get_checkpoint_path(args):
     if not args.checkpoint_path:
         return os.path.join(args.model_dir, 'model_best.tar')
     else:
         return args.checkpoint_path
 
-def load_configs(config_path):
-    with open(config_path) as f:
-        print('loading configuration file {}'.format(config_path))
-        for line in f:
-            if not '=' in line:
-                continue
-            arg_name, arg_value = line.strip().split('=')
-            if arg_value.startswith('"') and arg_value.endswith('"'):
-                arg_value = arg_value[1:-1]
-            if hasattr(args, arg_name):
-                print('{} = {}'.format(arg_name, arg_value))
-                arg_value2 = getattr(args, arg_name)
-                if type(arg_value2) is str:
-                    setattr(args, arg_name, arg_value)
-                elif type(arg_value2) is bool:
-                    if arg_value == 'True':
-                        setattr(args, arg_name, True)
-                    elif arg_value == 'False':
-                        setattr(args, arg_name, False)
-                    else:
-                        raise ValueError('Unrecognized boolean value description: {}'.format(arg_value))
-                elif type(arg_value2) is int:
-                    setattr(args, arg_name, int(arg_value))
-                elif type(arg_value2) is float:
-                    setattr(args, arg_name, float(arg_value))
-                else:
-                    raise ValueError('Unrecognized attribute type: {}: {}'.format(arg_name, type(arg_value2)))
-            else:
-                raise ValueError('Unrecognized argument: {}'.format(arg_name))
-    return args
-
 def run_experiment(args):
 
-    if args.test:
-        if 'NELL' in args.data_dir:
-            dataset = os.path.basename(args.data_dir)
-            args.distmult_state_dict_path = data_utils.change_to_test_model_path(dataset, args.distmult_state_dict_path)
-            args.complex_state_dict_path = data_utils.change_to_test_model_path(dataset, args.complex_state_dict_path)
-            args.conve_state_dict_path = data_utils.change_to_test_model_path(dataset, args.conve_state_dict_path)
-        args.data_dir += '.test'
-
     if args.process_data:
-
         # Process knowledge graph data
-
         process_data()
     else:
         with torch.set_grad_enabled(args.train or args.search_random_seed or args.grid_search):
-            if args.search_random_seed:
-
-                # Search for best random seed
-                # I think this part should be deprecated    --dzj
-                # search log file
-                task = os.path.basename(os.path.normpath(args.data_dir))
-                out_log = '{}.{}.rss'.format(task, args.model)
-                o_f = open(out_log, 'w')
-
-                print('** Search Random Seed **')
-                o_f.write('** Search Random Seed **\n')
-                o_f.close()
-                num_runs = 5
-
-                hits_at_1s = {}
-                hits_at_10s = {}
-                mrrs = {}
-                mrrs_search = {}
-                for i in range(num_runs):
-
-                    o_f = open(out_log, 'a')
-
-                    random_seed = random.randint(0, 1e16)
-                    print("\nRandom seed = {}\n".format(random_seed))
-                    o_f.write("\nRandom seed = {}\n\n".format(random_seed))
-                    torch.manual_seed(random_seed)
-                    torch.cuda.manual_seed_all(args, random_seed)
-                    initialize_model_directory(args, random_seed)
-                    lf = construct_model(args)
-                    lf.cuda()
-                    train(lf)
-                    metrics = inference(lf)
-                    hits_at_1s[random_seed] = metrics['test']['hits_at_1']
-                    hits_at_10s[random_seed] = metrics['test']['hits_at_10']
-                    mrrs[random_seed] = metrics['test']['mrr']
-                    mrrs_search[random_seed] = metrics['dev']['mrr']
-                    # print the results of the hyperparameter combinations searched so far
-                    print('------------------------------------------')
-                    print('Random Seed\t@1\t@10\tMRR')
-                    for key in hits_at_1s:
-                        print('{}\t{:.3f}\t{:.3f}\t{:.3f}'.format(
-                            key, hits_at_1s[key], hits_at_10s[key], mrrs[key]))
-                    print('------------------------------------------')
-                    o_f.write('------------------------------------------\n')
-                    o_f.write('Random Seed\t@1\t@10\tMRR\n')
-                    for key in hits_at_1s:
-                        o_f.write('{}\t{:.3f}\t{:.3f}\t{:.3f}\n'.format(
-                            key, hits_at_1s[key], hits_at_10s[key], mrrs[key]))
-                    o_f.write('------------------------------------------\n')
-
-                    # compute result variance
-                    import numpy as np
-                    hits_at_1s_ = list(hits_at_1s.values())
-                    hits_at_10s_ = list(hits_at_10s.values())
-                    mrrs_ = list(mrrs.values())
-                    print('Hits@1 mean: {:.3f}\tstd: {:.6f}'.format(np.mean(hits_at_1s_), np.std(hits_at_1s_)))
-                    print('Hits@10 mean: {:.3f}\tstd: {:.6f}'.format(np.mean(hits_at_10s_), np.std(hits_at_10s_)))
-                    print('MRR mean: {:.3f}\tstd: {:.6f}'.format(np.mean(mrrs_), np.std(mrrs_)))
-                    o_f.write('Hits@1 mean: {:.3f}\tstd: {:.6f}\n'.format(np.mean(hits_at_1s_), np.std(hits_at_1s_)))
-                    o_f.write('Hits@10 mean: {:.3f}\tstd: {:.6f}\n'.format(np.mean(hits_at_10s_), np.std(hits_at_10s_)))
-                    o_f.write('MRR mean: {:.3f}\tstd: {:.6f}\n'.format(np.mean(mrrs_), np.std(mrrs_)))
-                    o_f.close()
-                    
-                # find best random seed
-                best_random_seed, best_mrr = sorted(mrrs_search.items(), key=lambda x: x[1], reverse=True)[0]
-                print('* Best Random Seed = {}'.format(best_random_seed))
-                print('* @1: {:.3f}\t@10: {:.3f}\tMRR: {:.3f}'.format(
-                    hits_at_1s[best_random_seed],
-                    hits_at_10s[best_random_seed],
-                    mrrs[best_random_seed]))
-                with open(out_log, 'a'):
-                    o_f.write('* Best Random Seed = {}\n'.format(best_random_seed))
-                    o_f.write('* @1: {:.3f}\t@10: {:.3f}\tMRR: {:.3f}\n'.format(
-                        hits_at_1s[best_random_seed],
-                        hits_at_10s[best_random_seed],
-                        mrrs[best_random_seed])
-                    )
-                    o_f.close()
-
-            elif args.grid_search:
-
+            if args.grid_search:
                 # Grid search
                 # This part is not being used now, but I think we can utilize it.   --dzj
                 # search log file
@@ -790,39 +407,27 @@ def run_experiment(args):
                     ))
 
                     o_f.close()
-
-            elif args.run_ablation_studies:
-                run_ablation_studies(args)
+            elif args.case_study:
+                if args.model_dir is None:
+                    initialize_model_directory(args)
+                print ("model directory : %s" % args.model_dir)
+                sys.stdout = open(os.path.join(args.model_dir, "case_study.txt"), "w")
+                lf = construct_model(args)
+                lf.cuda()
+                case_study(lf)
             elif args.test_metrics:
-                assert (args.model_dir is not None)
+                if args.model_dir is None:
+                    initialize_model_directory(args)
+                print ("model directory : %s" % args.model_dir)
                 sys.stdout = open(os.path.join(args.model_dir, "test_metrics.txt"), "w")
                 lf = construct_model(args)
                 lf.cuda()
-                sys.stdout.flush()
                 test_metrics(lf)
             else:
                 initialize_model_directory(args)
                 lf = construct_model(args)
                 lf.cuda()
-                if args.train:
-                    train(lf)
-                elif args.inference:
-                    inference(lf)
-                elif args.eval_by_relation_type:
-                    inference(lf)
-                elif args.eval_by_seen_queries:
-                    inference(lf)
-                # I think following codes are useless.  --dzj
-                elif args.export_to_embedding_projector:
-                    export_to_embedding_projector(lf)
-                elif args.export_reward_shaping_parameters:
-                    export_reward_shaping_parameters(lf)
-                elif args.compute_fact_scores:
-                    compute_fact_scores(lf)
-                elif args.export_fuzzy_facts:
-                    export_fuzzy_facts(lf)
-                elif args.export_error_cases:
-                    export_error_cases(lf)
+                train(lf)
 
 if __name__ == '__main__':
     run_experiment(args)

@@ -40,7 +40,7 @@ parser.add_argument('--data_dir', type=str, default=os.path.join(os.path.dirname
                     help='directory where the knowledge graph data is stored (default: None)')
 parser.add_argument('--model_root_dir', type=str, default=os.path.join(os.path.dirname(os.path.dirname(__file__)), 'model'),
                     help='root directory where the model parameters are stored (default: None)')
-parser.add_argument('--model_dir', type=str, default=os.path.join(os.path.dirname(os.path.dirname(__file__)), 'model'),
+parser.add_argument('--model_dir', type=str, default=None,
                     help='directory where the model parameters are stored (default: None)')
 parser.add_argument('--gpu', type=int, default=0,
                     help='gpu device (default: 0)')
@@ -234,7 +234,9 @@ parser.add_argument('--use_pretrain', action='store_true')
 parser.add_argument('--fix_embedding', action='store_true')
 parser.add_argument('--entity_only', action='store_true')
 parser.add_argument('--reward_matrix', action='store_true')
-parser.add_argument('--test_train_data_only', action='store_true')
+parser.add_argument('--test_train_data', action='store_true')
+parser.add_argument('--test_dev_data', action='store_true')
 parser.add_argument('--remove_rs', action='store_true')
+parser.add_argument('--no_ground_truth_edge_mask', action='store_true')
 
 args = parser.parse_args()

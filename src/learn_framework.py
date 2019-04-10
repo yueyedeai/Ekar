@@ -24,7 +24,7 @@ import src.eval
 from src.utils.ops import var_cuda, zeros_var_cuda
 import src.utils.ops as ops
 from time import time, sleep
-import collections
+from collections import defaultdict
 from IPython import embed
 
 class LFramework(nn.Module):
@@ -153,9 +153,9 @@ class LFramework(nn.Module):
                     else:
                         fns = torch.cat([fns, loss['fn']])
 
-            print ("time for calculate loss = %.2f" % t_loss_0)
-            print ("time for backward = %.2f"       % t_back_0)
-            print ("time for step = %.2f"           % t_step_0)
+            print ("time for calculate loss = %.2f" % t_loss)
+            print ("time for backward = %.2f"       % t_back)
+            print ("time for step = %.2f"           % t_step)
 
             _t_train = time() - t1
             print ("training time for epoch %d = %.1f" % (epoch_id, _t_train))
@@ -254,15 +254,55 @@ class LFramework(nn.Module):
 
         self.eval()
         self.batch_size = self.dev_batch_size
-        test_scores = self.forward(test_data, verbose=self.case_study)
-        print('test set performance: ')
-        NDCG, Precison, K = src.eval.NDCG_and_Precision(test_data, test_scores, self.kg.all_objects, self.kg.item_set, verbose=True)
-        # for i in range(len(K)):
-        #     print ("NDCG@%d = %.4f" % (K[i], NDCG[i]))
-        # for i in range(len(K)):
-        #     print ("P@%d = %.4f" % (K[i], Precison[i]))
-
+        test_scores = self.forward(test_data)
+        NDCG, P, K = src.eval.NDCG_and_Precision(test_data, test_scores, self.kg.all_objects, self.kg.item_set, verbose=True)
+        metrics = dict()
+        metrics['K']    = K
+        metrics['NDCG'] = NDCG
+        metrics['P']    = P
         print ("total test time = %.4f\n" % (time() - t0))
+        return metrics
+
+    def run_case_study(self, test_data):
+        self.print_all_model_parameters()
+        print ("size of item set = ", len(self.kg.item_set))
+        self.load_checkpoint(os.path.join(self.model_dir, 'model_best.tar'))
+
+        self.eval()
+        self.batch_size = self.dev_batch_size
+        test_scores = self.forward_case_study(test_data)
+
+    def forward_case_study(self, examples, verbose=False):
+        pred_scores = []
+        all_meta_path_dict = defaultdict(int)
+        all_meta_path_sum  = 0
+        pos_meta_path_dict = defaultdict(int)
+        pos_meta_path_sum  = 0
+        show_case_f = open(os.path.join(self.args.model_dir, "show_case.txt"), "w")
+        for example_id in tqdm(range(0, len(examples), self.batch_size)):
+            mini_batch = examples[example_id:example_id + self.batch_size]
+            mini_batch_size = len(mini_batch)
+            if len(mini_batch) < self.batch_size:
+                self.make_full_batch(mini_batch, self.batch_size)
+            pred_score, _all_meta_path_dict, _pos_meta_path_dict = \
+                self.predict(mini_batch, verbose=verbose, case_study=True, show_case=True, show_case_f=show_case_f)
+            pred_scores.append(pred_score[:mini_batch_size])
+            for k, v in _all_meta_path_dict.items():
+                all_meta_path_dict[k] += v
+                all_meta_path_sum += v
+            for k, v in _pos_meta_path_dict.items():
+                pos_meta_path_dict[k] += v
+                pos_meta_path_sum += v
+
+        show_case_f.close()
+        print("********All meta path**********")
+        for k, v in all_meta_path_dict.items():
+            print ("%s:%d(%.1f)%%" % (k, v, 100.0 * v / all_meta_path_sum))
+        print("********Positive meta path**********")
+        for k, v in pos_meta_path_dict.items():
+            print ("%s:%d(%.1f)%%" % (k, v, 100.0 * v / pos_meta_path_sum))
+        scores = torch.cat(pred_scores)
+        return scores
 
     def forward(self, examples, verbose=False):
         pred_scores = []

@@ -14,7 +14,7 @@ from src.learn_framework import LFramework
 import src.rl.graph_search.beam_search as search
 import src.utils.ops as ops
 from src.utils.ops import int_fill_var_cuda, var_cuda, zeros_var_cuda
-import collections
+from collections import defaultdict
 from time import time
 from IPython import embed
 
@@ -279,16 +279,25 @@ class PolicyGradient(LFramework):
 
         return sample_outcome
 
-    def predict(self, mini_batch, verbose=False):
+    def predict(self, mini_batch, verbose=False, case_study=False, show_case=False, show_case_f=None):
+
+        def get_relation(relation_id):
+            if relation_id == self.kg.self_edge:
+                return '<null>'
+            else:
+                return self.kg.id2relation[relation_id]
+
         kg, pn = self.kg, self.mdl
         e1, e2, r = self.format_batch(mini_batch, num_labels=kg.num_entities)
         beam_search_output = search.beam_search(
             pn, e1, r, e2, kg, self.num_rollout_steps, self.beam_size,
+            return_search_traces=case_study,
             use_action_space_bucketing=self.args.use_action_space_bucketing)
         pred_e2s = beam_search_output['pred_e2s']
         pred_e2_scores = beam_search_output['pred_e2_scores']
-        if verbose:
-            # print inference paths
+        if case_study:
+            all_meta_path_dict = defaultdict(int)
+            pos_meta_path_dict = defaultdict(int)
             search_traces = beam_search_output['search_traces']
             output_beam_size = min(self.beam_size, pred_e2_scores.shape[1])
             for i in range(len(e1)):
@@ -297,14 +306,31 @@ class PolicyGradient(LFramework):
                     if pred_e2s[i][j] == kg.dummy_e:
                         break
                     search_trace = []
+                    meta_path = ''
                     for k in range(len(search_traces)):
-                        search_trace.append((int(search_traces[k][0][ind]), int(search_traces[k][1][ind])))
-                    print('beam {}: score = {} \n<PATH> {}'.format(
-                        j, float(pred_e2_scores[i][j]), ops.format_path(search_trace, kg)))
+                        relation_id = int(search_traces[k][0][ind])
+                        entity_id   = int(search_traces[k][1][ind])
+                        search_trace.append((relation_id, entity_id))
+                        if (k > 0):
+                            relation = get_relation(relation_id)
+                            meta_path += '==>' + relation
+                    score = float(pred_e2_scores[i][j])
+                    path  = ops.format_path(search_trace, kg)
+                    if verbose:
+                        print('beam {}: score = {} \n<PATH> {}'.format(
+                        j, score, path))
+                    all_meta_path_dict[meta_path] += 1
+                    if (e2[i][pred_e2s[i][j]] != 0):
+                        pos_meta_path_dict[meta_path] += 1
+                        if (show_case and j <= 20):
+                            show_case_f.write('beam {}: score = {} \n<PATH> {}\n'.format(
+                                j, score, path))
         with torch.no_grad():
             pred_scores = zeros_var_cuda([len(e1), kg.num_entities])
             for i in range(len(e1)):
                 pred_scores[i][pred_e2s[i]] = torch.exp(pred_e2_scores[i])
+        if case_study == True:
+            return pred_scores, all_meta_path_dict, pos_meta_path_dict
         return pred_scores
 
     def record_path_trace(self, path_trace):
