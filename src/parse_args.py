@@ -85,8 +85,6 @@ parser.add_argument('--add_reverse_relations', type=bool, default=True,
                     help='add reverse relations to KB (default: True)')
 parser.add_argument('--add_reversed_training_edges', action='store_true',
                     help='add reversed edges to extend training set (default: False)')
-parser.add_argument('--train_entire_graph', type=bool, default=False,
-                    help='add all edges in the graph to extend training set (default: False)')
 parser.add_argument('--emb_dropout_rate', type=float, default=0.3,
                     help='Knowledge graph embedding dropout rate (default: 0.3)')
 parser.add_argument('--zero_entity_initialization', type=bool, default=False,
@@ -129,10 +127,10 @@ parser.add_argument('--random_parameters', type=bool, default=False,
 # Fact Network
 parser.add_argument('--label_smoothing_epsilon', type=float, default=0.1,
                     help='epsilon used for label smoothing')
-parser.add_argument('--hidden_dropout_rate', type=float, default=0.1,
-                    help='ConvE hidden layer dropout rate (default: 0.3)')
-parser.add_argument('--feat_dropout_rate', type=float, default=0.1,
-                    help='ConvE feature dropout rate (default: 0.2)')
+parser.add_argument('--hidden_dropout_rate', type=float, default=0.0,
+                    help='ConvE hidden layer dropout rate (default: 0.0)')
+parser.add_argument('--feat_dropout_rate', type=float, default=0.0,
+                    help='ConvE feature dropout rate (default: 0.0)')
 parser.add_argument('--emb_2D_d1', type=int, default=4,
                     help='ConvE embedding 2D shape dimension 1 (default: 4)')
 parser.add_argument('--emb_2D_d2', type=int, default=8,
@@ -233,10 +231,21 @@ parser.add_argument('--grid_search', action='store_true',
 parser.add_argument('--use_pretrain', action='store_true')
 parser.add_argument('--fix_embedding', action='store_true')
 parser.add_argument('--entity_only', action='store_true')
+parser.add_argument('--history_only', action='store_true')
 parser.add_argument('--reward_matrix', action='store_true')
 parser.add_argument('--test_train_data', action='store_true')
 parser.add_argument('--test_dev_data', action='store_true')
 parser.add_argument('--remove_rs', action='store_true')
 parser.add_argument('--no_ground_truth_edge_mask', action='store_true')
+parser.add_argument('--train_raw_graph', action='store_true')
+parser.add_argument('--reward_as_score', action='store_true')
+parser.add_argument('--rollout_inference', action='store_true')
+parser.add_argument('--max_decrease_count', type=int, default=5)
+
+def str2list(v):
+    v=v.split(',')
+    v=[int(_.strip('[]')) for _ in v]
+    return v
+parser.add_argument('--K', type=str2list, default=[10])
 
 args = parser.parse_args()

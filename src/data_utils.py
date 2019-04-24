@@ -62,20 +62,10 @@ def change_to_test_model_path(dataset, model_path):
     return new_model_path
 
 def get_train_path(args):
-    if 'NELL' in args.data_dir:
-        if not args.model.startswith('point'):
-            if args.test:
-                train_path = os.path.join(args.data_dir, 'train.dev.large.triples')
-            else:
-                train_path = os.path.join(args.data_dir, 'train.large.triples')
-        else:
-            if args.test:
-                train_path = os.path.join(args.data_dir, 'train.dev.triples')
-            else:
-                train_path = os.path.join(args.data_dir, 'train.triples')
+    if args.train_raw_graph:
+        train_path = os.path.join(args.data_dir, 'raw.kb')
     else:
         train_path = os.path.join(args.data_dir, 'train.triples')
-
     return train_path
 
 def load_seen_entities(adj_list_path, entity_index_path):
@@ -114,7 +104,8 @@ def load_triples_with_label(data_path, r, entity_index_path, relation_index_path
     return triples, labels
 
 def load_triples(data_path, entity_index_path, relation_index_path, group_examples_by_query=False,
-                 add_reverse_relations=False, seen_entities=None, verbose=False):
+                 add_reverse_relations=False, seen_entities=None, verbose=False, raw_path=None,
+                 add_raw_path=False):
     """
     Convert triples stored on disc into indices.
     """
@@ -127,14 +118,14 @@ def load_triples(data_path, entity_index_path, relation_index_path, group_exampl
     triples = []
     if group_examples_by_query:
         triple_dict = {}
-    with open(data_path) as f:
+    with open(data_path, "r") as f:
         num_skipped = 0
         for line in f:
             e1, e2, r = line.strip().split()
             if seen_entities and (not e1 in seen_entities or not e2 in seen_entities):
                 num_skipped += 1
                 if verbose:
-                    print('Skip triple ({}) with unseen entity: {}'.format(num_skipped, line.strip())) 
+                    print('Skip triple ({}) with unseen entity: {}'.format(num_skipped, line.strip()))
                 continue
             if group_examples_by_query:
                 e1_id, e2_id, r_id = triple2ids(e1, e2, r)

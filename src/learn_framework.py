@@ -52,9 +52,11 @@ class LFramework(nn.Module):
         self.inference = not args.train
         self.run_analysis = args.run_analysis
         self.case_study = args.case_study
+        self.max_decrease_count = args.max_decrease_count
 
         self.kg = kg
         self.mdl = mdl
+        self.K = args.K
         print('{} module created'.format(self.model))
 
     def print_all_model_parameters(self):
@@ -77,6 +79,7 @@ class LFramework(nn.Module):
         # Track dev metrics changes
         best_dev_metrics = 0
         dev_metrics_history = []
+        # last_loss = 100.0
 
         t0 = time()
         t1 = t0
@@ -90,6 +93,7 @@ class LFramework(nn.Module):
         t_back_0 = 0
         t_step = 0
         t_step_0 = 0
+        decrease_count = 0
 
         for epoch_id in range(self.start_epoch, self.num_epochs):
             sys.stdout.flush()
@@ -164,6 +168,18 @@ class LFramework(nn.Module):
 
             # Check training statistics
             stdout_msg = 'Epoch {}: average training loss = {}'.format(epoch_id, np.mean(batch_losses))
+
+            # epoch_loss = np.mean(batch_losses)
+            # if (epoch_loss > last_loss):
+            #     self.learning_rate *= 0.5
+            #     print("learning rate decay to %f" % self.learning_rate)
+            #     if self.learning_rate < 1e-5:
+            #         self.num_epochs = epoch_id + 1
+            #         break
+            #     for param_group in self.optim.param_groups:
+            #         param_group['lr'] = self.learning_rate
+            # last_loss = epoch_loss
+
             if entropies:
                 stdout_msg += '\nentropy = {}'.format(np.mean(entropies))
             print(stdout_msg)
@@ -185,14 +201,14 @@ class LFramework(nn.Module):
                 self.batch_size = self.dev_batch_size
                 dev_scores = self.forward(dev_data, verbose=False)
                 print('Dev set performance: (include test set labels)')
-                NDCG, Precison, K = src.eval.NDCG_and_Precision(dev_data, dev_scores, self.kg.all_objects, self.kg.item_set, verbose=True)
-                metrics = sum(NDCG) + sum(Precison)
+                NDCG, Precison, Recall = src.eval.NDCG_Precision_Recall(dev_data, dev_scores, self.kg.all_objects, self.kg.item_set, K=self.K, verbose=True)
+                metrics = sum(NDCG) + sum(Precison) + sum(Recall)
                 # Action dropout anneaking
                 if self.model.startswith('point'):
                     eta = self.action_dropout_anneal_interval
                     if len(dev_metrics_history) > eta and metrics < min(dev_metrics_history[-eta:]):
                         old_action_dropout_rate = self.action_dropout_rate
-                        self.action_dropout_rate *= self.action_dropout_anneal_factor 
+                        self.action_dropout_rate *= self.action_dropout_anneal_factor
                         print('Decreasing action dropout rate: {} -> {}'.format(
                             old_action_dropout_rate, self.action_dropout_rate))
                 # Save checkpoint
@@ -201,17 +217,25 @@ class LFramework(nn.Module):
                     best_dev_metrics = metrics
                     with open(os.path.join(self.model_dir, 'best_dev_iteration.dat'), 'w') as o_f:
                         o_f.write('{}\n'.format(epoch_id))
-                        for i in range(len(K)):
-                            o_f.write("NDCG@%d = %.4f\n" % (K[i], NDCG[i]))
-                        for i in range(len(K)):
-                            o_f.write("P@%d = %.4f\n" % (K[i], Precison[i]))
+                        for i in range(len(self.K)):
+                            o_f.write("NDCG@%d = %.4f\n" % (self.K[i], NDCG[i]))
+                        for i in range(len(self.K)):
+                            o_f.write("Precion@%d = %.4f\n" % (self.K[i], Precison[i]))
+                        for i in range(len(self.K)):
+                            o_f.write("Recall@%d = %.4f\n" % (self.K[i], Recall[i]))
                         # We can add more information
 
                 else:
                     # Early stopping
-                    if epoch_id - self.start_epoch + 1 >= self.num_wait_epochs and metrics < np.mean(dev_metrics_history[-self.num_wait_epochs:]):
-                        self.num_epochs = epoch_id + 1
-                        break
+                    if n_valid > self.max_decrease_count:
+                        if metrics < dev_metrics_history[-1]:
+                            decrease_count += 1
+                        else:
+                            decrease_count = 0
+                        if decrease_count >= self.max_decrease_count:
+                            self.num_epochs = epoch_id + 1
+                            break
+
                 dev_metrics_history.append(metrics)
                 if self.run_analysis:
                     num_path_types_file = os.path.join(self.model_dir, 'num_path_types.dat')
@@ -244,6 +268,7 @@ class LFramework(nn.Module):
         if self.num_epochs - self.start_epoch > 0:
             print ("*************************")
             print ("*** Average time for training = %.1f" % (t_train / (self.num_epochs - self.start_epoch)))
+            print ("*** Average time for evaluate = %.1f" % (t_valid / n_valid))
             print ("*** Average time for each epoch = %.1f" % ((time() - t0) / (self.num_epochs - self.start_epoch)))
 
     def run_test_metrics(self, test_data):
@@ -255,11 +280,12 @@ class LFramework(nn.Module):
         self.eval()
         self.batch_size = self.dev_batch_size
         test_scores = self.forward(test_data)
-        NDCG, P, K = src.eval.NDCG_and_Precision(test_data, test_scores, self.kg.all_objects, self.kg.item_set, verbose=True)
+        NDCG, Precison, Recall = src.eval.NDCG_Precision_Recall(test_data, test_scores, self.kg.all_objects, self.kg.item_set, verbose=True)
         metrics = dict()
-        metrics['K']    = K
+        metrics['K']    = self.K
         metrics['NDCG'] = NDCG
-        metrics['P']    = P
+        metrics['Precison']    = Precison
+        metrics['Recall']      = Recall
         print ("total test time = %.4f\n" % (time() - t0))
         return metrics
 

@@ -104,9 +104,11 @@ class RewardShapingPolicyGradient(PolicyGradient):
             else:
                 if self.args.reward_matrix:
                     binary_reward = self.reward_matrix[self.id2uid[e1], pred_e2].float()
+                elif e2 is None:
+                    binary_reward = 0
                 else:
                     binary_reward = (pred_e2 == e2).float()
-                return binary_reward + self.mu * (1 - binary_reward) * real_reward + bias
+                return binary_reward + self.mu * (1 - binary_reward) * (1 + bias) * real_reward + bias
 
     def test_fn(self, examples):
         fn_kg, fn = self.fn_kg, self.fn

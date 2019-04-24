@@ -45,6 +45,8 @@ class PolicyGradient(LFramework):
         self.bias = torch.zeros(self.kg.num_entities) - 1
         self.bias[list(self.kg.item_set)] = 0
         self.bias = self.bias.cuda()
+        self.reward_as_score = args.reward_as_score
+        self.rollout_inference = args.rollout_inference
 
         self.args = args
 
@@ -289,12 +291,31 @@ class PolicyGradient(LFramework):
 
         kg, pn = self.kg, self.mdl
         e1, e2, r = self.format_batch(mini_batch, num_labels=kg.num_entities)
-        beam_search_output = search.beam_search(
-            pn, e1, r, e2, kg, self.num_rollout_steps, self.beam_size,
-            return_search_traces=case_study,
-            use_action_space_bucketing=self.args.use_action_space_bucketing)
-        pred_e2s = beam_search_output['pred_e2s']
-        pred_e2_scores = beam_search_output['pred_e2_scores']
+        if self.rollout_inference:
+            _e1 = e1.unsqueeze(1).repeat((1, self.beam_size)).view(-1)
+            _r = r.unsqueeze(1).repeat((1, self.beam_size)).view(-1)
+            _e2 = torch.zeros(_e1.shape).unsqueeze(1)
+            self.action_dropout_rate = 0
+            output = self.rollout(_e1, _r, _e2, num_steps=self.num_rollout_steps)
+            _pred_e2 = output['pred_e2']
+            _scores = self.reward_fun(_e1, _r, _e1, _pred_e2)
+            pred_e2s = _pred_e2.view(e1.shape[0], -1)
+            pred_e2_scores = _scores.reshape(pred_e2s.shape[0], -1)
+        else:
+            beam_search_output = search.beam_search(
+                pn, e1, r, e2, kg, self.num_rollout_steps, self.beam_size,
+                return_search_traces=case_study,
+                use_action_space_bucketing=self.args.use_action_space_bucketing)
+            pred_e2s = beam_search_output['pred_e2s']
+            if self.reward_as_score:
+                _e1 = e1.unsqueeze(1).repeat((1, pred_e2s.shape[1])).view(-1)
+                _r = r.unsqueeze(1).repeat((1, pred_e2s.shape[1])).view(-1)
+                _pred_e2 = pred_e2s.view(-1)
+                _scores = self.reward_fun(_e1, _r, None, _pred_e2)
+                pred_e2_scores = _scores.reshape(pred_e2s.shape[0], -1)
+            else:
+                pred_e2_scores = beam_search_output['pred_e2_scores']
+
         if case_study:
             all_meta_path_dict = defaultdict(int)
             pos_meta_path_dict = defaultdict(int)

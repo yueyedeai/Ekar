@@ -24,6 +24,10 @@ entity_only_flag=''
 if [[ $entity_only = *"True"* ]]; then
     entity_only_flag='--entity_only'
 fi
+history_only_flag=''
+if [[ $history_only = *"True"* ]]; then
+    history_only_flag='--history_only'
+fi
 
 cmd="python3 -u -m src.experiments \
     --data_dir $data_dir \
@@ -55,6 +59,7 @@ cmd="python3 -u -m src.experiments \
     --reward_shaping_threshold $reward_shaping_threshold \
     $relation_only_flag \
     $entity_only_flag \
+    $history_only_flag \
     --beta $beta \
     --beam_size $beam_size \
     --num_paths_per_entity $num_paths_per_entity \

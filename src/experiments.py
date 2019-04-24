@@ -51,7 +51,7 @@ def initialize_model_directory(args, random_seed=None):
     dataset = os.path.basename(os.path.normpath(args.data_dir))
 
     reverse_edge_tag = '-RV' if args.add_reversed_training_edges else ''
-    entire_graph_tag = '-EG' if args.train_entire_graph else ''
+    raw_graph_tag    = '-RG' if args.train_raw_graph else ''
     if args.xavier_initialization:
         initialization_tag = '-xavier'
     elif args.uniform_entity_initialization:
@@ -155,7 +155,7 @@ def initialize_model_directory(args, random_seed=None):
         dataset,
         args.model,
         reverse_edge_tag,
-        entire_graph_tag,
+        raw_graph_tag,
         initialization_tag,
         hyperparam_sig
     )
@@ -166,6 +166,8 @@ def initialize_model_directory(args, random_seed=None):
         model_sub_dir += '-ro'
     elif args.entity_only:
         model_sub_dir += '-eo'
+    elif args.history_only:
+        model_sub_dir += '-ho'
     elif args.relation_only_in_path:
         model_sub_dir += '-rpo'
     elif args.type_only:
@@ -197,7 +199,7 @@ def initialize_model_directory(args, random_seed=None):
 
     args.model_dir = model_dir
 
-    if args.train and not args.test_metrics:
+    if args.train and not args.test_metrics and not args.case_study:
         sys.stdout = open(os.path.join(args.model_dir, "output.txt"), "w")
         print (args)
 
@@ -281,6 +283,7 @@ def case_study(lf):
 def train(lf):
     train_path = data_utils.get_train_path(args)
     dev_path = os.path.join(args.data_dir, 'dev.triples')
+    raw_path = os.path.join(args.data_dir, 'raw.kb')
     entity_index_path = os.path.join(args.data_dir, 'entity2id.txt')
     relation_index_path = os.path.join(args.data_dir, 'relation2id.txt')
     train_data = data_utils.load_triples(
@@ -328,6 +331,7 @@ def run_experiment(args):
 
                 print("** Grid Search **")
                 o_f.write("** Grid Search **\n")
+                o_f.write(args.tune + '\n')
                 hyperparameters = args.tune.split(',')
 
                 if args.tune == '' or len(hyperparameters) < 1:
@@ -338,9 +342,11 @@ def run_experiment(args):
                 for hp in hyperparameters[1:]:
                     grid = itertools.product(grid, hp_range[hp])
 
-                hits_at_1s = {}
-                hits_at_10s = {}
-                mrrs = {}
+                K    = {}
+                NDCG = {}
+                P    = {}
+                R    = {}
+                metrics_sum = {}
                 grid = list(grid)
                 print('* {} hyperparameter combinations to try'.format(len(grid)))
                 o_f.write('* {} hyperparameter combinations to try\n'.format(len(grid)))
@@ -353,7 +359,6 @@ def run_experiment(args):
                     if not (type(grid_entry) is list or type(grid_entry) is list):
                         grid_entry = [grid_entry]
                     grid_entry = flatten(grid_entry)
-                    print('* Hyperparameter Set {}:'.format(i))
                     o_f.write('* Hyperparameter Set {}:\n'.format(i))
                     signature = ''
                     for j in range(len(grid_entry)):
@@ -364,49 +369,45 @@ def run_experiment(args):
                         else:
                             setattr(args, hp, float(value))
                         signature += ':{}'.format(value)
-                        print('* {}: {}'.format(hp, value))
+                        o_f.write('* {}: {}\n'.format(hp, value))
                     initialize_model_directory(args)
                     lf = construct_model(args)
                     lf.cuda()
                     train(lf)
-                    metrics = inference(lf)
-                    hits_at_1s[signature] = metrics['dev']['hits_at_1']
-                    hits_at_10s[signature] = metrics['dev']['hits_at_10']
-                    mrrs[signature] = metrics['dev']['mrr']
-                    # print the results of the hyperparameter combinations searched so far
-                    print('------------------------------------------')
-                    print('Signature\t@1\t@10\tMRR')
-                    for key in hits_at_1s:
-                        print('{}\t{:.3f}\t{:.3f}\t{:.3f}'.format(
-                            key, hits_at_1s[key], hits_at_10s[key], mrrs[key]))
-                    print('------------------------------------------\n')
+                    metrics = test_metrics(lf)
+                    K[signature]    = metrics['test']['K']
+                    NDCG[signature] = metrics['test']['NDCG']
+                    P[signature]    = metrics['test']['Precison']
+                    R[signature]    = metrics['test']['Recall']
+                    metrics_sum[signature]  = sum(NDCG[signature]) + sum(P[signature]) + sum(R[signature])
+                    # write the results of the hyperparameter combinations searched so far
+                    o_f.write(signature + '\n')
+                    for k in range(len(K[signature])):
+                        o_f.write('NDCG@%d = %.4f\n'%(K[signature][k], NDCG[signature][k]))
+                    for k in range(len(K[signature])):
+                        o_f.write('P@%d = %.4f\n'%(K[signature][k], P[signature][k]))
+                    for k in range(len(K[signature])):
+                        o_f.write('R@%d = %.4f\n'%(K[signature][k], R[signature][k]))
                     o_f.write('------------------------------------------\n')
-                    o_f.write('Signature\t@1\t@10\tMRR\n')
-                    for key in hits_at_1s:
-                        o_f.write('{}\t{:.3f}\t{:.3f}\t{:.3f}\n'.format(
-                            key, hits_at_1s[key], hits_at_10s[key], mrrs[key]))
-                    o_f.write('------------------------------------------\n')
-                    # find best hyperparameter set
-                    best_signature, best_mrr = sorted(mrrs.items(), key=lambda x:x[1], reverse=True)[0]
-                    print('* best hyperparameter set')
-                    o_f.write('* best hyperparameter set\n')
-                    best_hp_values = best_signature.split(':')[1:]
-                    for i, value in enumerate(best_hp_values):
-                        hp_name = hyperparameters[i]
-                        hp_value = best_hp_values[i]
-                        print('* {}: {}'.format(hp_name, hp_value))
-                    print('* @1: {:.3f}\t@10: {:.3f}\tMRR: {:.3f}'.format(
-                        hits_at_1s[best_signature],
-                        hits_at_10s[best_signature],
-                        mrrs[best_signature]
-                    ))
-                    o_f.write('* @1: {:.3f}\t@10: {:.3f}\tMRR: {:.3f}\ns'.format(
-                        hits_at_1s[best_signature],
-                        hits_at_10s[best_signature],
-                        mrrs[best_signature]
-                    ))
-
-                    o_f.close()
+                # find best hyperparameter set
+                best_signature, best_sum = \
+                    sorted(metrics_sum.items(), key=lambda x:x[1], reverse=True)[0]
+                o_f.write('* best hyperparameter set\n')
+                best_hp_values = best_signature.split(':')[1:]
+                for i, value in enumerate(best_hp_values):
+                    hp_name = hyperparameters[i]
+                    hp_value = best_hp_values[i]
+                    o_f.write('* {}: {}\n'.format(hp_name, hp_value))
+                for k in range(len(K[best_signature])):
+                    o_f.write('NDCG@%d = %.4f\n' %
+                              (K[best_signature][k], NDCG[best_signature][k]))
+                for k in range(len(K[best_signature])):
+                    o_f.write('P@%d = %.4f\n' %
+                              (K[best_signature][k], P[best_signature][k]))
+                for k in range(len(K[best_signature])):
+                    o_f.write('R@%d = %.4f\n' %
+                              (K[best_signature][k], R[best_signature][k]))
+                o_f.close()
             elif args.case_study:
                 if args.model_dir is None:
                     initialize_model_directory(args)
@@ -419,11 +420,19 @@ def run_experiment(args):
                 if args.model_dir is None:
                     initialize_model_directory(args)
                 print ("model directory : %s" % args.model_dir)
-                sys.stdout = open(os.path.join(args.model_dir, "test_metrics.txt"), "w")
+                filename = ""
+                if args.rollout_inference:
+                    filename = "rollout"
+                else:
+                    filename = "beam_search"
+                if args.reward_as_score:
+                    filename += "_reward_as_score"
+                filename += ".txt"
+                sys.stdout = open(os.path.join(args.model_dir, filename), "w")
                 lf = construct_model(args)
                 lf.cuda()
                 test_metrics(lf)
-            else:
+            elif args.train:
                 initialize_model_directory(args)
                 lf = construct_model(args)
                 lf.cuda()

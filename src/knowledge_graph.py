@@ -66,7 +66,7 @@ class KnowledgeGraph(nn.Module):
         self.emb_dropout_rate = args.emb_dropout_rate
         self.num_graph_convolution_layers = args.num_graph_convolution_layers
         self.entity_embeddings = None
-        self.relation_embeddings = None
+        self.DistMult = None
         self.entity_img_embeddings = None
         self.relation_img_embeddings = None
         self.EDropout = None
@@ -233,8 +233,6 @@ class KnowledgeGraph(nn.Module):
         add_object(self.dummy_e, self.dummy_e, self.dummy_r, dev_objects)
         add_object(self.dummy_e, self.dummy_e, self.dummy_r, all_objects)
         for file_name in ['raw.kb', 'train.triples', 'dev.triples', 'test.triples']:
-            if 'NELL' in self.args.data_dir and self.args.test and file_name == 'train.triples':
-                continue
             with open(os.path.join(data_dir, file_name)) as f:
                 for line in f:
                     e1, e2, r = line.strip().split()

@@ -23,8 +23,12 @@ class GraphSearchPolicy(nn.Module):
         super(GraphSearchPolicy, self).__init__()
         self.model = args.model
         assert (not (args.relation_only and args.entity_only))
+        assert (not (args.relation_only and args.history_only))
+        assert (not (args.entity_only and args.history_only))
+
         self.relation_only = args.relation_only
         self.entity_only = args.entity_only
+        self.history_only = args.history_only
 
         self.history_dim = args.history_dim
         self.history_num_layers = args.history_num_layers
@@ -96,6 +100,8 @@ class GraphSearchPolicy(nn.Module):
         elif self.entity_only:
             E = kg.get_entity_embeddings(e)
             X = torch.cat([E, H], dim=-1)
+        elif self.history_only:
+            X = H
         else:
             E = kg.get_entity_embeddings(e)
             X = torch.cat([E, H, Q], dim=-1)
@@ -222,7 +228,6 @@ class GraphSearchPolicy(nn.Module):
             action_embedding = self.get_action_embedding(action, kg)
         if offset is not None:
             offset_path_history(self.path, offset)
-
         self.path.append(self.path_encoder(action_embedding.unsqueeze(1), self.path[-1])[1])
 
     def get_action_space_in_buckets(self, e, obs, kg, collapse_entities=False):
@@ -417,6 +422,8 @@ class GraphSearchPolicy(nn.Module):
             input_dim = self.history_dim + self.entity_dim * 2 + self.relation_dim
         elif self.entity_only:
             input_dim = self.history_dim + self.entity_dim
+        elif self.history_only:
+            input_dim = self.history_dim
         else:
             input_dim = self.history_dim + self.entity_dim + self.relation_dim
         # self.W1 = nn.Linear(input_dim, self.action_dim)
