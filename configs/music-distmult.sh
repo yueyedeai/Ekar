@@ -1,25 +1,21 @@
 #!/usr/bin/env bash
 
 data_dir="data/music"
-model="conve"
-add_reversed_training_edges="True"
+model="distmult"
 group_examples_by_query="True"
 interact_relation="music.user.interacted_artist"
 entity_dim=32
 relation_dim=32
-emb_2D_d1=4
-emb_2D_d2=8
 num_rollouts=1
 bucket_interval=10
 num_epochs=1000
-num_wait_epochs=500
-batch_size=1024
-train_batch_size=1024
-dev_batch_size=128
+num_wait_epochs=300
+batch_size=512
+train_batch_size=512
+dev_batch_size=64
 learning_rate=0.01
 grad_norm=5
-emb_dropout_rate=0.1
-beam_size=128
-
-num_negative_samples=100
-margin=0.5
+emb_dropout_rate=0.0
+beam_size=100
+num_negative_samples=50
+margin=10

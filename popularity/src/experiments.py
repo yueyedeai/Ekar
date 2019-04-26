@@ -264,7 +264,10 @@ def test_metrics(lf):
         metrics['dev'] = lf.run_test_metrics(dev_data)
 
     print("*********now test the test data")
-    test_path = os.path.join(args.data_dir, 'test.triples')
+    if args.cold is None:
+        test_path = os.path.join(args.data_dir, 'test.triples')
+    else:
+        test_path = os.path.join(args.data_dir, 'test<' + args.cold + '.triples')
     test_data = data_utils.load_triples(test_path, entity_index_path, relation_index_path,
                                        group_examples_by_query=True)
     metrics['test'] = lf.run_test_metrics(test_data)
@@ -306,9 +309,6 @@ def train(lf):
             lf.get_reward_matrix(train_data, n_entity)
     lf.run_train(train_data, dev_data)
 
-    test_metrics(lf)
-
-    lf.reward_as_score = True
     test_metrics(lf)
 
 def get_checkpoint_path(args):
@@ -430,7 +430,8 @@ def run_experiment(args):
                     filename = "beam_search"
                 if args.reward_as_score:
                     filename += "_reward_as_score"
-                filename += ".txt"
+                
+                filename += "_cold.txt"
                 sys.stdout = open(os.path.join(args.model_dir, filename), "w")
                 lf = construct_model(args)
                 lf.cuda()

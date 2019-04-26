@@ -32,7 +32,8 @@ action_dropout_anneal_interval=1000
 reward_shaping_threshold=0
 beta=0.05
 relation_only="False"
-entity_only="True"
+entity_only="False"
+history_only="False"
 beam_size=256
 
 distmult_state_dict_path="model/"

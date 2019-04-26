@@ -280,13 +280,6 @@ class LFramework(nn.Module):
         self.eval()
         self.batch_size = self.dev_batch_size
         test_scores = self.forward(test_data)
-
-        if self.reward_as_score:
-            print ("*********reward as score*********")
-        elif self.rollout_inference:
-            print ("*********rollout inference*******")
-        else:
-            print ("*********default score***********")
         NDCG, Precison, Recall = src.eval.NDCG_Precision_Recall(test_data, test_scores, self.kg.all_objects, self.kg.item_set, K=self.K, verbose=True)
         metrics = dict()
         metrics['K']    = self.K
