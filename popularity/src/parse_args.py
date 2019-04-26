@@ -238,11 +238,12 @@ parser.add_argument('--test_dev_data', action='store_true')
 parser.add_argument('--remove_rs', action='store_true')
 parser.add_argument('--no_ground_truth_edge_mask', action='store_true')
 parser.add_argument('--train_raw_graph', action='store_true')
-parser.add_argument('--reward_as_score', action='store_true')
-parser.add_argument('--rollout_inference', action='store_true')
+parser.add_argument('--beam_pop', action='store_true')
+parser.add_argument('--rollout_pop', action='store_true')
+parser.add_argument('--beam', action='store_true')
+parser.add_argument('--rollout', action='store_true')
+# parser.add_argument('--pop', action='store_true')
 parser.add_argument('--max_decrease_count', type=int, default=5)
-
-parser.add_argument('--cold', type=str)
 
 def str2list(v):
     v=v.split(',')

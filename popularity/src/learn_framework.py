@@ -277,16 +277,30 @@ class LFramework(nn.Module):
         t0 = time()
         self.load_checkpoint(os.path.join(self.model_dir, 'model_best.tar'))
 
+        K = [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]
+        cnt = np.zeros(len(K))
+        for i in range(self.n_user):
+            pu = self.user_p_embeddings.weight[i]
+            pu = torch.sigmoid(pu).item()
+            for j in range(len(K)):
+                if pu > K[j]:
+                    cnt[j] += 1
+        for j in range(len(K)):
+            print ("> %f : %d (%f)%%" % (K[j], cnt[j], 100 * cnt[j] / self.n_user))
+        sys.stdout.flush()
         self.eval()
         self.batch_size = self.dev_batch_size
         test_scores = self.forward(test_data)
-        NDCG, Precison, Recall = src.eval.NDCG_Precision_Recall(test_data, test_scores, self.kg.all_objects, self.kg.item_set, K=self.K, verbose=True)
+
+        NDCG, Precison, Recall = src.eval.NDCG_Precision_Recall(test_data, test_scores, self.kg.all_objects, self.kg.item_set, K=self.args.K, verbose=True)
         metrics = dict()
         metrics['K']    = self.K
         metrics['NDCG'] = NDCG
         metrics['Precison']    = Precison
         metrics['Recall']      = Recall
         print ("total test time = %.4f\n" % (time() - t0))
+
+
         return metrics
 
     def run_case_study(self, test_data):

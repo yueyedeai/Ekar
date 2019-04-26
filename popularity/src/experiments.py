@@ -200,7 +200,16 @@ def initialize_model_directory(args, random_seed=None):
     args.model_dir = model_dir
 
     if args.train and not args.test_metrics and not args.case_study:
-        sys.stdout = open(os.path.join(args.model_dir, "output.txt"), "w")
+        filename = "output.txt"
+        if args.beam_pop:
+            filename = "beam+popularity.txt"
+        elif args.rollout_pop:
+            filename = "rollout+popularity.txt"
+        elif args.beam:
+            filename = "beam.txt"
+        elif args.rollout:
+            filename = "rollout.txt"
+        sys.stdout = open(os.path.join(args.model_dir, filename), "w")
         print (args)
 
 
@@ -231,6 +240,17 @@ def construct_model(args):
             fn = ConvE(fn_args, kg.num_entities)
             fn_kg = KnowledgeGraph(fn_args)
         lf = RewardShapingPolicyGradient(args, kg, pn, fn_kg, fn)
+
+        train_path = data_utils.get_train_path(args)
+        entity_index_path = os.path.join(args.data_dir, 'entity2id.txt')
+        relation_index_path = os.path.join(args.data_dir, 'relation2id.txt')
+        train_data = data_utils.load_triples(
+            train_path, entity_index_path, relation_index_path, group_examples_by_query=args.group_examples_by_query,
+            add_reverse_relations=args.add_reversed_training_edges)
+        entity2id, _ = data_utils.load_index(entity_index_path)
+        n_entity = max([v for k, v in entity2id.items()]) + 1
+        lf.get_popularity(train_data, n_entity)
+
     elif args.model == 'complex':
         fn = ComplEx(args)
         lf = EmbeddingBasedMethod(args, kg, fn)
@@ -264,10 +284,7 @@ def test_metrics(lf):
         metrics['dev'] = lf.run_test_metrics(dev_data)
 
     print("*********now test the test data")
-    if args.cold is None:
-        test_path = os.path.join(args.data_dir, 'test.triples')
-    else:
-        test_path = os.path.join(args.data_dir, 'test<' + args.cold + '.triples')
+    test_path = os.path.join(args.data_dir, 'test.triples')
     test_data = data_utils.load_triples(test_path, entity_index_path, relation_index_path,
                                        group_examples_by_query=True)
     metrics['test'] = lf.run_test_metrics(test_data)
@@ -302,11 +319,13 @@ def train(lf):
     if args.checkpoint_path is not None:
         lf.load_checkpoint(args.checkpoint_path)
 
-    if args.reward_matrix:
-        entity2id, _ = data_utils.load_index(entity_index_path)
-        n_entity = max([v for k, v in entity2id.items()]) + 1
-        if args.model.startswith('point'):
-            lf.get_reward_matrix(train_data, n_entity)
+    # entity2id, _ = data_utils.load_index(entity_index_path)
+    # n_entity = max([v for k, v in entity2id.items()]) + 1
+    # if args.model.startswith('point') and args.reward_matrix:
+    #     lf.get_reward_matrix(train_data, n_entity)
+    # elif args.model.startswith('point'):
+    #     lf.get_popularity(train_data, n_entity)
+    lf.cuda()
     lf.run_train(train_data, dev_data)
 
     test_metrics(lf)
@@ -423,15 +442,15 @@ def run_experiment(args):
                 if args.model_dir is None:
                     initialize_model_directory(args)
                 print ("model directory : %s" % args.model_dir)
-                filename = ""
-                if args.rollout_inference:
+                if args.beam_pop:
+                    filename = "beam+popularity"
+                elif args.rollout_pop:
+                    filename = "rollout+popularity"
+                elif args.beam:
+                    filename = "beam"
+                elif args.rollout:
                     filename = "rollout"
-                else:
-                    filename = "beam_search"
-                if args.reward_as_score:
-                    filename += "_reward_as_score"
-                
-                filename += "_cold.txt"
+                filename += "_test.txt"
                 sys.stdout = open(os.path.join(args.model_dir, filename), "w")
                 lf = construct_model(args)
                 lf.cuda()

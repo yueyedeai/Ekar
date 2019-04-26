@@ -8,6 +8,8 @@
 """
 
 import torch
+import torch.nn.functional as F
+import torch.nn as nn
 import numpy as np
 import sys
 from src.learn_framework import LFramework
@@ -45,10 +47,37 @@ class PolicyGradient(LFramework):
         self.bias = torch.zeros(self.kg.num_entities) - 1
         self.bias[list(self.kg.item_set)] = 0
         self.bias = self.bias.cuda()
-        self.reward_as_score = args.reward_as_score
-        self.rollout_inference = args.rollout_inference
 
         self.args = args
+
+    def get_popularity(self, train_data, n_entity):
+        self.n_entity = n_entity
+        self.id2uid = torch.zeros(n_entity, dtype=torch.int64).cuda()
+        self.id2iid = torch.zeros(n_entity, dtype=torch.int64).cuda()
+        n_user = 0
+        n_item = 0
+        for triple in train_data:
+            e1, e2, r = triple
+            if self.id2uid[e1] == 0:
+                n_user += 1
+                self.id2uid[e1] = n_user
+            if self.id2iid[e2] == 0:
+                n_item += 1
+                self.id2iid[e2] = n_item
+        n_user += 1
+        n_item += 1
+        self.n_user = n_user
+        self.n_item = n_item
+        self.user_p_embeddings = nn.Embedding(self.n_user, 1)
+        self.popularity = torch.zeros(n_item, dtype=torch.float).cuda()
+        self.iid2id = torch.zeros(n_item, dtype=torch.int64).cuda()
+        for triple in train_data:
+            e1, e2, r = triple
+            self.popularity[self.id2iid[e2]] += 1
+            self.iid2id[self.id2iid[e2]] = e2
+        self.popularity = self.popularity / sum(self.popularity)
+
+        # embed()
 
     def get_reward_matrix(self, train_data, n_entity):
         self.id2uid = torch.zeros(n_entity, dtype=torch.int64)
@@ -121,14 +150,29 @@ class PolicyGradient(LFramework):
 
         # Entropy regularization
         entropy = torch.cat([x.unsqueeze(1) for x in action_entropy], dim=1).mean(dim=1)
-        pg_loss = (pg_loss - entropy * self.beta).mean()
-        pt_loss = (pt_loss - entropy * self.beta).mean()
+        # pg_loss = (pg_loss - entropy * self.beta).mean()
+        # pt_loss = (pt_loss - entropy * self.beta).mean()
 
+        if self.args.beam_pop or self.args.rollout_pop:
+            uid = self.id2uid[e1]
+            pu = self.user_p_embeddings(uid)
+            pu = torch.sigmoid(pu).view(-1)
+            RW_mask = torch.bernoulli(pu)
+            pop_i = torch.multinomial(self.popularity, e1.shape[0], replacement=True)
+            pop_e = self.iid2id[pop_i]
+
+        if self.args.beam_pop or self.args.rollout_pop:
+            loss = (pg_loss - (ops.safe_log(pu) * final_reward)) * RW_mask + (1 - RW_mask) * \
+                (-ops.safe_log(1 - pu) * self.reward_fun(e1, r, e2, pop_e))
+        elif self.args.beam or self.args.rollout:
+            loss = pg_loss
+        loss = loss.mean()
         loss_dict = {}
-        loss_dict['model_loss'] = pg_loss
-        loss_dict['print_loss'] = float(pt_loss)
+        loss_dict['model_loss'] = loss
+        loss_dict['print_loss'] = float(loss)
         loss_dict['reward'] = final_reward
         loss_dict['entropy'] = float(entropy.mean())
+
         if self.run_analysis:
             fn = torch.zeros(final_reward.size())
             for i in range(len(final_reward)):
@@ -291,67 +335,108 @@ class PolicyGradient(LFramework):
 
         kg, pn = self.kg, self.mdl
         e1, e2, r = self.format_batch(mini_batch, num_labels=kg.num_entities)
-        if self.rollout_inference:
+
+        # _beam_pred_e2s = None
+        # _beam_pred_e2_scores = None
+        # _rollout_pred_e2s = None
+        # _rollout_pred_e2_scores = None
+        # _pop_pred_e2s = None
+        # _pop_pred_e2_scores = None
+        # _pred_e2s = None
+        # _pred_e2_scores = None
+        # _e1 = None
+        # _e2 = None
+        # _r = None
+
+        #beam search scores
+        if self.args.beam_pop or self.args.beam:
+            beam_search_output = search.beam_search(
+                pn, e1, r, e2, kg, self.num_rollout_steps, self.beam_size,
+                return_search_traces=case_study,
+                use_action_space_bucketing=self.args.use_action_space_bucketing)
+
+            _beam_pred_e2s = beam_search_output['pred_e2s'].view(-1)
+            _e1 = e1.unsqueeze(1).repeat((1, len(_beam_pred_e2s) // len(e1))).view(-1)
+            _r = r.unsqueeze(1).repeat((1, len(_beam_pred_e2s) // len(e1))).view(-1)
+            _e2 = torch.zeros(_e1.shape).unsqueeze(1)
+            _beam_pred_e2_scores = self.reward_fun(_e1, _r, None, _beam_pred_e2s).view(-1)
+
+            if self.args.beam:
+                _pred_e2s = _beam_pred_e2s
+                _pred_e2_scores = _beam_pred_e2_scores
+
+        if self.args.rollout_pop or self.args.rollout:
+            #rollout scores
             _e1 = e1.unsqueeze(1).repeat((1, self.beam_size)).view(-1)
             _r = r.unsqueeze(1).repeat((1, self.beam_size)).view(-1)
             _e2 = torch.zeros(_e1.shape).unsqueeze(1)
             self.action_dropout_rate = 0
             output = self.rollout(_e1, _r, _e2, num_steps=self.num_rollout_steps)
-            _pred_e2 = output['pred_e2']
-            _scores = self.reward_fun(_e1, _r, _e1, _pred_e2)
-            pred_e2s = _pred_e2.view(e1.shape[0], -1)
-            pred_e2_scores = _scores.reshape(pred_e2s.shape[0], -1)
-        else:
-            beam_search_output = search.beam_search(
-                pn, e1, r, e2, kg, self.num_rollout_steps, self.beam_size,
-                return_search_traces=case_study,
-                use_action_space_bucketing=self.args.use_action_space_bucketing)
-            pred_e2s = beam_search_output['pred_e2s']
-            if self.reward_as_score:
-                _e1 = e1.unsqueeze(1).repeat((1, pred_e2s.shape[1])).view(-1)
-                _r = r.unsqueeze(1).repeat((1, pred_e2s.shape[1])).view(-1)
-                _pred_e2 = pred_e2s.view(-1)
-                _scores = self.reward_fun(_e1, _r, None, _pred_e2)
-                pred_e2_scores = _scores.reshape(pred_e2s.shape[0], -1)
-            else:
-                pred_e2_scores = beam_search_output['pred_e2_scores']
+            _rollout_pred_e2s = output['pred_e2']
+            _rollout_pred_e2_scores = self.reward_fun(_e1, _r, _e1, _rollout_pred_e2s).view(-1)
 
-        if case_study:
-            all_meta_path_dict = defaultdict(int)
-            pos_meta_path_dict = defaultdict(int)
-            search_traces = beam_search_output['search_traces']
-            output_beam_size = min(self.beam_size, pred_e2_scores.shape[1])
-            for i in range(len(e1)):
-                for j in range(output_beam_size):
-                    ind = i * output_beam_size + j
-                    if pred_e2s[i][j] == kg.dummy_e:
-                        break
-                    search_trace = []
-                    meta_path = ''
-                    for k in range(len(search_traces)):
-                        relation_id = int(search_traces[k][0][ind])
-                        entity_id   = int(search_traces[k][1][ind])
-                        search_trace.append((relation_id, entity_id))
-                        if (k > 0):
-                            relation = get_relation(relation_id)
-                            meta_path += '==>' + relation
-                    score = float(pred_e2_scores[i][j])
-                    path  = ops.format_path(search_trace, kg)
-                    if verbose:
-                        print('beam {}: score = {} \n<PATH> {}'.format(
-                        j, score, path))
-                    all_meta_path_dict[meta_path] += 1
-                    if (e2[i][pred_e2s[i][j]] != 0):
-                        pos_meta_path_dict[meta_path] += 1
-                        if (show_case and j <= 20):
-                            show_case_f.write('beam {}: score = {} \n<PATH> {}\n'.format(
-                                j, score, path))
+            if self.args.rollout:
+                _pred_e2s = _rollout_pred_e2s
+                _pred_e2_scores = _rollout_pred_e2_scores
+
+        if self.args.rollout_pop or self.args.beam_pop:
+            _uid = self.id2uid[_e1]
+            _pop_i = torch.multinomial(self.popularity, len(_uid), replacement=True)
+            _pop_e = self.iid2id[_pop_i]
+            _pop_pred_e2s = _pop_e
+            _pop_pred_e2_scores = self.reward_fun(_e1, _r, _e1, _pop_e)
+            _pu = torch.sigmoid(self.user_p_embeddings(_uid))
+
+            if self.args.rollout_pop:
+                RW_mask = torch.bernoulli(_pu)
+                _pred_e2_scores = _rollout_pred_e2_scores * RW_mask + _pop_pred_e2_scores * (1 - RW_mask)
+                RW_mask = RW_mask.long()
+                _pred_e2s = _rollout_pred_e2s * RW_mask + _pop_pred_e2s * (1 - RW_mask)
+            elif self.args.beam_pop:
+                RW_mask = torch.bernoulli(_pu)
+                _pred_e2_scores = _beam_pred_e2_scores * RW_mask + _pop_pred_e2_scores * (1 - RW_mask)
+                RW_mask = RW_mask.long()
+                _pred_e2s = _beam_pred_e2s * RW_mask + _pop_pred_e2s * (1 - RW_mask)
+
+        pred_e2s = _pred_e2s.view(e1.shape[0], -1)
+        pred_e2_scores = _pred_e2_scores.view(e1.shape[0], -1)
         with torch.no_grad():
             pred_scores = zeros_var_cuda([len(e1), kg.num_entities])
             for i in range(len(e1)):
                 pred_scores[i][pred_e2s[i]] = torch.exp(pred_e2_scores[i])
-        if case_study == True:
-            return pred_scores, all_meta_path_dict, pos_meta_path_dict
+
+        # if case_study:
+        #     all_meta_path_dict = defaultdict(int)
+        #     pos_meta_path_dict = defaultdict(int)
+        #     search_traces = beam_search_output['search_traces']
+        #     output_beam_size = min(self.beam_size, pred_e2_scores.shape[1])
+        #     for i in range(len(e1)):
+        #         for j in range(output_beam_size):
+        #             ind = i * output_beam_size + j
+        #             if pred_e2s[i][j] == kg.dummy_e:
+        #                 break
+        #             search_trace = []
+        #             meta_path = ''
+        #             for k in range(len(search_traces)):
+        #                 relation_id = int(search_traces[k][0][ind])
+        #                 entity_id   = int(search_traces[k][1][ind])
+        #                 search_trace.append((relation_id, entity_id))
+        #                 if (k > 0):
+        #                     relation = get_relation(relation_id)
+        #                     meta_path += '==>' + relation
+        #             score = float(pred_e2_scores[i][j])
+        #             path  = ops.format_path(search_trace, kg)
+        #             if verbose:
+        #                 print('beam {}: score = {} \n<PATH> {}'.format(
+        #                 j, score, path))
+        #             all_meta_path_dict[meta_path] += 1
+        #             if (e2[i][pred_e2s[i][j]] != 0):
+        #                 pos_meta_path_dict[meta_path] += 1
+        #                 if (show_case and j <= 20):
+        #                     show_case_f.write('beam {}: score = {} \n<PATH> {}\n'.format(
+        #                         j, score, path))
+        #     return pred_scores, all_meta_path_dict, pos_meta_path_dict
+
         return pred_scores
 
     def record_path_trace(self, path_trace):
