@@ -281,9 +281,9 @@ class LFramework(nn.Module):
         self.batch_size = self.dev_batch_size
         test_scores = self.forward(test_data)
 
-        if self.reward_as_score:
+        if self.args.reward_as_score:
             print ("*********reward as score*********")
-        elif self.rollout_inference:
+        elif self.args.rollout_inference:
             print ("*********rollout inference*******")
         else:
             print ("*********default score***********")
@@ -311,7 +311,7 @@ class LFramework(nn.Module):
         all_meta_path_sum  = 0
         pos_meta_path_dict = defaultdict(int)
         pos_meta_path_sum  = 0
-        show_case_f = open(os.path.join(self.args.model_dir, "show_case.txt"), "w")
+        show_case_f = open(os.path.join(self.args.model_dir, "movie_show_case.txt"), "w")
         for example_id in tqdm(range(0, len(examples), self.batch_size)):
             mini_batch = examples[example_id:example_id + self.batch_size]
             mini_batch_size = len(mini_batch)

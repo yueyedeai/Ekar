@@ -1,0 +1,158 @@
+** Create point.rs.conve knowledge graph **
+Sanity check: 11240 entities loaded
+Sanity check: 1 types loaded
+Sanity check: 125 relations loaded
+Sanity check: maximum out degree: 944
+Sanity check: 54906 facts in knowledge graph
+Vectorizing action spaces...
+** Create conve knowledge graph **
+Sanity check: 11240 entities loaded
+Sanity check: 1 types loaded
+Sanity check: 125 relations loaded
+point.rs.conve module created
+loading pretrained embeddings...
+*********case study for the test data
+1858 triples loaded from data/music/test.triples
+
+Model Parameters
+--------------------------
+kg.entity_embeddings.weight 359680 requires_grad=False
+kg.relation_embeddings.weight 4000 requires_grad=False
+mdl.W1.weight 2048 requires_grad=True
+mdl.W1.bias 64 requires_grad=True
+mdl.W2.weight 4096 requires_grad=True
+mdl.W2.bias 64 requires_grad=True
+mdl.path_encoder.weight_ih_l0 8192 requires_grad=True
+mdl.path_encoder.weight_hh_l0 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l0 128 requires_grad=True
+mdl.path_encoder.bias_hh_l0 128 requires_grad=True
+mdl.path_encoder.weight_ih_l1 4096 requires_grad=True
+mdl.path_encoder.weight_hh_l1 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l1 128 requires_grad=True
+mdl.path_encoder.bias_hh_l1 128 requires_grad=True
+mdl.path_encoder.weight_ih_l2 4096 requires_grad=True
+mdl.path_encoder.weight_hh_l2 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l2 128 requires_grad=True
+mdl.path_encoder.bias_hh_l2 128 requires_grad=True
+fn_kg.entity_embeddings.weight 359680 requires_grad=False
+fn_kg.relation_embeddings.weight 4000 requires_grad=False
+fn.b 11240 requires_grad=False
+fn.conv1.weight 288 requires_grad=False
+fn.conv1.bias 32 requires_grad=False
+fn.bn0.weight 1 requires_grad=False
+fn.bn0.bias 1 requires_grad=False
+fn.bn1.weight 32 requires_grad=False
+fn.bn1.bias 32 requires_grad=False
+fn.bn2.weight 32 requires_grad=False
+fn.bn2.bias 32 requires_grad=False
+fn.fc.weight 36864 requires_grad=False
+fn.fc.bias 32 requires_grad=False
+Total # parameters = 811658
+--------------------------
+
+size of item set =  3846
+=> loading checkpoint 'model/music-point.rs.conve-xavier-pretrain-fix-n/a-32-32-3-5-0.01-0.0-0.0-0.3-256-0.05-ho(case)/model_best.tar'
+********All meta path**********
+==>music.user.interacted_artist==><null>==><null>==><null>==><null>:6621(1.7)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist:276381(71.9)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.user.interacted_artist_inv:33333(8.7)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>film.person_or_entity_appearing_in_film.film:985(0.3)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>people.person.place_of_birth:66(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.producer.tracks_produced:59(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>film.actor.film:559(0.1)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==><null>:11966(3.1)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.artist.origin:219(0.1)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>award.nominee.award_nominations:48(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==><null>==><null>:881(0.2)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv:42613(11.1)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:3972(1.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==><null>==><null>==><null>:62(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.person.place_of_birth==>music.artist.origin_inv:1950(0.5)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.artist.origin==>people.person.place_of_birth_inv:843(0.2)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.artist.origin==>people.deceased_person.place_of_death_inv:147(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>people.person.place_of_birth_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:54(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.user.interacted_artist_inv==><null>:87(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.deceased_person.place_of_death==>music.artist.origin_inv:148(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.album.track:39(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.album.genre:20(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.album.artist:8(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.artist.track:43(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==>music.user.interacted_artist_inv:1436(0.4)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==>film.person_or_entity_appearing_in_film.film:166(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==>film.actor.film:97(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.deceased_person.place_of_death==>people.person.place_of_birth_inv:19(0.0)%
+==>music.user.interacted_artist==>people.person.place_of_birth==>music.artist.origin_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:235(0.1)%
+==>music.user.interacted_artist==>people.person.place_of_birth==>music.artist.origin_inv==><null>==><null>:40(0.0)%
+==>music.user.interacted_artist==>location.location.contained_by==>music.artist.origin_inv==><null>==><null>:54(0.0)%
+==>music.user.interacted_artist==>location.location.contained_by==>music.artist.origin_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:251(0.1)%
+==>music.user.interacted_artist==>location.location.contained_by==>music.artist.origin_inv==>people.person.place_of_birth==>music.artist.origin_inv:4(0.0)%
+==>music.user.interacted_artist==>location.location.contained_by==>music.artist.origin_inv==>music.artist.origin==>music.artist.origin_inv:5(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>people.deceased_person.place_of_death_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:9(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>event.agent.performance:40(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>film.film.country==>music.artist.origin_inv:242(0.1)%
+==>music.user.interacted_artist==>film.film.music_inv==><null>==><null>==><null>:2(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==>music.user.interacted_artist_inv==><null>:8(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.artist.origin==><null>:19(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.person.place_of_birth==>people.person.place_of_birth_inv:58(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>people.person.place_of_birth_inv==><null>==><null>:6(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>award.competitor.award_nominations:12(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==>people.person.place_of_birth==>music.artist.origin_inv:39(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>film.film.music==>film.film.music_inv:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.musician.instruments_played:12(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>location.location.contained_by==>music.artist.origin_inv:72(0.0)%
+==>music.user.interacted_artist==>film.film.country==>music.artist.origin_inv==><null>==><null>:15(0.0)%
+==>music.user.interacted_artist==>film.film.country==>music.artist.origin_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:135(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.artist.origin==>film.film.country_inv:6(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.person.place_of_birth==>people.deceased_person.place_of_death_inv:10(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.person.place_of_birth==><null>:1(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==><null>==><null>==><null>:1(0.0)%
+==>music.user.interacted_artist==>film.film.country==>music.artist.origin_inv==>people.person.place_of_birth==>music.artist.origin_inv:2(0.0)%
+==>music.user.interacted_artist==>film.film.country==>music.artist.origin_inv==>music.artist.origin==>music.artist.origin_inv:65(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==>music.artist.origin==>music.artist.origin_inv:127(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>award.competitor.awards_won:8(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==>music.artist.origin==><null>:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>music.user.interacted_artist_inv==>music.user.interacted_artist:13(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>music.artist.origin==>music.artist.origin_inv:1(0.0)%
+==><null>==><null>==><null>==><null>==><null>:4(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==>music.artist.track:2(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==>music.producer.tracks_produced:1(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==>music.artist.origin:2(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>film.film.director:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>film.film.language:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>film.film.country==>music.artist.origin_inv:2(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>film.film.rating:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>film.film.genre:2(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>film.film.actor:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>film.film.country:2(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>film.film.rating==>film.film.rating_inv:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>film.film.genre==>film.film.genre_inv:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>award.winner.awards_won:5(0.0)%
+==>music.user.interacted_artist==>people.person.place_of_birth==>music.artist.origin_inv==>music.artist.origin==>music.artist.origin_inv:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>music.artist.album:3(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>film.film.music_inv==><null>:3(0.0)%
+==>music.user.interacted_artist==>people.person.place_of_birth==>people.person.place_of_birth_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:3(0.0)%
+==>music.user.interacted_artist==>people.deceased_person.place_of_death==>music.artist.origin_inv==><null>==><null>:19(0.0)%
+==>music.user.interacted_artist==>people.deceased_person.place_of_death==>music.artist.origin_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:10(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>people.person.place_of_birth==>music.artist.origin_inv:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>film.actor.film==><null>:1(0.0)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==>music.artist.origin==>people.person.place_of_birth_inv:12(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>people.person.profession==>people.person.profession_inv:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>film.person_or_entity_appearing_in_film.film==><null>:2(0.0)%
+==>music.user.interacted_artist==><null>==><null>==><null>==>people.person.profession:1(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.deceased_person.place_of_death==>people.deceased_person.place_of_death_inv:1(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>music.user.interacted_artist_inv==><null>:2(0.0)%
+==>music.user.interacted_artist==><null>==><null>==>music.artist.origin==>people.person.place_of_birth_inv:1(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==>award.nominee.award_nominations:1(0.0)%
+==>music.user.interacted_artist==>film.production_company.film==><null>==><null>==><null>:1(0.0)%
+********Positive meta path**********
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist:2048(87.3)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==><null>==><null>:230(9.8)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv:33(1.4)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.artist.origin==>people.person.place_of_birth_inv:3(0.1)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.person.place_of_birth==>music.artist.origin_inv:5(0.2)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:13(0.6)%
+==>music.user.interacted_artist==>music.artist.origin==>music.artist.origin_inv==><null>==><null>:9(0.4)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>people.person.place_of_birth==>people.person.place_of_birth_inv:1(0.0)%
+==>music.user.interacted_artist==>music.user.interacted_artist_inv==>music.user.interacted_artist==>music.artist.origin==>people.deceased_person.place_of_death_inv:1(0.0)%
+==>music.user.interacted_artist==>location.location.contained_by==>music.artist.origin_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:1(0.0)%
+==>music.user.interacted_artist==>people.person.place_of_birth==>music.artist.origin_inv==>music.user.interacted_artist_inv==>music.user.interacted_artist:1(0.0)%

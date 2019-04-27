@@ -405,7 +405,7 @@ class PolicyGradient(LFramework):
             for i in range(len(e1)):
                 pred_scores[i][pred_e2s[i]] = torch.exp(pred_e2_scores[i])
 
-        # if case_study:
+        # if T3_case_study:
         #     all_meta_path_dict = defaultdict(int)
         #     pos_meta_path_dict = defaultdict(int)
         #     search_traces = beam_search_output['search_traces']

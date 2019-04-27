@@ -1,0 +1,449 @@
+** Create point.rs.conve knowledge graph **
+Sanity check: 15727 entities loaded
+Sanity check: 1 types loaded
+Sanity check: 31 relations loaded
+Sanity check: maximum out degree: 2516
+Sanity check: 334954 facts in knowledge graph
+Vectorizing action spaces...
+** Create conve knowledge graph **
+Sanity check: 15727 entities loaded
+Sanity check: 1 types loaded
+Sanity check: 31 relations loaded
+point.rs.conve module created
+loading pretrained embeddings...
+*********case study for the test data
+5576 triples loaded from data/dbbook2014-one/test.triples
+
+Model Parameters
+--------------------------
+kg.entity_embeddings.weight 503264 requires_grad=False
+kg.relation_embeddings.weight 992 requires_grad=False
+mdl.W1.weight 2048 requires_grad=True
+mdl.W1.bias 64 requires_grad=True
+mdl.W2.weight 4096 requires_grad=True
+mdl.W2.bias 64 requires_grad=True
+mdl.path_encoder.weight_ih_l0 8192 requires_grad=True
+mdl.path_encoder.weight_hh_l0 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l0 128 requires_grad=True
+mdl.path_encoder.bias_hh_l0 128 requires_grad=True
+mdl.path_encoder.weight_ih_l1 4096 requires_grad=True
+mdl.path_encoder.weight_hh_l1 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l1 128 requires_grad=True
+mdl.path_encoder.bias_hh_l1 128 requires_grad=True
+mdl.path_encoder.weight_ih_l2 4096 requires_grad=True
+mdl.path_encoder.weight_hh_l2 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l2 128 requires_grad=True
+mdl.path_encoder.bias_hh_l2 128 requires_grad=True
+fn_kg.entity_embeddings.weight 503264 requires_grad=False
+fn_kg.relation_embeddings.weight 992 requires_grad=False
+fn.b 15727 requires_grad=False
+fn.conv1.weight 288 requires_grad=False
+fn.conv1.bias 32 requires_grad=False
+fn.bn0.weight 1 requires_grad=False
+fn.bn0.bias 1 requires_grad=False
+fn.bn1.weight 32 requires_grad=False
+fn.bn1.bias 32 requires_grad=False
+fn.bn2.weight 32 requires_grad=False
+fn.bn2.bias 32 requires_grad=False
+fn.fc.weight 36864 requires_grad=False
+fn.fc.bias 32 requires_grad=False
+Total # parameters = 1097297
+--------------------------
+
+size of item set =  2598
+=> loading checkpoint 'model/dbbook2014-one-point.rs.conve-xavier-pretrain-fix-n/a-32-32-3-5-0.01-0.0-0.0-0.3-256-0.05-ho(case)/model_best.tar'
+********All meta path**********
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:953854(72.6)%
+==>http://interacted==><null>==><null>==><null>==><null>:5145(0.4)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:117(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:7209(0.5)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:110958(8.4)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:8981(0.7)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:253(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>:390(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>==><null>:787(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv==><null>==><null>:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:4901(0.4)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://interacted_inv==>http://interacted:61574(4.7)%
+==>http://interacted==>http://interacted_inv==>http://interacted==><null>==><null>:207(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:6581(0.5)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>:1363(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:2269(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4410(0.3)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:181(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:85(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:28(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1880(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:5822(0.4)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:101(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:68(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:473(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:2693(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:251(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:14(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:13122(1.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2251(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:13532(1.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:4508(0.3)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:957(0.1)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:19705(1.5)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:1116(0.1)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv:57(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:5185(0.4)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/literaryGenre_inv:143(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:2739(0.2)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/ontology/wikiPageWikiLink:2580(0.2)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:883(0.1)%
+==>http://interacted==><null>==><null>==><null>==>http://interacted_inv:4056(0.3)%
+==>http://interacted==><null>==><null>==><null>==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:4211(0.3)%
+==>http://interacted==><null>==><null>==><null>==>http://purl.org/linguistics/gold/hypernym:162(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1091(0.1)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>:29(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>:104(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>:15(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>==><null>:259(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:7034(0.5)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:137(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:1486(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>==><null>==><null>:445(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:5425(0.4)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym_inv:3257(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>:301(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>:98(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink:3141(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:5261(0.4)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:2538(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==><null>==><null>==><null>:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:192(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:1028(0.1)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/ontology/publisher:83(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:1960(0.1)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/ontology/literaryGenre:106(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:297(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:7(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==><null>:126(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:3190(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:88(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://interacted_inv==>http://interacted:3866(0.3)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv:8(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv:29(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:308(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:368(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:118(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:354(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:9(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:662(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:401(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher==><null>==><null>:11(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:3922(0.3)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/property/books_inv:6(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:522(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://interacted_inv==>http://interacted:245(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:170(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:140(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:1167(0.1)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink:49(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==><null>:134(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==><null>==><null>:19(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>:30(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:1122(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:87(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:40(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:21(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:20(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://interacted_inv==>http://interacted:112(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:253(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:353(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:341(0.0)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/ontology/language:26(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv:12(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:88(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink:25(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:35(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:37(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>==><null>:41(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:15(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:76(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>:30(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:61(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>:21(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:6(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:31(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>:44(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:104(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>:11(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==><null>==><null>==><null>:2(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv==>http://interacted_inv==>http://interacted:104(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:112(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:38(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:39(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:101(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:87(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==><null>==><null>:73(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==><null>==><null>==><null>:17(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/coverArtist_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink:2(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv:2(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/illustrator_inv:13(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:14(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:134(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink:10(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://purl.org/linguistics/gold/hypernym==><null>:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books:19(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/language==><null>==><null>:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==><null>==><null>:51(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:14(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:56(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:60(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/language_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:14(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>==>http://interacted_inv:9(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/illustrator==><null>:8(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/property/books==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:19(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv:11(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:60(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:6(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso==><null>==><null>==><null>:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:25(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:120(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv:8(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv:25(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym_inv:47(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv:9(0.0)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/ontology/coverArtist:22(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==>http://interacted_inv==>http://interacted:201(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://interacted_inv==>http://interacted:140(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:31(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://purl.org/linguistics/gold/hypernym_inv:4(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/publisher==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre==>http://purl.org/linguistics/gold/hypernym_inv:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym_inv:130(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==><null>==><null>==><null>:1(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:18(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher_inv==>http://interacted_inv==>http://interacted:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink:4(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:100(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:25(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/illustrator_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:14(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:32(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>:3(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:33(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/illustrator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:16(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/illustrator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:135(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:11(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:41(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==><null>==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:11(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/translator_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:65(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:13(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:146(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher_inv:8(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:2(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/language==><null>==><null>:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:21(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://interacted_inv==>http://interacted:35(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:96(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:4(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:17(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:18(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:5(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:8(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://interacted_inv==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:1(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink:110(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/language_inv:11(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:187(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books:10(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:86(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:197(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==><null>==><null>:6(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:24(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:22(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://interacted_inv==>http://interacted:69(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv==>http://interacted_inv==>http://interacted:12(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:8(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv:3(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv:2(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/language_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:11(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/wikiPageWikiLink:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink:4(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:13(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:18(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:8(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/language_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:29(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist_inv==><null>==><null>:8(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/coverArtist_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:10(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv==><null>==><null>:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink:3(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:35(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv==>http://interacted_inv==>http://interacted:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv==><null>==><null>:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://interacted_inv==>http://interacted:21(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/coverArtist_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/coverArtist_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:6(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/property/books:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/literaryGenre_inv:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books:8(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym_inv:45(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv==><null>==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:30(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:1(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://purl.org/linguistics/gold/hypernym_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:8(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:87(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books_inv==><null>:1(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher_inv:2(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/coverArtist_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:45(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/coverArtist_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:9(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv==><null>==><null>:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://purl.org/linguistics/gold/hypernym_inv==><null>==><null>:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv==>http://interacted_inv==>http://interacted:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://purl.org/linguistics/gold/hypernym_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:5(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+********Positive meta path**********
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:4406(71.5)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>==><null>:35(0.6)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://interacted_inv==>http://interacted:144(2.3)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:49(0.8)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:54(0.9)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:37(0.6)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:40(0.6)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:61(1.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:510(8.3)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:93(1.5)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:33(0.5)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:40(0.6)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink:21(0.3)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:90(1.5)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:69(1.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:21(0.3)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/ontology/wikiPageWikiLink:5(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:66(1.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:22(0.4)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>:22(0.4)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:8(0.1)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:13(0.2)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:23(0.4)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:57(0.9)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:47(0.8)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:11(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:15(0.2)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:2(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym_inv:11(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>==><null>:21(0.3)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://interacted_inv==>http://interacted:14(0.2)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:9(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:4(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:6(0.1)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:6(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:17(0.3)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.1)%
+==>http://interacted==><null>==><null>==><null>==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:1(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:9(0.1)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://interacted_inv==>http://interacted:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:4(0.1)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:7(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>==><null>:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==><null>==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:4(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://interacted_inv==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/literaryGenre_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv==><null>==><null>:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:1(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://interacted_inv==>http://interacted:1(0.0)%

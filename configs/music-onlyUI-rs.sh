@@ -33,7 +33,7 @@ reward_shaping_threshold=0
 beta=0.05
 relation_only="False"
 entity_only="False"
-history_only="False"
+history_only="True"
 beam_size=256
 
 distmult_state_dict_path="model/"

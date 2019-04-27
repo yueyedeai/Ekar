@@ -1,0 +1,2280 @@
+beam 2: score = -4.484630107879639
+<PATH> u.399-music.user.interacted_artist->74<-music.user.interacted_artist-u.470-music.user.interacted_artist->127
+beam 20: score = -7.254336357116699
+<PATH> u.399-music.user.interacted_artist->47<-music.user.interacted_artist-u.1568-music.user.interacted_artist->560
+beam 7: score = -5.327458381652832
+<PATH> u.390-music.user.interacted_artist->77<-music.user.interacted_artist-u.380-music.user.interacted_artist->73
+beam 19: score = -6.64764928817749
+<PATH> u.390-music.user.interacted_artist->98<-music.user.interacted_artist-u.72-music.user.interacted_artist->72
+beam 2: score = -3.960512638092041
+<PATH> u.2015-music.user.interacted_artist->42<-music.user.interacted_artist-u.1879-music.user.interacted_artist->36
+beam 18: score = -7.078909873962402
+<PATH> u.2015-music.user.interacted_artist->803<-music.user.interacted_artist-u.119-music.user.interacted_artist->531
+beam 4: score = -4.382096290588379
+<PATH> u.787-music.user.interacted_artist->96<-music.user.interacted_artist-u.1686-music.user.interacted_artist->118
+beam 11: score = -6.42888069152832
+<PATH> u.787-music.user.interacted_artist->301<-music.user.interacted_artist-u.1422-music.user.interacted_artist->199
+beam 14: score = -7.239750385284424
+<PATH> u.987-music.user.interacted_artist->79<-music.user.interacted_artist-u.749-music.user.interacted_artist->919
+beam 15: score = -7.398345470428467
+<PATH> u.987-music.user.interacted_artist->127<-music.user.interacted_artist-u.380-music.user.interacted_artist->77
+beam 11: score = -4.865259170532227
+<PATH> u.1103-music.user.interacted_artist->329<-music.user.interacted_artist-u.935-music.user.interacted_artist->334
+beam 17: score = -4.638386249542236
+<PATH> u.868-music.user.interacted_artist->1082<-music.user.interacted_artist-u.888-music.user.interacted_artist->118
+beam 3: score = -3.604945182800293
+<PATH> u.1035-music.user.interacted_artist->1543<-music.user.interacted_artist-u.368-music.user.interacted_artist->883
+beam 8: score = -4.7528276443481445
+<PATH> u.1035-music.user.interacted_artist->1543<-music.user.interacted_artist-u.434-music.user.interacted_artist->617
+beam 18: score = -5.445348262786865
+<PATH> u.358-music.user.interacted_artist->1496<-music.user.interacted_artist-u.813-music.user.interacted_artist->158
+beam 11: score = -5.066645622253418
+<PATH> u.1896-music.user.interacted_artist->1098<-music.user.interacted_artist-u.1442-music.user.interacted_artist->199
+beam 3: score = -4.196187496185303
+<PATH> u.1693-music.user.interacted_artist->78<-music.user.interacted_artist-u.1132-music.user.interacted_artist->79
+beam 14: score = -5.261787414550781
+<PATH> u.1050-music.user.interacted_artist->163<-music.user.interacted_artist-u.997-music.user.interacted_artist->516
+beam 3: score = -3.6342618465423584
+<PATH> u.1990-music.user.interacted_artist->508<-music.user.interacted_artist-u.517-music.user.interacted_artist->422
+beam 15: score = -4.9772748947143555
+<PATH> u.500-music.user.interacted_artist->196<-music.user.interacted_artist-u.2080-music.user.interacted_artist->156
+beam 17: score = -5.158232688903809
+<PATH> u.500-music.user.interacted_artist->196<-music.user.interacted_artist-u.1284-music.user.interacted_artist->314
+beam 9: score = -5.395167350769043
+<PATH> u.1911-music.user.interacted_artist->1253<-music.user.interacted_artist-u.1831-music.user.interacted_artist->391
+beam 11: score = -4.676271915435791
+<PATH> u.1442-music.user.interacted_artist->215<-music.user.interacted_artist-u.582-music.user.interacted_artist->208
+beam 14: score = -4.932860851287842
+<PATH> u.1442-music.user.interacted_artist->822<-music.user.interacted_artist-u.123-music.user.interacted_artist->210
+beam 0: score = -2.519435167312622
+<PATH> u.1784-music.user.interacted_artist->1589<-music.user.interacted_artist-u.964-music.user.interacted_artist->105
+beam 12: score = -4.569592475891113
+<PATH> u.1177-music.user.interacted_artist->1240<-music.user.interacted_artist-u.1055-music.user.interacted_artist->2074
+beam 11: score = -4.945652961730957
+<PATH> u.649-music.user.interacted_artist->756<-music.user.interacted_artist-u.731-music.user.interacted_artist->209
+beam 2: score = -4.011599540710449
+<PATH> u.2032-music.user.interacted_artist->2065<-music.user.interacted_artist-u.1910-music.user.interacted_artist->187
+beam 14: score = -5.5721917152404785
+<PATH> u.2032-music.user.interacted_artist->223<-music.user.interacted_artist-u.1624-music.user.interacted_artist->413
+beam 5: score = -3.6973941326141357
+<PATH> u.1601-music.user.interacted_artist->273<-music.user.interacted_artist-u.777-music.user.interacted_artist->277
+beam 14: score = -5.979106903076172
+<PATH> u.2037-music.user.interacted_artist->132<-music.user.interacted_artist-u.136-music.user.interacted_artist->74
+beam 11: score = -5.982790946960449
+<PATH> u.1511-music.user.interacted_artist->115<-music.user.interacted_artist-u.30-music.user.interacted_artist->171
+beam 20: score = -6.797443389892578
+<PATH> u.1511-music.user.interacted_artist->374<-music.user.interacted_artist-u.809-music.user.interacted_artist->118
+beam 2: score = -4.486042022705078
+<PATH> u.920-music.user.interacted_artist->494<-music.user.interacted_artist-u.1613-music.user.interacted_artist->47
+beam 0: score = -2.9561567306518555
+<PATH> u.1278-music.user.interacted_artist->2269<-music.user.interacted_artist-u.1954-music.user.interacted_artist->80
+beam 9: score = -4.222021579742432
+<PATH> u.1362-music.user.interacted_artist->936<-music.user.interacted_artist-u.155-music.user.interacted_artist->941
+beam 4: score = -4.5170392990112305
+<PATH> u.1804-music.user.interacted_artist->102<-music.user.interacted_artist-u.1686-music.user.interacted_artist->118
+beam 6: score = -5.307306289672852
+<PATH> u.1804-music.user.interacted_artist->102<-music.user.interacted_artist-u.943-music.user.interacted_artist->52
+beam 11: score = -6.212466716766357
+<PATH> u.347-music.user.interacted_artist->96<-music.user.interacted_artist-u.751-music.user.interacted_artist->102
+beam 3: score = -4.954764366149902
+<PATH> u.342-music.user.interacted_artist->190<-music.user.interacted_artist-u.824-music.user.interacted_artist->36
+beam 3: score = -4.7089996337890625
+<PATH> u.1690-music.user.interacted_artist->22<-music.user.interacted_artist-u.658-music.user.interacted_artist->132
+beam 20: score = -5.835992336273193
+<PATH> u.1690-music.user.interacted_artist->110<-music.user.interacted_artist-u.2040-music.user.interacted_artist->131
+beam 7: score = -4.406820297241211
+<PATH> u.206-music.user.interacted_artist->1139<-music.user.interacted_artist-u.1084-music.user.interacted_artist->46
+beam 2: score = -3.83876895904541
+<PATH> u.1377-music.user.interacted_artist->1869<-music.user.interacted_artist-u.2067-music.user.interacted_artist->776
+beam 5: score = -4.561889171600342
+<PATH> u.672-music.user.interacted_artist->802<-music.user.interacted_artist-u.1111-music.user.interacted_artist->302
+beam 3: score = -4.291985988616943
+<PATH> u.101-music.user.interacted_artist->78<-music.user.interacted_artist-u.289-music.user.interacted_artist->102
+beam 2: score = -3.5388388633728027
+<PATH> u.282-music.user.interacted_artist->228<-music.user.interacted_artist-u.23-music.user.interacted_artist->34
+beam 0: score = -3.7338573932647705
+<PATH> u.1833-music.user.interacted_artist->73<-music.user.interacted_artist-u.380-music.user.interacted_artist->87
+beam 1: score = -4.297307968139648
+<PATH> u.1247-music.user.interacted_artist->130<-music.user.interacted_artist-u.1186-music.user.interacted_artist->87
+beam 16: score = -6.205605506896973
+<PATH> u.1247-music.user.interacted_artist->130<-music.user.interacted_artist-u.2065-music.user.interacted_artist->79
+beam 2: score = -3.842517614364624
+<PATH> u.930-music.user.interacted_artist->538<-music.user.interacted_artist-u.1788-music.user.interacted_artist->185
+beam 5: score = -5.720434665679932
+<PATH> u.326-music.user.interacted_artist->96<-music.user.interacted_artist-u.1678-music.user.interacted_artist->134
+beam 11: score = -6.283261299133301
+<PATH> u.1423-music.user.interacted_artist->184<-music.user.interacted_artist-u.1001-music.user.interacted_artist->267
+beam 18: score = -4.940209865570068
+<PATH> u.1806-music.user.interacted_artist->453<-music.user.interacted_artist-u.848-music.user.interacted_artist->159
+beam 12: score = -4.466026782989502
+<PATH> u.727-music.user.interacted_artist->846<-music.user.interacted_artist-u.1697-music.user.interacted_artist->60
+beam 5: score = -4.482994079589844
+<PATH> u.1019-music.user.interacted_artist->918<-music.user.interacted_artist-u.1023-music.user.interacted_artist->863
+beam 3: score = -4.02606725692749
+<PATH> u.1926-music.user.interacted_artist->230<-music.user.interacted_artist-u.1220-music.user.interacted_artist->22
+beam 9: score = -4.298786163330078
+<PATH> u.359-music.user.interacted_artist->1293<-music.user.interacted_artist-u.452-music.user.interacted_artist->30
+beam 12: score = -5.170433044433594
+<PATH> u.1980-music.user.interacted_artist->2703<-music.user.interacted_artist-u.1354-music.user.interacted_artist->141
+beam 13: score = -5.2833943367004395
+<PATH> u.1232-music.user.interacted_artist->277<-music.user.interacted_artist-u.2047-music.user.interacted_artist->883
+beam 1: score = -1.5354645252227783
+<PATH> u.163-music.user.interacted_artist->979<-music.user.interacted_artist-u.1588-music.user.interacted_artist->377
+beam 5: score = -3.787156105041504
+<PATH> u.582-music.user.interacted_artist->208<-music.user.interacted_artist-u.752-music.user.interacted_artist->212
+beam 10: score = -4.337589263916016
+<PATH> u.582-music.user.interacted_artist->215<-music.user.interacted_artist-u.1442-music.user.interacted_artist->199
+beam 12: score = -5.53131103515625
+<PATH> u.986-music.user.interacted_artist->78<-music.user.interacted_artist-u.504-music.user.interacted_artist->102
+beam 19: score = -5.89026403427124
+<PATH> u.357-music.user.interacted_artist->57<-music.user.interacted_artist-u.2024-music.user.interacted_artist->293
+beam 20: score = -5.167126178741455
+<PATH> u.148-music.user.interacted_artist->904<-music.user.interacted_artist-u.602-music.user.interacted_artist->109
+beam 9: score = -20.8794002532959
+<PATH> u.182-music.user.interacted_artist->1037<-music.user.interacted_artist-u.1137-music.user.interacted_artist->1040
+beam 5: score = -5.021686553955078
+<PATH> u.15-music.user.interacted_artist->159<-music.user.interacted_artist-u.989-music.user.interacted_artist->163
+beam 3: score = -4.4050612449646
+<PATH> u.1936-music.user.interacted_artist->61<-music.user.interacted_artist-u.1006-music.user.interacted_artist->109
+beam 16: score = -6.498628616333008
+<PATH> u.1270-music.user.interacted_artist->989<-music.user.interacted_artist-u.1896-music.user.interacted_artist->280
+beam 1: score = -3.280466079711914
+<PATH> u.1483-music.user.interacted_artist->47<-music.user.interacted_artist-u.751-music.user.interacted_artist->96
+beam 2: score = -3.5677592754364014
+<PATH> u.1483-music.user.interacted_artist->47<-music.user.interacted_artist-u.741-music.user.interacted_artist->118
+beam 14: score = -5.275681972503662
+<PATH> u.1540-music.user.interacted_artist->230<-music.user.interacted_artist-u.1120-music.user.interacted_artist->132
+beam 10: score = -4.838874340057373
+<PATH> u.1955-music.user.interacted_artist->159<-music.user.interacted_artist-u.1790-music.user.interacted_artist->154
+beam 2: score = -3.34682297706604
+<PATH> u.800-music.user.interacted_artist->243<-music.user.interacted_artist-u.1267-music.user.interacted_artist->250
+beam 2: score = -4.297920227050781
+<PATH> u.744-music.user.interacted_artist->253<-music.user.interacted_artist-u.904-music.user.interacted_artist->126
+beam 0: score = -2.813436508178711
+<PATH> u.393-music.user.interacted_artist->276<-music.user.interacted_artist-u.2011-music.user.interacted_artist->46
+beam 7: score = -4.458226203918457
+<PATH> u.69-music.user.interacted_artist->156<-music.user.interacted_artist-u.1557-music.user.interacted_artist->155
+beam 15: score = -5.034170627593994
+<PATH> u.69-music.user.interacted_artist->67<-music.user.interacted_artist-u.1076-music.user.interacted_artist->422
+beam 3: score = -5.971155166625977
+<PATH> u.1559-music.user.interacted_artist->776<-music.user.interacted_artist-u.1160-music.user.interacted_artist->102
+beam 3: score = -5.2887983322143555
+<PATH> u.45-music.user.interacted_artist->364<-music.user.interacted_artist-u.589-music.user.interacted_artist->171
+beam 3: score = -4.760597229003906
+<PATH> u.231-music.user.interacted_artist->1201<-music.user.interacted_artist-u.910-music.user.interacted_artist->81
+beam 5: score = -4.866586208343506
+<PATH> u.231-music.user.interacted_artist->77<-music.user.interacted_artist-u.380-music.user.interacted_artist->135
+beam 6: score = -4.019278526306152
+<PATH> u.914-music.user.interacted_artist->211<-music.user.interacted_artist-u.546-music.user.interacted_artist->242
+beam 18: score = -4.901228904724121
+<PATH> u.914-music.user.interacted_artist->211<-music.user.interacted_artist-u.546-music.user.interacted_artist->42
+beam 13: score = -5.2062458992004395
+<PATH> u.2062-music.user.interacted_artist->832<-music.user.interacted_artist-u.1830-music.user.interacted_artist->133
+beam 1: score = -4.415717124938965
+<PATH> u.1360-music.user.interacted_artist->54<-music.user.interacted_artist-u.465-music.user.interacted_artist->105
+beam 9: score = -4.2975969314575195
+<PATH> u.1653-music.user.interacted_artist->681<-music.user.interacted_artist-u.91-music.user.interacted_artist->275
+beam 18: score = -5.399274826049805
+<PATH> u.844-music.user.interacted_artist->560<-music.user.interacted_artist-u.1253-music.user.interacted_artist->134
+beam 8: score = -4.479526519775391
+<PATH> u.427-music.user.interacted_artist->1502<-music.user.interacted_artist-u.1737-music.user.interacted_artist->280
+beam 18: score = -5.451633930206299
+<PATH> u.903-music.user.interacted_artist->211<-music.user.interacted_artist-u.914-music.user.interacted_artist->1123
+beam 19: score = -5.516453266143799
+<PATH> u.903-music.user.interacted_artist->1445<-music.user.interacted_artist-u.1176-music.user.interacted_artist->209
+beam 5: score = -4.908092021942139
+<PATH> u.232-music.user.interacted_artist->81<-music.user.interacted_artist-u.1593-music.user.interacted_artist->77
+beam 14: score = -5.863401889801025
+<PATH> u.466-music.user.interacted_artist->1200<-music.user.interacted_artist-u.830-music.user.interacted_artist->134
+beam 9: score = -4.503120422363281
+<PATH> u.28-music.user.interacted_artist->265<-music.user.interacted_artist-u.428-music.user.interacted_artist->26
+beam 11: score = -5.760412216186523
+<PATH> u.1753-music.user.interacted_artist->1889<-music.user.interacted_artist-u.1351-music.user.interacted_artist->130
+beam 19: score = -7.229653358459473
+<PATH> u.995-music.user.interacted_artist->206<-music.user.interacted_artist-u.646-music.user.interacted_artist->374
+beam 4: score = -5.666269302368164
+<PATH> u.1197-music.user.interacted_artist->206<-music.user.interacted_artist-u.58-music.user.interacted_artist->184
+beam 17: score = -6.132157325744629
+<PATH> u.760-music.user.interacted_artist->1523<-music.user.interacted_artist-u.633-music.user.interacted_artist->210
+beam 17: score = -6.630060195922852
+<PATH> u.977-music.user.interacted_artist->1662<-music.user.interacted_artist-u.1239-music.user.interacted_artist->55
+beam 10: score = -4.643867492675781
+<PATH> u.874-music.user.interacted_artist->1739<-music.user.interacted_artist-u.1551-music.user.interacted_artist->334
+beam 1: score = -3.3258402347564697
+<PATH> u.864-music.user.interacted_artist->52<-music.user.interacted_artist-u.315-music.user.interacted_artist->46
+beam 14: score = -7.71734619140625
+<PATH> u.864-music.user.interacted_artist->105<-music.user.interacted_artist-u.1508-music.user.interacted_artist->863
+beam 12: score = -5.110909938812256
+<PATH> u.1684-music.user.interacted_artist->976<-music.user.interacted_artist-u.326-music.user.interacted_artist->87
+beam 13: score = -5.291416645050049
+<PATH> u.1684-music.user.interacted_artist->560<-music.user.interacted_artist-u.75-music.user.interacted_artist->133
+beam 4: score = -4.89361047744751
+<PATH> u.1780-music.user.interacted_artist->919<-music.user.interacted_artist-u.1017-music.user.interacted_artist->87
+beam 8: score = -5.85354471206665
+<PATH> u.1780-music.user.interacted_artist->919<-music.user.interacted_artist-u.1017-music.user.interacted_artist->135
+beam 2: score = -3.7061567306518555
+<PATH> u.1275-music.user.interacted_artist->36<-music.user.interacted_artist-u.237-music.user.interacted_artist->105
+beam 2: score = -3.9290404319763184
+<PATH> u.1908-music.user.interacted_artist->539<-music.user.interacted_artist-u.502-music.user.interacted_artist->87
+beam 2: score = -3.4061059951782227
+<PATH> u.157-music.user.interacted_artist->949<-music.user.interacted_artist-u.640-music.user.interacted_artist->36
+beam 10: score = -4.39524507522583
+<PATH> u.1779-music.user.interacted_artist->1289<-music.user.interacted_artist-u.860-music.user.interacted_artist->928
+beam 1: score = -3.049165725708008
+<PATH> u.849-music.user.interacted_artist->652<-music.user.interacted_artist-u.334-music.user.interacted_artist->46
+beam 7: score = -4.863961219787598
+<PATH> u.849-music.user.interacted_artist->2478<-music.user.interacted_artist-u.2034-music.user.interacted_artist->55
+beam 8: score = -6.5819010734558105
+<PATH> u.1566-music.user.interacted_artist->107<-music.user.interacted_artist-u.1685-music.user.interacted_artist->863
+beam 15: score = -4.544894695281982
+<PATH> u.1845-music.user.interacted_artist->26<-music.user.interacted_artist-u.1209-music.user.interacted_artist->1057
+beam 5: score = -5.403902053833008
+<PATH> u.451-music.user.interacted_artist->538<-music.user.interacted_artist-u.425-music.user.interacted_artist->87
+beam 13: score = -6.110058307647705
+<PATH> u.1186-music.user.interacted_artist->132<-music.user.interacted_artist-u.1120-music.user.interacted_artist->75
+beam 20: score = -6.837189674377441
+<PATH> u.1186-music.user.interacted_artist->117<-music.user.interacted_artist-u.243-music.user.interacted_artist->137
+beam 1: score = -4.214908599853516
+<PATH> u.339-music.user.interacted_artist->73<-music.user.interacted_artist-u.380-music.user.interacted_artist->87
+beam 6: score = -5.249824523925781
+<PATH> u.339-music.user.interacted_artist->73<-music.user.interacted_artist-u.380-music.user.interacted_artist->77
+beam 12: score = -6.193724632263184
+<PATH> u.339-music.user.interacted_artist->73<-music.user.interacted_artist-u.873-music.user.interacted_artist->81
+beam 3: score = -4.207642078399658
+<PATH> u.595-music.user.interacted_artist->243<-music.user.interacted_artist-u.1267-music.user.interacted_artist->250
+beam 9: score = -4.830593585968018
+<PATH> u.1748-music.user.interacted_artist->841<-music.user.interacted_artist-u.186-music.user.interacted_artist->126
+beam 10: score = -4.886960983276367
+<PATH> u.1748-music.user.interacted_artist->96<-music.user.interacted_artist-u.451-music.user.interacted_artist->184
+beam 5: score = -5.057074546813965
+<PATH> u.1226-music.user.interacted_artist->96<-music.user.interacted_artist-u.985-music.user.interacted_artist->74
+beam 9: score = -4.850952625274658
+<PATH> u.806-music.user.interacted_artist->151<-music.user.interacted_artist-u.1235-music.user.interacted_artist->96
+beam 14: score = -5.277334213256836
+<PATH> u.806-music.user.interacted_artist->895<-music.user.interacted_artist-u.1923-music.user.interacted_artist->286
+beam 1: score = -3.634416103363037
+<PATH> u.523-music.user.interacted_artist->764<-music.user.interacted_artist-u.2010-music.user.interacted_artist->46
+beam 11: score = -4.391537666320801
+<PATH> u.1862-music.user.interacted_artist->190<-music.user.interacted_artist-u.1486-music.user.interacted_artist->46
+beam 20: score = -5.376760482788086
+<PATH> u.1018-music.user.interacted_artist->211<-music.user.interacted_artist-u.469-music.user.interacted_artist->36
+beam 18: score = -7.164356231689453
+<PATH> u.195-music.user.interacted_artist->141<-music.user.interacted_artist-u.824-music.user.interacted_artist->105
+beam 4: score = -4.428171634674072
+<PATH> u.388-music.user.interacted_artist->544<-music.user.interacted_artist-u.1143-music.user.interacted_artist->100
+beam 6: score = -4.572835922241211
+<PATH> u.388-music.user.interacted_artist->1518<-music.user.interacted_artist-u.1110-music.user.interacted_artist->96
+beam 4: score = -4.843231201171875
+<PATH> u.1963-music.user.interacted_artist->66<-music.user.interacted_artist-u.1017-music.user.interacted_artist->87
+beam 8: score = -5.802040100097656
+<PATH> u.1963-music.user.interacted_artist->131<-music.user.interacted_artist-u.2065-music.user.interacted_artist->98
+beam 5: score = -4.32362699508667
+<PATH> u.1921-music.user.interacted_artist->269<-music.user.interacted_artist-u.744-music.user.interacted_artist->96
+beam 4: score = -4.850785255432129
+<PATH> u.171-music.user.interacted_artist->102<-music.user.interacted_artist-u.943-music.user.interacted_artist->52
+beam 9: score = -5.931105136871338
+<PATH> u.171-music.user.interacted_artist->199<-music.user.interacted_artist-u.123-music.user.interacted_artist->187
+beam 2: score = -3.674577236175537
+<PATH> u.897-music.user.interacted_artist->34<-music.user.interacted_artist-u.1159-music.user.interacted_artist->42
+beam 6: score = -6.019388198852539
+<PATH> u.465-music.user.interacted_artist->354<-music.user.interacted_artist-u.237-music.user.interacted_artist->109
+beam 16: score = -5.760807037353516
+<PATH> u.302-music.user.interacted_artist->75<-music.user.interacted_artist-u.873-music.user.interacted_artist->135
+beam 2: score = -4.258211612701416
+<PATH> u.1929-music.user.interacted_artist->887<-music.user.interacted_artist-u.1514-music.user.interacted_artist->498
+beam 3: score = -4.901926040649414
+<PATH> u.158-music.user.interacted_artist->75<-music.user.interacted_artist-u.1580-music.user.interacted_artist->185
+beam 9: score = -6.290914058685303
+<PATH> u.158-music.user.interacted_artist->206<-music.user.interacted_artist-u.425-music.user.interacted_artist->98
+beam 16: score = -7.087120532989502
+<PATH> u.913-music.user.interacted_artist->293<-music.user.interacted_artist-u.1506-music.user.interacted_artist->221
+beam 2: score = -3.3026607036590576
+<PATH> u.1101-music.user.interacted_artist->727<-music.user.interacted_artist-u.416-music.user.interacted_artist->155
+beam 4: score = -4.162544250488281
+<PATH> u.735-music.user.interacted_artist->126<-music.user.interacted_artist-u.904-music.user.interacted_artist->52
+beam 1: score = -3.031515121459961
+<PATH> u.2019-music.user.interacted_artist->1240<-music.user.interacted_artist-u.1055-music.user.interacted_artist->134
+beam 3: score = -3.674377679824829
+<PATH> u.752-music.user.interacted_artist->208<-music.user.interacted_artist-u.1479-music.user.interacted_artist->102
+beam 11: score = -5.723248481750488
+<PATH> u.1265-music.user.interacted_artist->165<-music.user.interacted_artist-u.556-music.user.interacted_artist->708
+beam 5: score = -5.9641594886779785
+<PATH> u.1556-music.user.interacted_artist->42<-music.user.interacted_artist-u.241-music.user.interacted_artist->109
+beam 7: score = -5.224664211273193
+<PATH> u.1646-music.user.interacted_artist->842<-music.user.interacted_artist-u.129-music.user.interacted_artist->104
+beam 11: score = -4.290680885314941
+<PATH> u.1357-music.user.interacted_artist->144<-music.user.interacted_artist-u.642-music.user.interacted_artist->2096
+beam 11: score = -5.20216178894043
+<PATH> u.862-music.user.interacted_artist->254<-music.user.interacted_artist-u.1124-music.user.interacted_artist->131
+beam 1: score = -4.413896560668945
+<PATH> u.1678-music.user.interacted_artist->118<-music.user.interacted_artist-u.1568-music.user.interacted_artist->79
+beam 6: score = -5.494533061981201
+<PATH> u.1678-music.user.interacted_artist->118<-music.user.interacted_artist-u.425-music.user.interacted_artist->185
+beam 6: score = -3.8463492393493652
+<PATH> u.453-music.user.interacted_artist->354<-music.user.interacted_artist-u.237-music.user.interacted_artist->109
+beam 0: score = -3.5175490379333496
+<PATH> u.2061-music.user.interacted_artist->66<-music.user.interacted_artist-u.1017-music.user.interacted_artist->79
+beam 7: score = -5.87074089050293
+<PATH> u.2061-music.user.interacted_artist->377<-music.user.interacted_artist-u.1580-music.user.interacted_artist->184
+beam 13: score = -6.423376083374023
+<PATH> u.2061-music.user.interacted_artist->377<-music.user.interacted_artist-u.136-music.user.interacted_artist->98
+beam 2: score = -3.8558034896850586
+<PATH> u.2075-music.user.interacted_artist->445<-music.user.interacted_artist-u.534-music.user.interacted_artist->132
+beam 7: score = -4.5693817138671875
+<PATH> u.2075-music.user.interacted_artist->445<-music.user.interacted_artist-u.658-music.user.interacted_artist->22
+beam 16: score = -7.272677421569824
+<PATH> u.2096-music.user.interacted_artist->36<-music.user.interacted_artist-u.511-music.user.interacted_artist->57
+beam 19: score = -6.003262996673584
+<PATH> u.2091-music.user.interacted_artist->590<-music.user.interacted_artist-u.1793-music.user.interacted_artist->1487
+beam 4: score = -4.349343299865723
+<PATH> u.1182-music.user.interacted_artist->155<-music.user.interacted_artist-u.416-music.user.interacted_artist->196
+beam 15: score = -5.439445972442627
+<PATH> u.1182-music.user.interacted_artist->1514<-music.user.interacted_artist-u.1495-music.user.interacted_artist->35
+beam 0: score = -2.8811607360839844
+<PATH> u.1952-music.user.interacted_artist->1397<-music.user.interacted_artist-u.1438-music.user.interacted_artist->105
+beam 3: score = -5.14467191696167
+<PATH> u.1017-music.user.interacted_artist->377<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 0: score = -4.070745468139648
+<PATH> u.684-music.user.interacted_artist->81<-music.user.interacted_artist-u.353-music.user.interacted_artist->87
+beam 3: score = -4.874608039855957
+<PATH> u.684-music.user.interacted_artist->81<-music.user.interacted_artist-u.873-music.user.interacted_artist->135
+beam 9: score = -5.6852192878723145
+<PATH> u.684-music.user.interacted_artist->81<-music.user.interacted_artist-u.1478-music.user.interacted_artist->538
+beam 10: score = -6.030433654785156
+<PATH> u.2094-music.user.interacted_artist->2076<-music.user.interacted_artist-u.958-music.user.interacted_artist->1439
+beam 8: score = -4.464973449707031
+<PATH> u.1672-music.user.interacted_artist->1493<-music.user.interacted_artist-u.1622-music.user.interacted_artist->883
+beam 19: score = -5.525243759155273
+<PATH> u.1672-music.user.interacted_artist->223<-music.user.interacted_artist-u.1581-music.user.interacted_artist->55
+beam 15: score = -6.758256912231445
+<PATH> u.33-music.user.interacted_artist->34<-music.user.interacted_artist-u.897-music.user.interacted_artist->289
+beam 6: score = -4.853983402252197
+<PATH> u.22-music.user.interacted_artist->211<-music.user.interacted_artist-u.119-music.user.interacted_artist->209
+beam 3: score = -4.048478603363037
+<PATH> u.324-music.user.interacted_artist->42<-music.user.interacted_artist-u.1060-music.user.interacted_artist->36
+beam 7: score = -4.380128383636475
+<PATH> u.1014-music.user.interacted_artist->374<-music.user.interacted_artist-u.1687-music.user.interacted_artist->376
+beam 17: score = -6.954314231872559
+<PATH> u.1455-music.user.interacted_artist->72<-music.user.interacted_artist-u.793-music.user.interacted_artist->74
+beam 3: score = -3.114044666290283
+<PATH> u.593-music.user.interacted_artist->437<-music.user.interacted_artist-u.258-music.user.interacted_artist->184
+beam 9: score = -4.221077919006348
+<PATH> u.593-music.user.interacted_artist->437<-music.user.interacted_artist-u.1525-music.user.interacted_artist->206
+beam 0: score = -3.1873364448547363
+<PATH> u.1309-music.user.interacted_artist->224<-music.user.interacted_artist-u.2096-music.user.interacted_artist->36
+beam 7: score = -4.676330089569092
+<PATH> u.1414-music.user.interacted_artist->210<-music.user.interacted_artist-u.787-music.user.interacted_artist->96
+beam 5: score = -6.5190582275390625
+<PATH> u.943-music.user.interacted_artist->105<-music.user.interacted_artist-u.237-music.user.interacted_artist->36
+beam 5: score = -4.5552167892456055
+<PATH> u.1661-music.user.interacted_artist->55<-music.user.interacted_artist-u.30-music.user.interacted_artist->267
+beam 11: score = -5.034828186035156
+<PATH> u.1661-music.user.interacted_artist->184<-music.user.interacted_artist-u.494-music.user.interacted_artist->137
+beam 18: score = -5.999152183532715
+<PATH> u.260-music.user.interacted_artist->438<-music.user.interacted_artist-u.1247-music.user.interacted_artist->130
+beam 7: score = -5.208357334136963
+<PATH> u.44-music.user.interacted_artist->250<-music.user.interacted_artist-u.177-music.user.interacted_artist->109
+beam 6: score = -4.862207412719727
+<PATH> u.691-music.user.interacted_artist->24<-music.user.interacted_artist-u.1185-music.user.interacted_artist->137
+beam 5: score = -4.737066268920898
+<PATH> u.936-music.user.interacted_artist->155<-music.user.interacted_artist-u.1557-music.user.interacted_artist->460
+beam 18: score = -5.821868896484375
+<PATH> u.936-music.user.interacted_artist->2579<-music.user.interacted_artist-u.1284-music.user.interacted_artist->732
+beam 0: score = -3.551612377166748
+<PATH> u.1808-music.user.interacted_artist->115<-music.user.interacted_artist-u.702-music.user.interacted_artist->79
+beam 18: score = -6.650485992431641
+<PATH> u.1808-music.user.interacted_artist->115<-music.user.interacted_artist-u.1466-music.user.interacted_artist->75
+beam 12: score = -5.565566062927246
+<PATH> u.1848-music.user.interacted_artist->3173<-music.user.interacted_artist-u.1406-music.user.interacted_artist->3170
+beam 7: score = -4.443780422210693
+<PATH> u.114-music.user.interacted_artist->777-people.person.place_of_birth->3864<-music.artist.origin-36
+beam 9: score = -6.0369462966918945
+<PATH> u.1606-music.user.interacted_artist->55<-music.user.interacted_artist-u.814-music.user.interacted_artist->171
+beam 13: score = -4.825054168701172
+<PATH> u.1140-music.user.interacted_artist->617<-music.user.interacted_artist-u.1395-music.user.interacted_artist->111
+beam 2: score = -4.8319091796875
+<PATH> u.147-music.user.interacted_artist->133<-music.user.interacted_artist-u.987-music.user.interacted_artist->127
+beam 17: score = -7.028134822845459
+<PATH> u.147-music.user.interacted_artist->79<-music.user.interacted_artist-u.669-music.user.interacted_artist->254
+beam 5: score = -4.373663425445557
+<PATH> u.688-music.user.interacted_artist->96<-music.user.interacted_artist-u.1339-music.user.interacted_artist->52
+beam 8: score = -5.121791362762451
+<PATH> u.688-music.user.interacted_artist->96<-music.user.interacted_artist-u.1686-music.user.interacted_artist->46
+beam 3: score = -4.146583557128906
+<PATH> u.1380-music.user.interacted_artist->41<-music.user.interacted_artist-u.688-music.user.interacted_artist->102
+beam 10: score = -4.086319446563721
+<PATH> u.434-music.user.interacted_artist->617<-music.user.interacted_artist-u.1367-music.user.interacted_artist->676
+beam 10: score = -5.291815280914307
+<PATH> u.525-music.user.interacted_artist->303<-music.user.interacted_artist-u.205-music.user.interacted_artist->199
+beam 8: score = -5.628829479217529
+<PATH> u.2021-music.user.interacted_artist->923<-music.user.interacted_artist-u.1198-music.user.interacted_artist->98
+beam 19: score = -5.526394844055176
+<PATH> u.1982-music.user.interacted_artist->1046<-music.user.interacted_artist-u.183-music.user.interacted_artist->36
+beam 20: score = -6.400234222412109
+<PATH> u.1139-music.user.interacted_artist->87<-music.user.interacted_artist-u.722-music.user.interacted_artist->254
+beam 8: score = -6.005796909332275
+<PATH> u.1070-music.user.interacted_artist->55<-music.user.interacted_artist-u.619-music.user.interacted_artist->102
+beam 9: score = -6.108719348907471
+<PATH> u.1070-music.user.interacted_artist->55<-music.user.interacted_artist-u.475-music.user.interacted_artist->118
+beam 8: score = -5.442806243896484
+<PATH> u.329-music.user.interacted_artist->385<-music.user.interacted_artist-u.1909-music.user.interacted_artist->52
+beam 7: score = -5.510047435760498
+<PATH> u.213-music.user.interacted_artist->96<-music.user.interacted_artist-u.289-music.user.interacted_artist->102
+beam 0: score = -2.775698184967041
+<PATH> u.240-music.user.interacted_artist->404<-music.user.interacted_artist-u.984-music.user.interacted_artist->80
+beam 9: score = -5.06312894821167
+<PATH> u.1743-music.user.interacted_artist->208<-music.user.interacted_artist-u.261-music.user.interacted_artist->303
+beam 15: score = -5.582106590270996
+<PATH> u.1743-music.user.interacted_artist->776<-music.user.interacted_artist-u.2067-music.user.interacted_artist->589
+beam 5: score = -4.950348854064941
+<PATH> u.2046-music.user.interacted_artist->6<-music.user.interacted_artist-u.1089-music.user.interacted_artist->13
+beam 18: score = -5.9297261238098145
+<PATH> u.2046-music.user.interacted_artist->4<-music.user.interacted_artist-u.1774-music.user.interacted_artist->242
+beam 4: score = -4.1569013595581055
+<PATH> u.263-music.user.interacted_artist->1293<-music.user.interacted_artist-u.452-music.user.interacted_artist->257
+beam 18: score = -5.476178169250488
+<PATH> u.263-music.user.interacted_artist->1057<-music.user.interacted_artist-u.1209-music.user.interacted_artist->26
+beam 10: score = -5.446934700012207
+<PATH> u.675-music.user.interacted_artist->261<-music.user.interacted_artist-u.2058-music.user.interacted_artist->87
+beam 13: score = -5.519922733306885
+<PATH> u.675-music.user.interacted_artist->137<-music.user.interacted_artist-u.759-music.user.interacted_artist->187
+beam 11: score = -6.420290946960449
+<PATH> u.906-music.user.interacted_artist->134<-music.user.interacted_artist-u.1189-music.user.interacted_artist->80
+beam 14: score = -6.591155529022217
+<PATH> u.906-music.user.interacted_artist->87<-music.user.interacted_artist-u.987-music.user.interacted_artist->133
+beam 6: score = -5.2394938468933105
+<PATH> u.1877-music.user.interacted_artist->37<-music.user.interacted_artist-u.50-music.user.interacted_artist->36
+beam 7: score = -5.440559387207031
+<PATH> u.1272-music.user.interacted_artist->78<-music.user.interacted_artist-u.1480-music.user.interacted_artist->47
+beam 19: score = -6.291118621826172
+<PATH> u.1272-music.user.interacted_artist->78<-music.user.interacted_artist-u.504-music.user.interacted_artist->185
+beam 1: score = -3.636650562286377
+<PATH> u.2034-music.user.interacted_artist->118<-music.user.interacted_artist-u.475-music.user.interacted_artist->46
+beam 1: score = -3.8834381103515625
+<PATH> u.767-music.user.interacted_artist->445<-music.user.interacted_artist-u.650-music.user.interacted_artist->96
+beam 0: score = -3.3886663913726807
+<PATH> u.501-music.user.interacted_artist->171<-music.user.interacted_artist-u.1959-music.user.interacted_artist->79
+beam 3: score = -4.749159336090088
+<PATH> u.501-music.user.interacted_artist->1461<-music.user.interacted_artist-u.329-music.user.interacted_artist->127
+beam 1: score = -3.0065674781799316
+<PATH> u.1746-music.user.interacted_artist->354<-music.user.interacted_artist-u.237-music.user.interacted_artist->46
+beam 17: score = -6.109230995178223
+<PATH> u.1746-music.user.interacted_artist->354<-music.user.interacted_artist-u.1496-music.user.interacted_artist->190
+beam 10: score = -5.029454708099365
+<PATH> u.946-music.user.interacted_artist->78<-music.user.interacted_artist-u.289-music.user.interacted_artist->96
+beam 2: score = -4.053481101989746
+<PATH> u.351-music.user.interacted_artist->78<-music.user.interacted_artist-u.1053-music.user.interacted_artist->79
+beam 2: score = -4.403260707855225
+<PATH> u.400-music.user.interacted_artist->184<-music.user.interacted_artist-u.1607-music.user.interacted_artist->185
+beam 2: score = -3.3457274436950684
+<PATH> u.110-music.user.interacted_artist->758<-music.user.interacted_artist-u.312-music.user.interacted_artist->93
+beam 17: score = -4.683994293212891
+<PATH> u.110-music.user.interacted_artist->759<-music.user.interacted_artist-u.1445-music.user.interacted_artist->87
+beam 19: score = -6.041266441345215
+<PATH> u.888-music.user.interacted_artist->35<-music.user.interacted_artist-u.4-music.user.interacted_artist->43
+beam 12: score = -5.863708972930908
+<PATH> u.1590-music.user.interacted_artist->88<-music.user.interacted_artist-u.405-music.user.interacted_artist->117
+beam 20: score = -6.58661413192749
+<PATH> u.1942-music.user.interacted_artist->22<-music.user.interacted_artist-u.658-music.user.interacted_artist->445
+beam 20: score = -5.494107246398926
+<PATH> u.1996-music.user.interacted_artist->590<-music.user.interacted_artist-u.2091-music.user.interacted_artist->1956
+beam 15: score = -6.060239791870117
+<PATH> u.690-music.user.interacted_artist->74<-music.user.interacted_artist-u.470-music.user.interacted_artist->127
+beam 16: score = -6.124985218048096
+<PATH> u.690-music.user.interacted_artist->74<-music.user.interacted_artist-u.885-music.user.interacted_artist->135
+beam 1: score = -4.317012786865234
+<PATH> u.50-music.user.interacted_artist->52<-music.user.interacted_artist-u.315-music.user.interacted_artist->55
+beam 5: score = -4.254238605499268
+<PATH> u.692-music.user.interacted_artist->275<-music.user.interacted_artist-u.699-music.user.interacted_artist->257
+beam 3: score = -4.468531608581543
+<PATH> u.1578-music.user.interacted_artist->73<-music.user.interacted_artist-u.873-music.user.interacted_artist->81
+beam 17: score = -6.312260150909424
+<PATH> u.1578-music.user.interacted_artist->73<-music.user.interacted_artist-u.781-music.user.interacted_artist->98
+beam 7: score = -5.286590576171875
+<PATH> u.17-music.user.interacted_artist->185<-music.user.interacted_artist-u.1053-music.user.interacted_artist->78
+beam 7: score = -4.271585464477539
+<PATH> u.714-music.user.interacted_artist->1691<-music.user.interacted_artist-u.1049-music.user.interacted_artist->277
+beam 2: score = -3.37624192237854
+<PATH> u.720-music.user.interacted_artist->250<-music.user.interacted_artist-u.1655-music.user.interacted_artist->42
+beam 5: score = -5.655900955200195
+<PATH> u.1302-music.user.interacted_artist->105<-music.user.interacted_artist-u.1949-music.user.interacted_artist->391
+beam 14: score = -7.585698127746582
+<PATH> u.1308-music.user.interacted_artist->75<-music.user.interacted_artist-u.1124-music.user.interacted_artist->91
+beam 1: score = -3.415971279144287
+<PATH> u.23-music.user.interacted_artist->221<-music.user.interacted_artist-u.828-music.user.interacted_artist->36
+beam 5: score = -4.905976295471191
+<PATH> u.23-music.user.interacted_artist->34<-music.user.interacted_artist-u.292-music.user.interacted_artist->109
+beam 6: score = -5.237586498260498
+<PATH> u.285-music.user.interacted_artist->134<-music.user.interacted_artist-u.760-music.user.interacted_artist->52
+beam 7: score = -5.268828868865967
+<PATH> u.285-music.user.interacted_artist->134<-music.user.interacted_artist-u.346-music.user.interacted_artist->102
+beam 18: score = -5.434271812438965
+<PATH> u.313-music.user.interacted_artist->15<-music.user.interacted_artist-u.506-music.user.interacted_artist->4
+beam 0: score = -3.16387677192688
+<PATH> u.1444-music.user.interacted_artist->920<-music.user.interacted_artist-u.289-music.user.interacted_artist->102
+beam 4: score = -5.2529296875
+<PATH> u.1785-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->55
+beam 2: score = -4.0736613273620605
+<PATH> u.863-music.user.interacted_artist->107<-music.user.interacted_artist-u.1685-music.user.interacted_artist->105
+beam 8: score = -4.995583534240723
+<PATH> u.297-music.user.interacted_artist->695<-music.user.interacted_artist-u.94-music.user.interacted_artist->53
+beam 1: score = -3.987138509750366
+<PATH> u.1813-music.user.interacted_artist->376<-music.user.interacted_artist-u.646-music.user.interacted_artist->185
+beam 12: score = -5.69796895980835
+<PATH> u.1813-music.user.interacted_artist->376<-music.user.interacted_artist-u.578-music.user.interacted_artist->184
+beam 19: score = -5.271341323852539
+<PATH> u.1287-music.user.interacted_artist->242<-music.user.interacted_artist-u.295-music.user.interacted_artist->1148
+beam 5: score = -5.453362464904785
+<PATH> u.1811-music.user.interacted_artist->171<-music.user.interacted_artist-u.1564-music.user.interacted_artist->135
+beam 11: score = -7.133446216583252
+<PATH> u.1372-music.user.interacted_artist->46<-music.user.interacted_artist-u.475-music.user.interacted_artist->118
+beam 10: score = -5.434344291687012
+<PATH> u.2039-music.user.interacted_artist->356<-music.user.interacted_artist-u.1102-music.user.interacted_artist->74
+beam 11: score = -4.510091781616211
+<PATH> u.1240-music.user.interacted_artist->769<-music.user.interacted_artist-u.111-music.user.interacted_artist->46
+beam 8: score = -4.665325164794922
+<PATH> u.1158-music.user.interacted_artist->802<-music.user.interacted_artist-u.525-music.user.interacted_artist->47
+beam 4: score = -5.969808578491211
+<PATH> u.1834-music.user.interacted_artist->74<-music.user.interacted_artist-u.722-music.user.interacted_artist->87
+beam 5: score = -5.974867820739746
+<PATH> u.1834-music.user.interacted_artist->74<-music.user.interacted_artist-u.1525-music.user.interacted_artist->206
+beam 3: score = -3.6163501739501953
+<PATH> u.794-music.user.interacted_artist->105<-music.user.interacted_artist-u.315-music.user.interacted_artist->55
+beam 0: score = -3.955319881439209
+<PATH> u.68-music.user.interacted_artist->130<-music.user.interacted_artist-u.1186-music.user.interacted_artist->87
+beam 4: score = -4.861961364746094
+<PATH> u.68-music.user.interacted_artist->58<-music.user.interacted_artist-u.1517-music.user.interacted_artist->81
+beam 1: score = -4.321743488311768
+<PATH> u.1071-music.user.interacted_artist->55<-music.user.interacted_artist-u.700-music.user.interacted_artist->80
+beam 7: score = -5.591274261474609
+<PATH> u.1071-music.user.interacted_artist->98<-music.user.interacted_artist-u.72-music.user.interacted_artist->127
+beam 11: score = -7.156978607177734
+<PATH> u.1124-music.user.interacted_artist->254<-music.user.interacted_artist-u.72-music.user.interacted_artist->185
+beam 2: score = -4.0429911613464355
+<PATH> u.2092-music.user.interacted_artist->109<-music.user.interacted_artist-u.237-music.user.interacted_artist->105
+beam 12: score = -6.248929500579834
+<PATH> u.968-music.user.interacted_artist->187<-music.user.interacted_artist-u.1785-music.user.interacted_artist->24
+beam 16: score = -6.514463901519775
+<PATH> u.968-music.user.interacted_artist->187<-music.user.interacted_artist-u.1395-music.user.interacted_artist->111
+beam 12: score = -4.740077972412109
+<PATH> u.1116-music.user.interacted_artist->1228<-music.user.interacted_artist-u.1961-music.user.interacted_artist->77
+beam 18: score = -5.798145294189453
+<PATH> u.1116-music.user.interacted_artist->1228<-music.user.interacted_artist-u.1113-music.user.interacted_artist->1612
+beam 0: score = -3.573646068572998
+<PATH> u.1388-music.user.interacted_artist->538<-music.user.interacted_artist-u.1607-music.user.interacted_artist->185
+beam 2: score = -3.318873405456543
+<PATH> u.871-music.user.interacted_artist->354<-music.user.interacted_artist-u.237-music.user.interacted_artist->36
+beam 5: score = -3.885286331176758
+<PATH> u.569-music.user.interacted_artist->1259<-music.user.interacted_artist-u.256-music.user.interacted_artist->87
+beam 1: score = -3.397425651550293
+<PATH> u.619-music.user.interacted_artist->102<-music.user.interacted_artist-u.943-music.user.interacted_artist->46
+beam 9: score = -6.4938178062438965
+<PATH> u.619-music.user.interacted_artist->392<-music.user.interacted_artist-u.211-music.user.interacted_artist->528
+beam 4: score = -4.873516082763672
+<PATH> u.1137-music.user.interacted_artist->40<-music.user.interacted_artist-u.2058-music.user.interacted_artist->87
+beam 17: score = -5.791810989379883
+<PATH> u.59-music.user.interacted_artist->446<-music.user.interacted_artist-u.1343-music.user.interacted_artist->445
+beam 7: score = -4.934347629547119
+<PATH> u.1080-music.user.interacted_artist->364<-music.user.interacted_artist-u.589-music.user.interacted_artist->171
+beam 13: score = -5.647881984710693
+<PATH> u.1080-music.user.interacted_artist->363<-music.user.interacted_artist-u.1304-music.user.interacted_artist->185
+beam 10: score = -4.787152290344238
+<PATH> u.152-music.user.interacted_artist->923<-music.user.interacted_artist-u.1693-music.user.interacted_artist->78
+beam 10: score = -5.322747230529785
+<PATH> u.1254-music.user.interacted_artist->622<-music.user.interacted_artist-u.2030-music.user.interacted_artist->35
+beam 11: score = -7.550793647766113
+<PATH> u.1998-music.user.interacted_artist->863<-music.user.interacted_artist-u.1804-music.user.interacted_artist->102
+beam 15: score = -4.6032938957214355
+<PATH> u.799-music.user.interacted_artist->277<-music.user.interacted_artist-u.683-music.user.interacted_artist->883
+beam 17: score = -6.439241409301758
+<PATH> u.1547-music.user.interacted_artist->293<-music.user.interacted_artist-u.50-music.user.interacted_artist->388
+beam 4: score = -4.441245079040527
+<PATH> u.1757-music.user.interacted_artist->1200<-music.user.interacted_artist-u.830-music.user.interacted_artist->87
+beam 1: score = -3.4807326793670654
+<PATH> u.1851-music.user.interacted_artist->115<-music.user.interacted_artist-u.11-music.user.interacted_artist->79
+beam 4: score = -4.510283470153809
+<PATH> u.1851-music.user.interacted_artist->171<-music.user.interacted_artist-u.1959-music.user.interacted_artist->184
+beam 1: score = -3.5607645511627197
+<PATH> u.884-music.user.interacted_artist->115<-music.user.interacted_artist-u.136-music.user.interacted_artist->79
+beam 0: score = -3.3193609714508057
+<PATH> u.258-music.user.interacted_artist->919<-music.user.interacted_artist-u.1017-music.user.interacted_artist->79
+beam 14: score = -6.407055854797363
+<PATH> u.258-music.user.interacted_artist->915<-music.user.interacted_artist-u.844-music.user.interacted_artist->254
+beam 5: score = -4.412036418914795
+<PATH> u.698-music.user.interacted_artist->66<-music.user.interacted_artist-u.1795-music.user.interacted_artist->96
+beam 4: score = -4.3718671798706055
+<PATH> u.1530-music.user.interacted_artist->36<-music.user.interacted_artist-u.237-music.user.interacted_artist->109
+beam 14: score = -5.287483215332031
+<PATH> u.1658-music.user.interacted_artist->171<-music.user.interacted_artist-u.30-music.user.interacted_artist->55
+beam 8: score = -4.686143398284912
+<PATH> u.734-music.user.interacted_artist->1514<-music.user.interacted_artist-u.485-music.user.interacted_artist->52
+beam 0: score = -2.5835635662078857
+<PATH> u.1025-music.user.interacted_artist->608<-music.user.interacted_artist-u.1295-music.user.interacted_artist->36
+beam 11: score = -4.5736613273620605
+<PATH> u.356-music.user.interacted_artist->215<-music.user.interacted_artist-u.203-music.user.interacted_artist->303
+beam 10: score = -6.851769924163818
+<PATH> u.1133-music.user.interacted_artist->46<-music.user.interacted_artist-u.2009-music.user.interacted_artist->36
+beam 10: score = -6.6468963623046875
+<PATH> u.2022-music.user.interacted_artist->96<-music.user.interacted_artist-u.975-music.user.interacted_artist->254
+beam 6: score = -5.3783698081970215
+<PATH> u.2065-music.user.interacted_artist->130<-music.user.interacted_artist-u.1564-music.user.interacted_artist->80
+beam 19: score = -7.504793167114258
+<PATH> u.2065-music.user.interacted_artist->216<-music.user.interacted_artist-u.920-music.user.interacted_artist->96
+beam 4: score = -4.11658239364624
+<PATH> u.94-music.user.interacted_artist->111<-music.user.interacted_artist-u.10-music.user.interacted_artist->105
+beam 4: score = -3.7079107761383057
+<PATH> u.1533-music.user.interacted_artist->1228<-music.user.interacted_artist-u.1435-music.user.interacted_artist->66
+beam 16: score = -6.511898994445801
+<PATH> u.1363-music.user.interacted_artist->302<-music.user.interacted_artist-u.532-music.user.interacted_artist->303
+beam 3: score = -4.064606666564941
+<PATH> u.1470-music.user.interacted_artist->516<-music.user.interacted_artist-u.94-music.user.interacted_artist->111
+beam 4: score = -5.164799213409424
+<PATH> u.95-music.user.interacted_artist->698<-music.user.interacted_artist-u.134-music.user.interacted_artist->135
+beam 18: score = -6.904965877532959
+<PATH> u.95-music.user.interacted_artist->698<-music.user.interacted_artist-u.1399-music.user.interacted_artist->134
+beam 2: score = -4.480512619018555
+<PATH> u.1873-music.user.interacted_artist->127<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 10: score = -5.234902381896973
+<PATH> u.622-music.user.interacted_artist->111<-music.user.interacted_artist-u.10-music.user.interacted_artist->109
+beam 7: score = -6.617495536804199
+<PATH> u.722-music.user.interacted_artist->254<-music.user.interacted_artist-u.72-music.user.interacted_artist->98
+beam 10: score = -4.6375732421875
+<PATH> u.1219-music.user.interacted_artist->53<-music.user.interacted_artist-u.1832-music.user.interacted_artist->46
+beam 12: score = -4.841779708862305
+<PATH> u.908-music.user.interacted_artist->1608<-music.user.interacted_artist-u.1827-music.user.interacted_artist->4
+beam 6: score = -4.111532688140869
+<PATH> u.395-music.user.interacted_artist->393<-music.user.interacted_artist-u.1428-music.user.interacted_artist->325
+beam 13: score = -5.161194324493408
+<PATH> u.395-music.user.interacted_artist->96<-music.user.interacted_artist-u.347-music.user.interacted_artist->216
+beam 11: score = -5.774779319763184
+<PATH> u.605-music.user.interacted_artist->1174<-music.user.interacted_artist-u.346-music.user.interacted_artist->102
+beam 18: score = -6.093131065368652
+<PATH> u.1298-music.user.interacted_artist->919<-music.user.interacted_artist-u.1017-music.user.interacted_artist->377
+beam 12: score = -5.041162490844727
+<PATH> u.1112-music.user.interacted_artist->165<-music.user.interacted_artist-u.1325-music.user.interacted_artist->35
+beam 9: score = -5.543875694274902
+<PATH> u.1238-music.user.interacted_artist->36<-music.user.interacted_artist-u.511-music.user.interacted_artist->109
+beam 1: score = -3.8560211658477783
+<PATH> u.1608-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->105
+beam 4: score = -5.196179389953613
+<PATH> u.985-music.user.interacted_artist->96<-music.user.interacted_artist-u.700-music.user.interacted_artist->80
+beam 8: score = -5.962790012359619
+<PATH> u.985-music.user.interacted_artist->127<-music.user.interacted_artist-u.717-music.user.interacted_artist->134
+beam 15: score = -6.366840839385986
+<PATH> u.26-music.user.interacted_artist->241<-music.user.interacted_artist-u.313-music.user.interacted_artist->245
+beam 7: score = -4.5569353103637695
+<PATH> u.1472-music.user.interacted_artist->199<-music.user.interacted_artist-u.594-music.user.interacted_artist->52
+beam 17: score = -5.270012855529785
+<PATH> u.1472-music.user.interacted_artist->199<-music.user.interacted_artist-u.594-music.user.interacted_artist->96
+beam 5: score = -5.203680038452148
+<PATH> u.271-music.user.interacted_artist->73<-music.user.interacted_artist-u.380-music.user.interacted_artist->135
+beam 6: score = -3.576650381088257
+<PATH> u.8-music.user.interacted_artist->90<-music.user.interacted_artist-u.1517-music.user.interacted_artist->75
+beam 18: score = -4.938556671142578
+<PATH> u.8-music.user.interacted_artist->90<-music.user.interacted_artist-u.1898-music.user.interacted_artist->66
+beam 3: score = -5.050196170806885
+<PATH> u.1685-music.user.interacted_artist->105<-music.user.interacted_artist-u.1949-music.user.interacted_artist->55
+beam 7: score = -6.627032279968262
+<PATH> u.1685-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->52
+beam 16: score = -7.886753082275391
+<PATH> u.1685-music.user.interacted_artist->46<-music.user.interacted_artist-u.1707-music.user.interacted_artist->109
+beam 12: score = -5.7610931396484375
+<PATH> u.89-music.user.interacted_artist->47<-music.user.interacted_artist-u.346-music.user.interacted_artist->46
+beam 2: score = -3.5224738121032715
+<PATH> u.408-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->55
+beam 11: score = -6.5720720291137695
+<PATH> u.150-music.user.interacted_artist->66<-music.user.interacted_artist-u.1109-music.user.interacted_artist->171
+beam 7: score = -5.319677352905273
+<PATH> u.1514-music.user.interacted_artist->498<-music.user.interacted_artist-u.66-music.user.interacted_artist->257
+beam 20: score = -6.436261177062988
+<PATH> u.1514-music.user.interacted_artist->498<-music.user.interacted_artist-u.187-music.user.interacted_artist->36
+beam 2: score = -4.308049201965332
+<PATH> u.693-music.user.interacted_artist->230<-music.user.interacted_artist-u.1220-music.user.interacted_artist->55
+beam 4: score = -5.3407673835754395
+<PATH> u.1941-music.user.interacted_artist->282<-music.user.interacted_artist-u.418-music.user.interacted_artist->190
+beam 4: score = -4.326282501220703
+<PATH> u.1245-music.user.interacted_artist->47<-music.user.interacted_artist-u.1804-music.user.interacted_artist->55
+beam 14: score = -6.870144367218018
+<PATH> u.153-music.user.interacted_artist->42<-music.user.interacted_artist-u.241-music.user.interacted_artist->655
+beam 5: score = -3.8535661697387695
+<PATH> u.957-music.user.interacted_artist->1623<-music.user.interacted_artist-u.411-music.user.interacted_artist->70
+beam 1: score = -4.448591232299805
+<PATH> u.816-music.user.interacted_artist->372<-music.user.interacted_artist-u.1591-music.user.interacted_artist->87
+beam 3: score = -4.7972002029418945
+<PATH> u.816-music.user.interacted_artist->127<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 13: score = -6.3799238204956055
+<PATH> u.1809-music.user.interacted_artist->126<-music.user.interacted_artist-u.1374-music.user.interacted_artist->119
+beam 9: score = -4.4272050857543945
+<PATH> u.1622-music.user.interacted_artist->141<-music.user.interacted_artist-u.1617-music.user.interacted_artist->799
+beam 1: score = -2.5560755729675293
+<PATH> u.642-music.user.interacted_artist->146<-music.user.interacted_artist-u.1061-music.user.interacted_artist->147
+beam 4: score = -3.9826035499572754
+<PATH> u.291-music.user.interacted_artist->382<-music.user.interacted_artist-u.911-music.user.interacted_artist->538
+beam 8: score = -5.652535438537598
+<PATH> u.291-music.user.interacted_artist->382<-music.user.interacted_artist-u.987-music.user.interacted_artist->377
+beam 5: score = -4.1154327392578125
+<PATH> u.73-music.user.interacted_artist->542<-music.user.interacted_artist-u.117-music.user.interacted_artist->257
+beam 4: score = -3.9036335945129395
+<PATH> u.830-music.user.interacted_artist->1523<-music.user.interacted_artist-u.760-music.user.interacted_artist->96
+beam 8: score = -3.9817214012145996
+<PATH> u.1969-music.user.interacted_artist->515<-music.user.interacted_artist-u.842-music.user.interacted_artist->795
+beam 8: score = -5.157867908477783
+<PATH> u.310-music.user.interacted_artist->378<-music.user.interacted_artist-u.636-music.user.interacted_artist->72
+beam 11: score = -5.466593265533447
+<PATH> u.686-music.user.interacted_artist->227<-music.user.interacted_artist-u.1514-music.user.interacted_artist->22
+beam 16: score = -7.097618103027344
+<PATH> u.1832-music.user.interacted_artist->382<-music.user.interacted_artist-u.1688-music.user.interacted_artist->104
+beam 19: score = -4.951218605041504
+<PATH> u.2081-music.user.interacted_artist->45<-music.user.interacted_artist-u.1980-music.user.interacted_artist->56
+beam 3: score = -4.246156215667725
+<PATH> u.881-music.user.interacted_artist->105<-music.user.interacted_artist-u.315-music.user.interacted_artist->52
+beam 10: score = -5.491342544555664
+<PATH> u.1691-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->55
+beam 13: score = -5.6695876121521
+<PATH> u.1691-music.user.interacted_artist->275<-music.user.interacted_artist-u.1029-music.user.interacted_artist->356
+beam 3: score = -4.601032257080078
+<PATH> u.837-music.user.interacted_artist->727<-music.user.interacted_artist-u.1907-music.user.interacted_artist->196
+beam 17: score = -5.747648239135742
+<PATH> u.837-music.user.interacted_artist->727<-music.user.interacted_artist-u.1801-music.user.interacted_artist->517
+beam 7: score = -7.058454513549805
+<PATH> u.1416-music.user.interacted_artist->391<-music.user.interacted_artist-u.1949-music.user.interacted_artist->1103
+beam 16: score = -5.053293228149414
+<PATH> u.1261-music.user.interacted_artist->56<-music.user.interacted_artist-u.1289-music.user.interacted_artist->159
+beam 8: score = -4.788241386413574
+<PATH> u.55-music.user.interacted_artist->418<-music.user.interacted_artist-u.1382-music.user.interacted_artist->70
+beam 6: score = -5.435166835784912
+<PATH> u.1903-music.user.interacted_artist->137<-music.user.interacted_artist-u.862-music.user.interacted_artist->254
+beam 13: score = -5.746743202209473
+<PATH> u.1903-music.user.interacted_artist->237<-music.user.interacted_artist-u.1795-music.user.interacted_artist->131
+beam 10: score = -4.569523811340332
+<PATH> u.2099-music.user.interacted_artist->486<-music.user.interacted_artist-u.255-music.user.interacted_artist->727
+beam 1: score = -3.4356439113616943
+<PATH> u.2097-music.user.interacted_artist->572<-music.user.interacted_artist-u.1372-music.user.interacted_artist->46
+beam 2: score = -4.494993686676025
+<PATH> u.2097-music.user.interacted_artist->356<-music.user.interacted_artist-u.1798-music.user.interacted_artist->55
+beam 3: score = -4.926424026489258
+<PATH> u.2097-music.user.interacted_artist->572<-music.user.interacted_artist-u.1372-music.user.interacted_artist->105
+beam 18: score = -7.622662544250488
+<PATH> u.494-music.user.interacted_artist->79<-music.user.interacted_artist-u.350-music.user.interacted_artist->72
+beam 18: score = -6.310545921325684
+<PATH> u.1419-music.user.interacted_artist->1018<-music.user.interacted_artist-u.267-music.user.interacted_artist->91
+beam 8: score = -5.079512119293213
+<PATH> u.1619-music.user.interacted_artist->42<-music.user.interacted_artist-u.731-music.user.interacted_artist->34
+beam 18: score = -5.472233295440674
+<PATH> u.1774-music.user.interacted_artist->164<-music.user.interacted_artist-u.1258-music.user.interacted_artist->224
+beam 8: score = -4.494714260101318
+<PATH> u.825-music.user.interacted_artist->664<-music.user.interacted_artist-u.784-music.user.interacted_artist->163
+beam 1: score = -2.8021857738494873
+<PATH> u.541-music.user.interacted_artist->34<-music.user.interacted_artist-u.1159-music.user.interacted_artist->36
+beam 2: score = -4.28621244430542
+<PATH> u.1301-music.user.interacted_artist->540<-music.user.interacted_artist-u.72-music.user.interacted_artist->127
+beam 2: score = -3.945436954498291
+<PATH> u.1084-music.user.interacted_artist->356<-music.user.interacted_artist-u.2097-music.user.interacted_artist->107
+beam 7: score = -4.614620685577393
+<PATH> u.1084-music.user.interacted_artist->356<-music.user.interacted_artist-u.1350-music.user.interacted_artist->36
+beam 3: score = -4.137468338012695
+<PATH> u.1122-music.user.interacted_artist->184<-music.user.interacted_artist-u.1607-music.user.interacted_artist->185
+beam 14: score = -6.047723770141602
+<PATH> u.1122-music.user.interacted_artist->184<-music.user.interacted_artist-u.1607-music.user.interacted_artist->78
+beam 2: score = -4.309195041656494
+<PATH> u.905-music.user.interacted_artist->863<-music.user.interacted_artist-u.632-music.user.interacted_artist->87
+beam 4: score = -4.604860782623291
+<PATH> u.905-music.user.interacted_artist->267<-music.user.interacted_artist-u.875-music.user.interacted_artist->118
+beam 4: score = -4.092504024505615
+<PATH> u.1490-music.user.interacted_artist->208<-music.user.interacted_artist-u.86-music.user.interacted_artist->96
+beam 2: score = -3.8220114707946777
+<PATH> u.62-music.user.interacted_artist->479<-music.user.interacted_artist-u.2047-music.user.interacted_artist->445
+beam 9: score = -4.9998064041137695
+<PATH> u.107-music.user.interacted_artist->325<-music.user.interacted_artist-u.595-music.user.interacted_artist->242
+beam 16: score = -5.505472183227539
+<PATH> u.2056-music.user.interacted_artist->931<-music.user.interacted_artist-u.908-music.user.interacted_artist->126
+beam 6: score = -4.930815696716309
+<PATH> u.103-music.user.interacted_artist->55<-music.user.interacted_artist-u.315-music.user.interacted_artist->46
+beam 12: score = -5.292651653289795
+<PATH> u.103-music.user.interacted_artist->445<-music.user.interacted_artist-u.954-music.user.interacted_artist->275
+beam 10: score = -5.115407943725586
+<PATH> u.1176-music.user.interacted_artist->47<-music.user.interacted_artist-u.751-music.user.interacted_artist->102
+beam 6: score = -5.167568206787109
+<PATH> u.275-music.user.interacted_artist->499<-music.user.interacted_artist-u.1514-music.user.interacted_artist->498
+beam 12: score = -6.548382759094238
+<PATH> u.1925-music.user.interacted_artist->776<-music.user.interacted_artist-u.435-music.user.interacted_artist->494
+beam 3: score = -4.803469181060791
+<PATH> u.1243-music.user.interacted_artist->286<-music.user.interacted_artist-u.856-music.user.interacted_artist->109
+beam 1: score = -2.3429646492004395
+<PATH> u.1889-music.user.interacted_artist->141<-music.user.interacted_artist-u.824-music.user.interacted_artist->36
+beam 5: score = -4.386985778808594
+<PATH> u.1160-music.user.interacted_artist->863<-music.user.interacted_artist-u.1804-music.user.interacted_artist->47
+beam 18: score = -4.859836578369141
+<PATH> u.721-music.user.interacted_artist->106<-music.user.interacted_artist-u.1637-music.user.interacted_artist->110
+beam 6: score = -3.927978038787842
+<PATH> u.312-music.user.interacted_artist->93-music.artist.origin->4442<-music.artist.origin-1199
+beam 10: score = -4.2264323234558105
+<PATH> u.20-music.user.interacted_artist->200<-music.user.interacted_artist-u.447-music.user.interacted_artist->195
+beam 8: score = -4.933846473693848
+<PATH> u.1027-music.user.interacted_artist->1612<-music.user.interacted_artist-u.405-music.user.interacted_artist->77
+beam 1: score = -3.5656352043151855
+<PATH> u.855-music.user.interacted_artist->390<-music.user.interacted_artist-u.50-music.user.interacted_artist->46
+beam 2: score = -3.3218681812286377
+<PATH> u.330-music.user.interacted_artist->538<-music.user.interacted_artist-u.1607-music.user.interacted_artist->184
+beam 17: score = -5.301961898803711
+<PATH> u.403-music.user.interacted_artist->972<-music.user.interacted_artist-u.161-music.user.interacted_artist->973
+beam 6: score = -4.204546928405762
+<PATH> u.438-music.user.interacted_artist->1267<-music.user.interacted_artist-u.1089-music.user.interacted_artist->4
+beam 7: score = -4.138930797576904
+<PATH> u.1090-music.user.interacted_artist->1372<-music.user.interacted_artist-u.1262-music.user.interacted_artist->2804
+beam 10: score = -6.763746738433838
+<PATH> u.1549-music.user.interacted_artist->36<-music.user.interacted_artist-u.1295-music.user.interacted_artist->391
+beam 18: score = -6.654266357421875
+<PATH> u.1579-music.user.interacted_artist->1255<-music.user.interacted_artist-u.1390-music.user.interacted_artist->863
+beam 2: score = -4.030819416046143
+<PATH> u.1332-music.user.interacted_artist->73<-music.user.interacted_artist-u.781-music.user.interacted_artist->87
+beam 10: score = -5.9818315505981445
+<PATH> u.1332-music.user.interacted_artist->117<-music.user.interacted_artist-u.1198-music.user.interacted_artist->80
+beam 6: score = -4.744248867034912
+<PATH> u.1305-music.user.interacted_artist->77<-music.user.interacted_artist-u.380-music.user.interacted_artist->135
+beam 4: score = -3.808196544647217
+<PATH> u.80-music.user.interacted_artist->208<-music.user.interacted_artist-u.716-music.user.interacted_artist->212
+beam 19: score = -6.861814498901367
+<PATH> u.348-music.user.interacted_artist->115<-music.user.interacted_artist-u.1466-music.user.interacted_artist->184
+beam 2: score = -5.015398025512695
+<PATH> u.875-music.user.interacted_artist->267<-music.user.interacted_artist-u.1788-music.user.interacted_artist->185
+beam 4: score = -4.049875259399414
+<PATH> u.1057-music.user.interacted_artist->43<-music.user.interacted_artist-u.159-music.user.interacted_artist->74
+beam 0: score = -3.0223116874694824
+<PATH> u.464-music.user.interacted_artist->55<-music.user.interacted_artist-u.315-music.user.interacted_artist->46
+beam 1: score = -3.7504687309265137
+<PATH> u.1277-music.user.interacted_artist->105<-music.user.interacted_artist-u.315-music.user.interacted_artist->46
+beam 16: score = -5.373296737670898
+<PATH> u.229-music.user.interacted_artist->126<-music.user.interacted_artist-u.1567-music.user.interacted_artist->87
+beam 6: score = -5.244566917419434
+<PATH> u.521-music.user.interacted_artist->776<-music.user.interacted_artist-u.1741-music.user.interacted_artist->118
+beam 1: score = -2.758181095123291
+<PATH> u.1342-music.user.interacted_artist->632<-music.user.interacted_artist-u.83-music.user.interacted_artist->36
+beam 2: score = -4.33157205581665
+<PATH> u.1557-music.user.interacted_artist->155<-music.user.interacted_artist-u.416-music.user.interacted_artist->196
+beam 6: score = -4.8820414543151855
+<PATH> u.1557-music.user.interacted_artist->460<-music.user.interacted_artist-u.1101-music.user.interacted_artist->727
+beam 20: score = -5.707148551940918
+<PATH> u.1557-music.user.interacted_artist->460<-music.user.interacted_artist-u.2028-music.user.interacted_artist->517
+beam 7: score = -5.22225284576416
+<PATH> u.92-music.user.interacted_artist->98<-music.user.interacted_artist-u.1979-music.user.interacted_artist->74
+beam 0: score = -3.599336624145508
+<PATH> u.535-music.user.interacted_artist->377<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 0: score = -3.1883535385131836
+<PATH> u.532-music.user.interacted_artist->920<-music.user.interacted_artist-u.289-music.user.interacted_artist->102
+beam 18: score = -5.195456027984619
+<PATH> u.208-music.user.interacted_artist->393<-music.user.interacted_artist-u.1428-music.user.interacted_artist->325
+beam 1: score = -3.4516420364379883
+<PATH> u.856-music.user.interacted_artist->52<-music.user.interacted_artist-u.315-music.user.interacted_artist->105
+beam 15: score = -5.178020000457764
+<PATH> u.1125-music.user.interacted_artist->334<-music.user.interacted_artist-u.935-music.user.interacted_artist->329
+beam 14: score = -5.535914897918701
+<PATH> u.1144-music.user.interacted_artist->774<-music.user.interacted_artist-u.1914-music.user.interacted_artist->782
+beam 19: score = -7.097476959228516
+<PATH> u.1776-music.user.interacted_artist->538<-music.user.interacted_artist-u.1788-music.user.interacted_artist->267
+beam 7: score = -4.070005893707275
+<PATH> u.1107-music.user.interacted_artist->209<-music.user.interacted_artist-u.1176-music.user.interacted_artist->47
+beam 13: score = -6.712459564208984
+<PATH> u.2020-music.user.interacted_artist->137<-music.user.interacted_artist-u.2033-music.user.interacted_artist->1324
+beam 17: score = -7.254624366760254
+<PATH> u.2020-music.user.interacted_artist->137<-music.user.interacted_artist-u.1570-music.user.interacted_artist->413
+beam 11: score = -6.75984001159668
+<PATH> u.754-music.user.interacted_artist->2290<-music.user.interacted_artist-u.1407-music.user.interacted_artist->221
+beam 4: score = -4.46683406829834
+<PATH> u.1623-music.user.interacted_artist->42<-music.user.interacted_artist-u.587-music.user.interacted_artist->34
+beam 7: score = -5.234872817993164
+<PATH> u.1623-music.user.interacted_artist->42<-music.user.interacted_artist-u.1879-music.user.interacted_artist->286
+beam 1: score = -3.235614776611328
+<PATH> u.773-music.user.interacted_artist->47<-music.user.interacted_artist-u.5-music.user.interacted_artist->52
+beam 3: score = -4.359247207641602
+<PATH> u.2031-music.user.interacted_artist->923<-music.user.interacted_artist-u.2021-music.user.interacted_artist->80
+beam 19: score = -7.567697525024414
+<PATH> u.58-music.user.interacted_artist->79<-music.user.interacted_artist-u.749-music.user.interacted_artist->377
+beam 12: score = -6.296353340148926
+<PATH> u.1600-music.user.interacted_artist->132<-music.user.interacted_artist-u.862-music.user.interacted_artist->137
+beam 15: score = -6.686623573303223
+<PATH> u.1600-music.user.interacted_artist->79<-music.user.interacted_artist-u.1564-music.user.interacted_artist->80
+beam 17: score = -6.82864236831665
+<PATH> u.1600-music.user.interacted_artist->117<-music.user.interacted_artist-u.1795-music.user.interacted_artist->131
+beam 10: score = -6.978085994720459
+<PATH> u.70-music.user.interacted_artist->523<-music.user.interacted_artist-u.1855-music.user.interacted_artist->107
+beam 13: score = -7.406773090362549
+<PATH> u.70-music.user.interacted_artist->46<-music.user.interacted_artist-u.1539-music.user.interacted_artist->528
+beam 15: score = -5.770737648010254
+<PATH> u.186-music.user.interacted_artist->127<-music.user.interacted_artist-u.2058-music.user.interacted_artist->102
+beam 10: score = -5.6255598068237305
+<PATH> u.1473-music.user.interacted_artist->376<-music.user.interacted_artist-u.503-music.user.interacted_artist->78
+beam 1: score = -4.47010612487793
+<PATH> u.1145-music.user.interacted_artist->267<-music.user.interacted_artist-u.1788-music.user.interacted_artist->185
+beam 3: score = -3.7017641067504883
+<PATH> u.818-music.user.interacted_artist->96<-music.user.interacted_artist-u.1339-music.user.interacted_artist->52
+beam 5: score = -4.896812915802002
+<PATH> u.818-music.user.interacted_artist->47<-music.user.interacted_artist-u.1804-music.user.interacted_artist->46
+beam 0: score = -3.5783796310424805
+<PATH> u.1390-music.user.interacted_artist->36<-music.user.interacted_artist-u.1508-music.user.interacted_artist->105
+beam 5: score = -4.696612358093262
+<PATH> u.1491-music.user.interacted_artist->1324<-music.user.interacted_artist-u.1188-music.user.interacted_artist->107
+beam 1: score = -3.386105537414551
+<PATH> u.1366-music.user.interacted_artist->371<-music.user.interacted_artist-u.1833-music.user.interacted_artist->80
+beam 1: score = -3.8579599857330322
+<PATH> u.960-music.user.interacted_artist->404<-music.user.interacted_artist-u.984-music.user.interacted_artist->80
+beam 18: score = -5.05485725402832
+<PATH> u.1801-music.user.interacted_artist->727<-music.user.interacted_artist-u.1284-music.user.interacted_artist->732
+beam 1: score = -3.3795580863952637
+<PATH> u.1224-music.user.interacted_artist->146<-music.user.interacted_artist-u.1061-music.user.interacted_artist->774
+beam 3: score = -3.5578227043151855
+<PATH> u.1224-music.user.interacted_artist->146<-music.user.interacted_artist-u.1061-music.user.interacted_artist->1719
+beam 3: score = -3.8330163955688477
+<PATH> u.2083-music.user.interacted_artist->499<-music.user.interacted_artist-u.1029-music.user.interacted_artist->275
+beam 14: score = -5.991507530212402
+<PATH> u.583-music.user.interacted_artist->1031<-music.user.interacted_artist-u.1118-music.user.interacted_artist->199
+beam 11: score = -7.103429317474365
+<PATH> u.731-music.user.interacted_artist->655<-music.user.interacted_artist-u.1944-music.user.interacted_artist->242
+beam 1: score = -3.3248116970062256
+<PATH> u.480-music.user.interacted_artist->257<-music.user.interacted_artist-u.66-music.user.interacted_artist->275
+beam 2: score = -4.273294448852539
+<PATH> u.476-music.user.interacted_artist->293<-music.user.interacted_artist-u.1727-music.user.interacted_artist->55
+beam 7: score = -4.580494403839111
+<PATH> u.761-music.user.interacted_artist->498<-music.user.interacted_artist-u.66-music.user.interacted_artist->257
+beam 12: score = -5.867053031921387
+<PATH> u.655-music.user.interacted_artist->127<-music.user.interacted_artist-u.1828-music.user.interacted_artist->133
+beam 4: score = -3.704228401184082
+<PATH> u.1183-music.user.interacted_artist->1261<-music.user.interacted_artist-u.2070-music.user.interacted_artist->118
+beam 6: score = -4.068441867828369
+<PATH> u.1183-music.user.interacted_artist->302<-music.user.interacted_artist-u.435-music.user.interacted_artist->776
+beam 5: score = -4.912415981292725
+<PATH> u.659-music.user.interacted_artist->171<-music.user.interacted_artist-u.1564-music.user.interacted_artist->135
+beam 3: score = -2.7182750701904297
+<PATH> u.645-music.user.interacted_artist->551<-music.user.interacted_artist-u.533-music.user.interacted_artist->66
+beam 2: score = -4.231006622314453
+<PATH> u.425-music.user.interacted_artist->538<-music.user.interacted_artist-u.1607-music.user.interacted_artist->184
+beam 11: score = -5.954275131225586
+<PATH> u.1242-music.user.interacted_artist->36<-music.user.interacted_artist-u.1159-music.user.interacted_artist->286
+beam 7: score = -5.638674736022949
+<PATH> u.1333-music.user.interacted_artist->53<-music.user.interacted_artist-u.824-music.user.interacted_artist->55
+beam 17: score = -7.175981521606445
+<PATH> u.1333-music.user.interacted_artist->295<-music.user.interacted_artist-u.1708-music.user.interacted_artist->696
+beam 2: score = -4.023692607879639
+<PATH> u.432-music.user.interacted_artist->119<-music.user.interacted_artist-u.189-music.user.interacted_artist->118
+beam 7: score = -4.346850395202637
+<PATH> u.48-music.user.interacted_artist->254<-music.user.interacted_artist-u.484-music.user.interacted_artist->52
+beam 6: score = -4.32686185836792
+<PATH> u.1300-music.user.interacted_artist->540<-music.user.interacted_artist-u.862-music.user.interacted_artist->137
+beam 5: score = -4.064956188201904
+<PATH> u.2095-music.user.interacted_artist->1721<-music.user.interacted_artist-u.1342-music.user.interacted_artist->632
+beam 8: score = -4.4852375984191895
+<PATH> u.1033-music.user.interacted_artist->378<-music.user.interacted_artist-u.1646-music.user.interacted_artist->74
+beam 1: score = -3.978240489959717
+<PATH> u.763-music.user.interacted_artist->210<-music.user.interacted_artist-u.741-music.user.interacted_artist->118
+beam 9: score = -6.714709281921387
+<PATH> u.763-music.user.interacted_artist->126<-music.user.interacted_artist-u.1374-music.user.interacted_artist->119
+beam 10: score = -4.8689961433410645
+<PATH> u.540-music.user.interacted_artist->882<-music.user.interacted_artist-u.710-music.user.interacted_artist->277
+beam 1: score = -3.3173439502716064
+<PATH> u.304-music.user.interacted_artist->445<-music.user.interacted_artist-u.446-music.user.interacted_artist->36
+beam 14: score = -4.079529285430908
+<PATH> u.550-music.user.interacted_artist->1445<-music.user.interacted_artist-u.321-music.user.interacted_artist->325
+beam 2: score = -4.644025802612305
+<PATH> u.852-music.user.interacted_artist->377<-music.user.interacted_artist-u.470-music.user.interacted_artist->127
+beam 12: score = -6.766310214996338
+<PATH> u.852-music.user.interacted_artist->237<-music.user.interacted_artist-u.1795-music.user.interacted_artist->72
+beam 15: score = -5.63545036315918
+<PATH> u.1699-music.user.interacted_artist->73<-music.user.interacted_artist-u.380-music.user.interacted_artist->127
+beam 15: score = -7.207735061645508
+<PATH> u.21-music.user.interacted_artist->184<-music.user.interacted_artist-u.1564-music.user.interacted_artist->130
+beam 9: score = -5.004773139953613
+<PATH> u.97-music.user.interacted_artist->165<-music.user.interacted_artist-u.1807-music.user.interacted_artist->708
+beam 13: score = -5.178729057312012
+<PATH> u.97-music.user.interacted_artist->165<-music.user.interacted_artist-u.1896-music.user.interacted_artist->197
+beam 13: score = -4.762818813323975
+<PATH> u.1842-music.user.interacted_artist->653<-music.user.interacted_artist-u.1236-music.user.interacted_artist->96
+beam 0: score = -4.229630947113037
+<PATH> u.209-music.user.interacted_artist->1153<-music.user.interacted_artist-u.1135-music.user.interacted_artist->79
+beam 18: score = -6.829087257385254
+<PATH> u.209-music.user.interacted_artist->560<-music.user.interacted_artist-u.75-music.user.interacted_artist->47
+beam 8: score = -5.407947540283203
+<PATH> u.1102-music.user.interacted_artist->861<-music.user.interacted_artist-u.1826-music.user.interacted_artist->127
+beam 10: score = -5.562396049499512
+<PATH> u.1102-music.user.interacted_artist->1235<-music.user.interacted_artist-u.718-music.user.interacted_artist->22
+beam 15: score = -5.88322114944458
+<PATH> u.1102-music.user.interacted_artist->861<-music.user.interacted_artist-u.135-music.user.interacted_artist->237
+beam 1: score = -4.146164417266846
+<PATH> u.132-music.user.interacted_artist->134<-music.user.interacted_artist-u.1189-music.user.interacted_artist->87
+beam 8: score = -5.931853294372559
+<PATH> u.132-music.user.interacted_artist->74<-music.user.interacted_artist-u.470-music.user.interacted_artist->127
+beam 16: score = -5.902186393737793
+<PATH> u.316-music.user.interacted_artist->771<-music.user.interacted_artist-u.432-music.user.interacted_artist->119
+beam 10: score = -5.257158279418945
+<PATH> u.1474-music.user.interacted_artist->460<-music.user.interacted_artist-u.2003-music.user.interacted_artist->732
+beam 8: score = -6.169672012329102
+<PATH> u.1791-music.user.interacted_artist->1202<-music.user.interacted_artist-u.910-music.user.interacted_artist->66
+beam 10: score = -6.510169982910156
+<PATH> u.1791-music.user.interacted_artist->75<-music.user.interacted_artist-u.873-music.user.interacted_artist->81
+beam 12: score = -5.974722862243652
+<PATH> u.682-music.user.interacted_artist->78<-music.user.interacted_artist-u.1053-music.user.interacted_artist->130
+beam 15: score = -6.58902645111084
+<PATH> u.682-music.user.interacted_artist->206<-music.user.interacted_artist-u.425-music.user.interacted_artist->118
+beam 16: score = -6.609490871429443
+<PATH> u.682-music.user.interacted_artist->115<-music.user.interacted_artist-u.702-music.user.interacted_artist->80
+beam 1: score = -3.811366558074951
+<PATH> u.299-music.user.interacted_artist->133<-music.user.interacted_artist-u.632-music.user.interacted_artist->46
+beam 10: score = -5.327826976776123
+<PATH> u.299-music.user.interacted_artist->133<-music.user.interacted_artist-u.632-music.user.interacted_artist->863
+beam 2: score = -3.898705005645752
+<PATH> u.1052-music.user.interacted_artist->882<-music.user.interacted_artist-u.710-music.user.interacted_artist->109
+beam 12: score = -5.79344367980957
+<PATH> u.1052-music.user.interacted_artist->293<-music.user.interacted_artist-u.50-music.user.interacted_artist->187
+beam 13: score = -6.272000312805176
+<PATH> u.2069-music.user.interacted_artist->1538<-music.user.interacted_artist-u.792-music.user.interacted_artist->118
+beam 8: score = -5.563263893127441
+<PATH> u.385-music.user.interacted_artist->118<-music.user.interacted_artist-u.425-music.user.interacted_artist->98
+beam 11: score = -6.116647243499756
+<PATH> u.385-music.user.interacted_artist->184<-music.user.interacted_artist-u.1607-music.user.interacted_artist->78
+beam 14: score = -5.092339992523193
+<PATH> u.283-music.user.interacted_artist->1336-music.artist.origin->3864<-music.artist.origin-474
+beam 2: score = -3.872174024581909
+<PATH> u.77-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->105
+beam 4: score = -4.881264686584473
+<PATH> u.77-music.user.interacted_artist->528<-music.user.interacted_artist-u.628-music.user.interacted_artist->107
+beam 8: score = -5.148223876953125
+<PATH> u.77-music.user.interacted_artist->40<-music.user.interacted_artist-u.1587-music.user.interacted_artist->133
+beam 10: score = -4.61160945892334
+<PATH> u.1900-music.user.interacted_artist->221<-music.user.interacted_artist-u.1074-music.user.interacted_artist->799
+beam 11: score = -4.881811141967773
+<PATH> u.1900-music.user.interacted_artist->882<-music.user.interacted_artist-u.710-music.user.interacted_artist->277
+beam 12: score = -5.657781600952148
+<PATH> u.317-music.user.interacted_artist->1435<-music.user.interacted_artist-u.1411-music.user.interacted_artist->949
+beam 13: score = -4.959683418273926
+<PATH> u.1835-music.user.interacted_artist->227<-music.user.interacted_artist-u.954-music.user.interacted_artist->445
+beam 16: score = -5.108052730560303
+<PATH> u.1835-music.user.interacted_artist->293<-music.user.interacted_artist-u.1798-music.user.interacted_artist->474
+beam 10: score = -4.856608867645264
+<PATH> u.729-music.user.interacted_artist->329<-music.user.interacted_artist-u.935-music.user.interacted_artist->13
+beam 7: score = -3.8857786655426025
+<PATH> u.456-music.user.interacted_artist->1424<-music.user.interacted_artist-u.1253-music.user.interacted_artist->560
+beam 17: score = -6.84912109375
+<PATH> u.1594-music.user.interacted_artist->105<-music.user.interacted_artist-u.619-music.user.interacted_artist->102
+beam 20: score = -6.249266624450684
+<PATH> u.1318-music.user.interacted_artist->171<-music.user.interacted_artist-u.30-music.user.interacted_artist->55
+beam 4: score = -4.156005382537842
+<PATH> u.782-music.user.interacted_artist->462<-music.user.interacted_artist-u.1975-music.user.interacted_artist->314
+beam 10: score = -4.797580242156982
+<PATH> u.428-music.user.interacted_artist->1353<-music.user.interacted_artist-u.1327-music.user.interacted_artist->499
+beam 0: score = -2.988586187362671
+<PATH> u.750-music.user.interacted_artist->221<-music.user.interacted_artist-u.1486-music.user.interacted_artist->105
+beam 4: score = -5.994932174682617
+<PATH> u.2013-music.user.interacted_artist->105<-music.user.interacted_artist-u.315-music.user.interacted_artist->52
+beam 5: score = -6.294195652008057
+<PATH> u.2013-music.user.interacted_artist->105<-music.user.interacted_artist-u.1919-music.user.interacted_artist->107
+beam 6: score = -4.6883225440979
+<PATH> u.205-music.user.interacted_artist->303<-music.user.interacted_artist-u.101-music.user.interacted_artist->47
+beam 18: score = -6.073478698730469
+<PATH> u.352-music.user.interacted_artist->238<-music.user.interacted_artist-u.853-music.user.interacted_artist->377
+beam 8: score = -4.551182270050049
+<PATH> u.758-music.user.interacted_artist->184<-music.user.interacted_artist-u.1909-music.user.interacted_artist->118
+beam 9: score = -4.6673665046691895
+<PATH> u.758-music.user.interacted_artist->104<-music.user.interacted_artist-u.1910-music.user.interacted_artist->187
+beam 15: score = -5.702140808105469
+<PATH> u.29-music.user.interacted_artist->185<-music.user.interacted_artist-u.2065-music.user.interacted_artist->130
+beam 10: score = -4.281055927276611
+<PATH> u.1187-music.user.interacted_artist->664<-music.user.interacted_artist-u.784-music.user.interacted_artist->111
+beam 10: score = -5.839973449707031
+<PATH> u.1461-music.user.interacted_artist->47<-music.user.interacted_artist-u.1020-music.user.interacted_artist->79
+beam 3: score = -4.565244197845459
+<PATH> u.971-music.user.interacted_artist->1523<-music.user.interacted_artist-u.1804-music.user.interacted_artist->102
+beam 9: score = -3.9725725650787354
+<PATH> u.128-music.user.interacted_artist->252<-music.user.interacted_artist-u.2040-music.user.interacted_artist->159
+beam 4: score = -5.153765678405762
+<PATH> u.1562-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->52
+beam 4: score = -4.91306734085083
+<PATH> u.490-music.user.interacted_artist->863<-music.user.interacted_artist-u.1685-music.user.interacted_artist->105
+beam 6: score = -5.33165168762207
+<PATH> u.490-music.user.interacted_artist->47<-music.user.interacted_artist-u.964-music.user.interacted_artist->118
+beam 3: score = -4.624761581420898
+<PATH> u.354-music.user.interacted_artist->77<-music.user.interacted_artist-u.380-music.user.interacted_artist->79
+beam 12: score = -5.696938514709473
+<PATH> u.354-music.user.interacted_artist->77<-music.user.interacted_artist-u.781-music.user.interacted_artist->98
+beam 10: score = -4.935696125030518
+<PATH> u.2043-music.user.interacted_artist->2013<-music.user.interacted_artist-u.2067-music.user.interacted_artist->776
+beam 1: score = -3.621365785598755
+<PATH> u.2008-music.user.interacted_artist->243<-music.user.interacted_artist-u.1428-music.user.interacted_artist->46
+beam 13: score = -6.74144172668457
+<PATH> u.2084-music.user.interacted_artist->46<-music.user.interacted_artist-u.1539-music.user.interacted_artist->863
+beam 1: score = -4.419219493865967
+<PATH> u.1174-music.user.interacted_artist->1300<-music.user.interacted_artist-u.865-music.user.interacted_artist->754
+beam 16: score = -7.109565734863281
+<PATH> u.1403-music.user.interacted_artist->391<-music.user.interacted_artist-u.488-music.user.interacted_artist->190
+beam 17: score = -7.191921710968018
+<PATH> u.1403-music.user.interacted_artist->267<-music.user.interacted_artist-u.1686-music.user.interacted_artist->102
+beam 3: score = -4.702460289001465
+<PATH> u.419-music.user.interacted_artist->1258<-music.user.interacted_artist-u.405-music.user.interacted_artist->77
+beam 13: score = -5.691281318664551
+<PATH> u.419-music.user.interacted_artist->1258<-music.user.interacted_artist-u.2037-music.user.interacted_artist->73
+beam 0: score = -4.193852424621582
+<PATH> u.1795-music.user.interacted_artist->117<-music.user.interacted_artist-u.1186-music.user.interacted_artist->74
+beam 1: score = -4.375706195831299
+<PATH> u.1335-music.user.interacted_artist->155<-music.user.interacted_artist-u.416-music.user.interacted_artist->196
+beam 1: score = -4.883719444274902
+<PATH> u.904-music.user.interacted_artist->96<-music.user.interacted_artist-u.189-music.user.interacted_artist->118
+beam 1: score = -3.6370229721069336
+<PATH> u.334-music.user.interacted_artist->652<-music.user.interacted_artist-u.849-music.user.interacted_artist->105
+beam 3: score = -4.359737873077393
+<PATH> u.1469-music.user.interacted_artist->96<-music.user.interacted_artist-u.1339-music.user.interacted_artist->46
+beam 10: score = -6.010504722595215
+<PATH> u.1469-music.user.interacted_artist->36<-music.user.interacted_artist-u.773-music.user.interacted_artist->47
+beam 0: score = -3.4303348064422607
+<PATH> u.1961-music.user.interacted_artist->270<-music.user.interacted_artist-u.1834-music.user.interacted_artist->185
+beam 15: score = -5.531214237213135
+<PATH> u.969-music.user.interacted_artist->46<-music.user.interacted_artist-u.632-music.user.interacted_artist->863
+beam 8: score = -5.08027458190918
+<PATH> u.644-music.user.interacted_artist->34<-music.user.interacted_artist-u.623-music.user.interacted_artist->286
+beam 7: score = -4.539290904998779
+<PATH> u.859-music.user.interacted_artist->129<-music.user.interacted_artist-u.639-music.user.interacted_artist->80
+beam 3: score = -5.160266876220703
+<PATH> u.415-music.user.interacted_artist->78<-music.user.interacted_artist-u.1607-music.user.interacted_artist->185
+beam 2: score = -4.21167516708374
+<PATH> u.1740-music.user.interacted_artist->582<-music.user.interacted_artist-u.936-music.user.interacted_artist->155
+beam 9: score = -4.465733528137207
+<PATH> u.1108-music.user.interacted_artist->795<-music.user.interacted_artist-u.842-music.user.interacted_artist->508
+beam 10: score = -4.558802127838135
+<PATH> u.1108-music.user.interacted_artist->795<-music.user.interacted_artist-u.1874-music.user.interacted_artist->519
+beam 6: score = -5.970274925231934
+<PATH> u.1863-music.user.interacted_artist->434<-music.user.interacted_artist-u.58-music.user.interacted_artist->206
+beam 13: score = -7.196596622467041
+<PATH> u.1863-music.user.interacted_artist->79<-music.user.interacted_artist-u.470-music.user.interacted_artist->127
+beam 11: score = -6.566463947296143
+<PATH> u.1538-music.user.interacted_artist->118<-music.user.interacted_artist-u.1686-music.user.interacted_artist->102
+beam 6: score = -4.566160202026367
+<PATH> u.972-music.user.interacted_artist->165<-music.user.interacted_artist-u.644-music.user.interacted_artist->36
+beam 16: score = -6.176126956939697
+<PATH> u.1150-music.user.interacted_artist->184<-music.user.interacted_artist-u.1001-music.user.interacted_artist->377
+beam 4: score = -3.026395320892334
+<PATH> u.1199-music.user.interacted_artist->670<-music.user.interacted_artist-u.1354-music.user.interacted_artist->141
+beam 3: score = -4.227456569671631
+<PATH> u.1185-music.user.interacted_artist->230<-music.user.interacted_artist-u.1220-music.user.interacted_artist->22
+beam 6: score = -4.469783782958984
+<PATH> u.747-music.user.interacted_artist->776<-music.user.interacted_artist-u.1741-music.user.interacted_artist->199
+beam 6: score = -5.173017978668213
+<PATH> u.1898-music.user.interacted_artist->126<-music.user.interacted_artist-u.2065-music.user.interacted_artist->185
+beam 15: score = -4.747485160827637
+<PATH> u.1056-music.user.interacted_artist->1186<-music.user.interacted_artist-u.1437-music.user.interacted_artist->364
+beam 9: score = -5.478551864624023
+<PATH> u.966-music.user.interacted_artist->55<-music.user.interacted_artist-u.1725-music.user.interacted_artist->77
+beam 0: score = -1.4401426315307617
+<PATH> u.1627-music.user.interacted_artist->1140<-music.user.interacted_artist-u.640-music.user.interacted_artist->36
+beam 4: score = -5.059651851654053
+<PATH> u.909-music.user.interacted_artist->102<-music.user.interacted_artist-u.975-music.user.interacted_artist->47
+beam 15: score = -6.665983200073242
+<PATH> u.298-music.user.interacted_artist->78<-music.user.interacted_artist-u.490-music.user.interacted_artist->47
+beam 13: score = -4.91253137588501
+<PATH> u.609-music.user.interacted_artist->115<-music.user.interacted_artist-u.30-music.user.interacted_artist->55
+beam 13: score = -5.646320343017578
+<PATH> u.1374-music.user.interacted_artist->802<-music.user.interacted_artist-u.672-music.user.interacted_artist->102
+beam 2: score = -3.7267072200775146
+<PATH> u.1131-music.user.interacted_artist->1153<-music.user.interacted_artist-u.1294-music.user.interacted_artist->185
+beam 12: score = -4.919416904449463
+<PATH> u.982-music.user.interacted_artist->253<-music.user.interacted_artist-u.269-music.user.interacted_artist->36
+beam 3: score = -3.762366771697998
+<PATH> u.115-music.user.interacted_artist->785<-music.user.interacted_artist-u.1061-music.user.interacted_artist->774
+beam 3: score = -3.959800958633423
+<PATH> u.821-music.user.interacted_artist->52<-music.user.interacted_artist-u.1339-music.user.interacted_artist->46
+beam 1: score = -3.3894872665405273
+<PATH> u.144-music.user.interacted_artist->81<-music.user.interacted_artist-u.1120-music.user.interacted_artist->87
+beam 3: score = -4.278575897216797
+<PATH> u.2087-music.user.interacted_artist->1258<-music.user.interacted_artist-u.1351-music.user.interacted_artist->118
+beam 3: score = -5.089400291442871
+<PATH> u.1354-music.user.interacted_artist->572<-music.user.interacted_artist-u.1372-music.user.interacted_artist->107
+beam 20: score = -7.869720458984375
+<PATH> u.1354-music.user.interacted_artist->55<-music.user.interacted_artist-u.1949-music.user.interacted_artist->1103
+beam 8: score = -4.285271644592285
+<PATH> u.1146-music.user.interacted_artist->286<-music.user.interacted_artist-u.1950-music.user.interacted_artist->134
+beam 6: score = -4.376315116882324
+<PATH> u.257-music.user.interacted_artist->1267<-music.user.interacted_artist-u.1089-music.user.interacted_artist->4
+beam 20: score = -5.389485836029053
+<PATH> u.997-music.user.interacted_artist->163<-music.user.interacted_artist-u.1831-music.user.interacted_artist->109
+beam 15: score = -7.428101062774658
+<PATH> u.1159-music.user.interacted_artist->36<-music.user.interacted_artist-u.308-music.user.interacted_artist->210
+beam 0: score = -2.4899063110351562
+<PATH> u.1037-music.user.interacted_artist->774<-music.user.interacted_artist-u.1144-music.user.interacted_artist->147
+beam 8: score = -4.091462135314941
+<PATH> u.1037-music.user.interacted_artist->1140<-music.user.interacted_artist-u.640-music.user.interacted_artist->788
+beam 16: score = -5.551673412322998
+<PATH> u.919-music.user.interacted_artist->107<-music.user.interacted_artist-u.1372-music.user.interacted_artist->46
+beam 6: score = -4.340908050537109
+<PATH> u.590-music.user.interacted_artist->1153<-music.user.interacted_artist-u.209-music.user.interacted_artist->96
+beam 14: score = -5.636514186859131
+<PATH> u.590-music.user.interacted_artist->118<-music.user.interacted_artist-u.809-music.user.interacted_artist->130
+beam 8: score = -5.072943210601807
+<PATH> u.168-music.user.interacted_artist->509<-music.user.interacted_artist-u.105-music.user.interacted_artist->196
+beam 1: score = -3.299420118331909
+<PATH> u.119-music.user.interacted_artist->211<-music.user.interacted_artist-u.546-music.user.interacted_artist->42
+beam 3: score = -3.9237771034240723
+<PATH> u.295-music.user.interacted_artist->392<-music.user.interacted_artist-u.785-music.user.interacted_artist->52
+beam 9: score = -5.018117904663086
+<PATH> u.967-music.user.interacted_artist->219<-music.user.interacted_artist-u.1126-music.user.interacted_artist->1523
+beam 16: score = -6.841845512390137
+<PATH> u.1577-music.user.interacted_artist->127<-music.user.interacted_artist-u.1466-music.user.interacted_artist->98
+beam 15: score = -5.930013656616211
+<PATH> u.1946-music.user.interacted_artist->1315<-music.user.interacted_artist-u.794-music.user.interacted_artist->399
+beam 4: score = -4.010420799255371
+<PATH> u.1319-music.user.interacted_artist->1589<-music.user.interacted_artist-u.1079-music.user.interacted_artist->47
+beam 12: score = -6.202258110046387
+<PATH> u.529-music.user.interacted_artist->1734<-music.user.interacted_artist-u.1497-music.user.interacted_artist->362
+beam 3: score = -4.398821830749512
+<PATH> u.1428-music.user.interacted_artist->243<-music.user.interacted_artist-u.1207-music.user.interacted_artist->52
+beam 9: score = -6.355080604553223
+<PATH> u.737-music.user.interacted_artist->52<-music.user.interacted_artist-u.943-music.user.interacted_artist->102
+beam 7: score = -4.3580427169799805
+<PATH> u.948-music.user.interacted_artist->1543<-music.user.interacted_artist-u.434-music.user.interacted_artist->163
+beam 3: score = -3.996100664138794
+<PATH> u.4-music.user.interacted_artist->34<-music.user.interacted_artist-u.1159-music.user.interacted_artist->42
+beam 6: score = -5.907638072967529
+<PATH> u.824-music.user.interacted_artist->36<-music.user.interacted_artist-u.1295-music.user.interacted_artist->391
+beam 11: score = -5.721266746520996
+<PATH> u.1722-music.user.interacted_artist->81<-music.user.interacted_artist-u.1120-music.user.interacted_artist->254
+beam 8: score = -5.297255516052246
+<PATH> u.1636-music.user.interacted_artist->560<-music.user.interacted_artist-u.1253-music.user.interacted_artist->134
+beam 11: score = -5.7336249351501465
+<PATH> u.1636-music.user.interacted_artist->863<-music.user.interacted_artist-u.1532-music.user.interacted_artist->74
+beam 1: score = -3.7894082069396973
+<PATH> u.1695-music.user.interacted_artist->1103<-music.user.interacted_artist-u.1949-music.user.interacted_artist->105
+beam 2: score = -4.933260440826416
+<PATH> u.1695-music.user.interacted_artist->109<-music.user.interacted_artist-u.1303-music.user.interacted_artist->55
+beam 11: score = -7.0563507080078125
+<PATH> u.1695-music.user.interacted_artist->46<-music.user.interacted_artist-u.1539-music.user.interacted_artist->528
+beam 3: score = -3.747511386871338
+<PATH> u.1439-music.user.interacted_artist->34<-music.user.interacted_artist-u.623-music.user.interacted_artist->109
+beam 20: score = -7.144413471221924
+<PATH> u.1830-music.user.interacted_artist->52<-music.user.interacted_artist-u.1114-music.user.interacted_artist->109
+beam 17: score = -5.485349178314209
+<PATH> u.266-music.user.interacted_artist->499<-music.user.interacted_artist-u.1074-music.user.interacted_artist->190
+beam 4: score = -4.330143928527832
+<PATH> u.1180-music.user.interacted_artist->74<-music.user.interacted_artist-u.793-music.user.interacted_artist->80
+beam 12: score = -4.807799339294434
+<PATH> u.1874-music.user.interacted_artist->1136<-music.user.interacted_artist-u.1885-music.user.interacted_artist->196
+beam 15: score = -4.978704929351807
+<PATH> u.1874-music.user.interacted_artist->1010<-music.user.interacted_artist-u.416-music.user.interacted_artist->727
+beam 11: score = -5.189611434936523
+<PATH> u.1089-music.user.interacted_artist->332<-music.user.interacted_artist-u.257-music.user.interacted_artist->329
+beam 15: score = -7.376274108886719
+<PATH> u.1778-music.user.interacted_artist->46<-music.user.interacted_artist-u.1539-music.user.interacted_artist->391
+beam 15: score = -5.8147783279418945
+<PATH> u.1379-music.user.interacted_artist->832<-music.user.interacted_artist-u.501-music.user.interacted_artist->184
+beam 9: score = -4.836986064910889
+<PATH> u.915-music.user.interacted_artist->325<-music.user.interacted_artist-u.1428-music.user.interacted_artist->46
+beam 5: score = -4.975192546844482
+<PATH> u.1212-music.user.interacted_artist->109<-music.user.interacted_artist-u.856-music.user.interacted_artist->52
+beam 17: score = -4.581638813018799
+<PATH> u.1154-music.user.interacted_artist->502<-music.user.interacted_artist-u.1514-music.user.interacted_artist->30
+beam 6: score = -3.952469825744629
+<PATH> u.860-music.user.interacted_artist->961<-music.user.interacted_artist-u.1228-music.user.interacted_artist->34
+beam 3: score = -4.378612995147705
+<PATH> u.1310-music.user.interacted_artist->74<-music.user.interacted_artist-u.470-music.user.interacted_artist->127
+beam 6: score = -4.825246810913086
+<PATH> u.949-music.user.interacted_artist->302<-music.user.interacted_artist-u.1925-music.user.interacted_artist->776
+beam 14: score = -5.180871963500977
+<PATH> u.949-music.user.interacted_artist->302<-music.user.interacted_artist-u.532-music.user.interacted_artist->303
+beam 5: score = -5.042320251464844
+<PATH> u.1012-music.user.interacted_artist->102<-music.user.interacted_artist-u.1686-music.user.interacted_artist->118
+beam 15: score = -6.36848258972168
+<PATH> u.1965-music.user.interacted_artist->74<-music.user.interacted_artist-u.885-music.user.interacted_artist->127
+beam 18: score = -5.059011936187744
+<PATH> u.332-music.user.interacted_artist->55<-music.user.interacted_artist-u.1075-music.user.interacted_artist->863
+beam 4: score = -4.8200364112854
+<PATH> u.1703-music.user.interacted_artist->43<-music.user.interacted_artist-u.1057-music.user.interacted_artist->47
+beam 6: score = -5.636715888977051
+<PATH> u.1339-music.user.interacted_artist->80<-music.user.interacted_artist-u.315-music.user.interacted_artist->105
+beam 10: score = -4.736232757568359
+<PATH> u.1381-music.user.interacted_artist->1406<-music.user.interacted_artist-u.1387-music.user.interacted_artist->104
+beam 5: score = -4.504345893859863
+<PATH> u.1434-music.user.interacted_artist->98<-music.user.interacted_artist-u.134-music.user.interacted_artist->254
+beam 1: score = -4.041325569152832
+<PATH> u.1555-music.user.interacted_artist->254<-music.user.interacted_artist-u.1124-music.user.interacted_artist->87
+beam 14: score = -6.126938819885254
+<PATH> u.1555-music.user.interacted_artist->254<-music.user.interacted_artist-u.1124-music.user.interacted_artist->75
+beam 11: score = -6.7849249839782715
+<PATH> u.1615-music.user.interacted_artist->109<-music.user.interacted_artist-u.917-music.user.interacted_artist->210
+beam 1: score = -3.7553460597991943
+<PATH> u.716-music.user.interacted_artist->208<-music.user.interacted_artist-u.261-music.user.interacted_artist->96
+beam 3: score = -3.9645297527313232
+<PATH> u.716-music.user.interacted_artist->1031<-music.user.interacted_artist-u.1620-music.user.interacted_artist->102
+beam 5: score = -4.115353107452393
+<PATH> u.716-music.user.interacted_artist->714<-music.user.interacted_artist-u.1743-music.user.interacted_artist->776
+beam 3: score = -4.211560249328613
+<PATH> u.2006-music.user.interacted_artist->727<-music.user.interacted_artist-u.1101-music.user.interacted_artist->460
+beam 6: score = -4.877625465393066
+<PATH> u.2006-music.user.interacted_artist->727<-music.user.interacted_artist-u.1801-music.user.interacted_artist->517
+beam 13: score = -4.645705223083496
+<PATH> u.1841-music.user.interacted_artist->334<-music.user.interacted_artist-u.1125-music.user.interacted_artist->971
+beam 2: score = -3.980302333831787
+<PATH> u.405-music.user.interacted_artist->1232<-music.user.interacted_artist-u.617-music.user.interacted_artist->135
+beam 16: score = -6.287012100219727
+<PATH> u.405-music.user.interacted_artist->117<-music.user.interacted_artist-u.1186-music.user.interacted_artist->74
+beam 4: score = -5.333870887756348
+<PATH> u.1666-music.user.interacted_artist->73<-music.user.interacted_artist-u.380-music.user.interacted_artist->127
+beam 13: score = -6.6555867195129395
+<PATH> u.1478-music.user.interacted_artist->538<-music.user.interacted_artist-u.425-music.user.interacted_artist->118
+beam 4: score = -4.077892303466797
+<PATH> u.88-music.user.interacted_artist->511<-music.user.interacted_artist-u.625-music.user.interacted_artist->111
+beam 3: score = -4.994316101074219
+<PATH> u.220-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->55
+beam 4: score = -5.728816032409668
+<PATH> u.1509-music.user.interacted_artist->1185<-music.user.interacted_artist-u.456-music.user.interacted_artist->134
+beam 11: score = -6.77188777923584
+<PATH> u.1509-music.user.interacted_artist->1186<-music.user.interacted_artist-u.1253-music.user.interacted_artist->560
+beam 3: score = -4.244939804077148
+<PATH> u.244-music.user.interacted_artist->118<-music.user.interacted_artist-u.1686-music.user.interacted_artist->46
+beam 5: score = -4.477964878082275
+<PATH> u.244-music.user.interacted_artist->133<-music.user.interacted_artist-u.1830-music.user.interacted_artist->52
+beam 1: score = -3.3152432441711426
+<PATH> u.54-music.user.interacted_artist->72<-music.user.interacted_artist-u.1590-music.user.interacted_artist->87
+beam 2: score = -3.67210054397583
+<PATH> u.54-music.user.interacted_artist->72<-music.user.interacted_artist-u.632-music.user.interacted_artist->127
+beam 9: score = -5.047416687011719
+<PATH> u.1222-music.user.interacted_artist->539<-music.user.interacted_artist-u.502-music.user.interacted_artist->87
+beam 1: score = -3.194408416748047
+<PATH> u.1267-music.user.interacted_artist->250<-music.user.interacted_artist-u.1655-music.user.interacted_artist->42
+beam 4: score = -4.68966007232666
+<PATH> u.1635-music.user.interacted_artist->55<-music.user.interacted_artist-u.315-music.user.interacted_artist->52
+beam 7: score = -6.073066711425781
+<PATH> u.1635-music.user.interacted_artist->2254<-music.user.interacted_artist-u.940-music.user.interacted_artist->388
+beam 1: score = -4.189157009124756
+<PATH> u.514-music.user.interacted_artist->254<-music.user.interacted_artist-u.722-music.user.interacted_artist->87
+beam 4: score = -4.966782569885254
+<PATH> u.514-music.user.interacted_artist->118<-music.user.interacted_artist-u.425-music.user.interacted_artist->185
+beam 19: score = -7.901584148406982
+<PATH> u.1727-music.user.interacted_artist->878<-music.user.interacted_artist-u.369-music.user.interacted_artist->764
+beam 3: score = -4.433136940002441
+<PATH> u.585-music.user.interacted_artist->107<-music.user.interacted_artist-u.10-music.user.interacted_artist->55
+beam 3: score = -5.610173225402832
+<PATH> u.475-music.user.interacted_artist->528<-music.user.interacted_artist-u.1170-music.user.interacted_artist->391
+beam 12: score = -7.854808330535889
+<PATH> u.475-music.user.interacted_artist->46<-music.user.interacted_artist-u.342-music.user.interacted_artist->190
+beam 19: score = -5.612117767333984
+<PATH> u.1805-music.user.interacted_artist->223<-music.user.interacted_artist-u.1506-music.user.interacted_artist->53
+beam 12: score = -6.352936267852783
+<PATH> u.1471-music.user.interacted_artist->171<-music.user.interacted_artist-u.497-music.user.interacted_artist->134
+beam 5: score = -3.9373531341552734
+<PATH> u.1683-music.user.interacted_artist->45<-music.user.interacted_artist-u.1239-music.user.interacted_artist->36
+beam 8: score = -4.784881591796875
+<PATH> u.1683-music.user.interacted_artist->2028<-music.user.interacted_artist-u.2062-music.user.interacted_artist->165
+beam 17: score = -6.270077705383301
+<PATH> u.1790-music.user.interacted_artist->159<-music.user.interacted_artist-u.1904-music.user.interacted_artist->45
+beam 4: score = -4.495173931121826
+<PATH> u.1633-music.user.interacted_artist->132<-music.user.interacted_artist-u.1600-music.user.interacted_artist->87
+beam 7: score = -4.82539176940918
+<PATH> u.617-music.user.interacted_artist->135<-music.user.interacted_artist-u.380-music.user.interacted_artist->77
+beam 11: score = -5.28902006149292
+<PATH> u.1689-music.user.interacted_artist->1545<-music.user.interacted_artist-u.1054-music.user.interacted_artist->516
+beam 6: score = -6.499787330627441
+<PATH> u.315-music.user.interacted_artist->46<-music.user.interacted_artist-u.1539-music.user.interacted_artist->863
+beam 19: score = -8.316169738769531
+<PATH> u.315-music.user.interacted_artist->55<-music.user.interacted_artist-u.1804-music.user.interacted_artist->47
+beam 5: score = -4.9380598068237305
+<PATH> u.641-music.user.interacted_artist->184<-music.user.interacted_artist-u.1388-music.user.interacted_artist->78
+beam 6: score = -5.11025333404541
+<PATH> u.641-music.user.interacted_artist->267<-music.user.interacted_artist-u.1636-music.user.interacted_artist->96
+beam 14: score = -6.787896156311035
+<PATH> u.1094-music.user.interacted_artist->2020<-music.user.interacted_artist-u.1695-music.user.interacted_artist->572
+beam 6: score = -5.3841753005981445
+<PATH> u.289-music.user.interacted_artist->96<-music.user.interacted_artist-u.1686-music.user.interacted_artist->105
+beam 8: score = -5.591268539428711
+<PATH> u.289-music.user.interacted_artist->96<-music.user.interacted_artist-u.1339-music.user.interacted_artist->52
+beam 15: score = -6.072057247161865
+<PATH> u.1387-music.user.interacted_artist->118<-music.user.interacted_artist-u.650-music.user.interacted_artist->130
+beam 7: score = -6.437831878662109
+<PATH> u.1486-music.user.interacted_artist->190<-music.user.interacted_artist-u.933-music.user.interacted_artist->107
+beam 6: score = -5.057385444641113
+<PATH> u.1427-music.user.interacted_artist->275<-music.user.interacted_artist-u.596-music.user.interacted_artist->498
+beam 1: score = -3.4556705951690674
+<PATH> u.56-music.user.interacted_artist->55<-music.user.interacted_artist-u.315-music.user.interacted_artist->105
+beam 14: score = -4.788202285766602
+<PATH> u.695-music.user.interacted_artist->703<-music.user.interacted_artist-u.1060-music.user.interacted_artist->165
+beam 7: score = -6.659984588623047
+<PATH> u.1170-music.user.interacted_artist->235<-music.user.interacted_artist-u.1581-music.user.interacted_artist->863
+beam 6: score = -5.8585920333862305
+<PATH> u.511-music.user.interacted_artist->36<-music.user.interacted_artist-u.1239-music.user.interacted_artist->55
+beam 0: score = -2.6656949520111084
+<PATH> u.2016-music.user.interacted_artist->483<-music.user.interacted_artist-u.1838-music.user.interacted_artist->22
+beam 8: score = -5.273009300231934
+<PATH> u.1061-music.user.interacted_artist->774<-music.user.interacted_artist-u.2078-music.user.interacted_artist->52
+beam 13: score = -5.780179500579834
+<PATH> u.1061-music.user.interacted_artist->774<-music.user.interacted_artist-u.1032-music.user.interacted_artist->820
+beam 5: score = -5.312351703643799
+<PATH> u.353-music.user.interacted_artist->185<-music.user.interacted_artist-u.1834-music.user.interacted_artist->184
+beam 11: score = -5.755414962768555
+<PATH> u.570-music.user.interacted_artist->128<-music.user.interacted_artist-u.704-music.user.interacted_artist->376
+beam 1: score = -3.7226810455322266
+<PATH> u.1596-music.user.interacted_artist->141<-music.user.interacted_artist-u.1021-music.user.interacted_artist->52
+beam 3: score = -5.250879287719727
+<PATH> u.1919-music.user.interacted_artist->1103<-music.user.interacted_artist-u.1949-music.user.interacted_artist->55
+beam 4: score = -4.238903045654297
+<PATH> u.1369-music.user.interacted_artist->538<-music.user.interacted_artist-u.1607-music.user.interacted_artist->78
+beam 14: score = -4.670355796813965
+<PATH> u.65-music.user.interacted_artist->208<-music.user.interacted_artist-u.261-music.user.interacted_artist->494
+beam 5: score = -4.828761577606201
+<PATH> u.366-music.user.interacted_artist->155<-music.user.interacted_artist-u.416-music.user.interacted_artist->196
+beam 1: score = -3.122788190841675
+<PATH> u.12-music.user.interacted_artist->120<-music.user.interacted_artist-u.1954-music.user.interacted_artist->96
+beam 12: score = -5.2114057540893555
+<PATH> u.791-music.user.interacted_artist->572<-music.user.interacted_artist-u.612-music.user.interacted_artist->105
+beam 15: score = -5.588303565979004
+<PATH> u.397-music.user.interacted_artist->334<-music.user.interacted_artist-u.496-music.user.interacted_artist->13
+beam 18: score = -5.71065616607666
+<PATH> u.1065-music.user.interacted_artist->477<-music.user.interacted_artist-u.680-music.user.interacted_artist->96
+beam 6: score = -4.682002067565918
+<PATH> u.1687-music.user.interacted_artist->376<-music.user.interacted_artist-u.700-music.user.interacted_artist->130
+beam 20: score = -5.132882595062256
+<PATH> u.1249-music.user.interacted_artist->307<-music.user.interacted_artist-u.1929-music.user.interacted_artist->36
+beam 0: score = -3.7056193351745605
+<PATH> u.223-music.user.interacted_artist->184<-music.user.interacted_artist-u.1580-music.user.interacted_artist->79
+beam 9: score = -6.636033535003662
+<PATH> u.124-music.user.interacted_artist->96<-music.user.interacted_artist-u.432-music.user.interacted_artist->119
+beam 2: score = -4.125355243682861
+<PATH> u.1783-music.user.interacted_artist->46<-music.user.interacted_artist-u.315-music.user.interacted_artist->52
+beam 3: score = -4.190001487731934
+<PATH> u.1783-music.user.interacted_artist->36<-music.user.interacted_artist-u.237-music.user.interacted_artist->105
+beam 7: score = -5.682015895843506
+<PATH> u.1296-music.user.interacted_artist->34<-music.user.interacted_artist-u.177-music.user.interacted_artist->250
+beam 7: score = -6.150973796844482
+<PATH> u.380-music.user.interacted_artist->73<-music.user.interacted_artist-u.873-music.user.interacted_artist->81
+beam 11: score = -5.5521979331970215
+<PATH> u.1715-music.user.interacted_artist->134<-music.user.interacted_artist-u.13-music.user.interacted_artist->131
+beam 20: score = -6.344804763793945
+<PATH> u.1450-music.user.interacted_artist->305<-music.user.interacted_artist-u.532-music.user.interacted_artist->302
+beam 16: score = -6.498784065246582
+<PATH> u.449-music.user.interacted_artist->1214<-music.user.interacted_artist-u.235-music.user.interacted_artist->7
+beam 6: score = -5.7062554359436035
+<PATH> u.1773-music.user.interacted_artist->80<-music.user.interacted_artist-u.793-music.user.interacted_artist->74
+beam 13: score = -4.987495422363281
+<PATH> u.1991-music.user.interacted_artist->601<-music.user.interacted_artist-u.116-music.user.interacted_artist->795
+beam 2: score = -3.6788265705108643
+<PATH> u.1664-music.user.interacted_artist->46<-music.user.interacted_artist-u.1339-music.user.interacted_artist->96
+beam 11: score = -6.4611968994140625
+<PATH> u.1189-music.user.interacted_artist->79<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 7: score = -5.014986991882324
+<PATH> u.1686-music.user.interacted_artist->267<-music.user.interacted_artist-u.964-music.user.interacted_artist->47
+beam 8: score = -6.261702537536621
+<PATH> u.1686-music.user.interacted_artist->118<-music.user.interacted_artist-u.244-music.user.interacted_artist->133
+beam 12: score = -4.3819122314453125
+<PATH> u.613-music.user.interacted_artist->45<-music.user.interacted_artist-u.1745-music.user.interacted_artist->55
+beam 3: score = -5.506129264831543
+<PATH> u.414-music.user.interacted_artist->134<-music.user.interacted_artist-u.1189-music.user.interacted_artist->185
+beam 10: score = -6.3052825927734375
+<PATH> u.414-music.user.interacted_artist->134<-music.user.interacted_artist-u.415-music.user.interacted_artist->171
+beam 8: score = -4.937456130981445
+<PATH> u.1348-music.user.interacted_artist->951<-music.user.interacted_artist-u.223-music.user.interacted_artist->184
+beam 8: score = -4.624901294708252
+<PATH> u.2057-music.user.interacted_artist->110<-music.user.interacted_artist-u.1220-music.user.interacted_artist->55
+beam 13: score = -5.394583225250244
+<PATH> u.2057-music.user.interacted_artist->920<-music.user.interacted_artist-u.1083-music.user.interacted_artist->235
+beam 2: score = -3.8791067600250244
+<PATH> u.51-music.user.interacted_artist->209<-music.user.interacted_artist-u.731-music.user.interacted_artist->42
+beam 12: score = -6.155567646026611
+<PATH> u.51-music.user.interacted_artist->346<-music.user.interacted_artist-u.595-music.user.interacted_artist->242
+beam 6: score = -4.925548553466797
+<PATH> u.2076-music.user.interacted_artist->863<-music.user.interacted_artist-u.1532-music.user.interacted_artist->134
+beam 1: score = -2.873882293701172
+<PATH> u.917-music.user.interacted_artist->109<-music.user.interacted_artist-u.237-music.user.interacted_artist->105
+beam 13: score = -5.576257228851318
+<PATH> u.917-music.user.interacted_artist->109<-music.user.interacted_artist-u.547-music.user.interacted_artist->388
+beam 2: score = -4.456665515899658
+<PATH> u.2041-music.user.interacted_artist->352<-music.user.interacted_artist-u.904-music.user.interacted_artist->52
+beam 4: score = -4.824939250946045
+<PATH> u.2041-music.user.interacted_artist->772<-music.user.interacted_artist-u.861-music.user.interacted_artist->47
+beam 5: score = -4.298436164855957
+<PATH> u.1454-music.user.interacted_artist->275<-music.user.interacted_artist-u.66-music.user.interacted_artist->257
+beam 5: score = -4.180756092071533
+<PATH> u.2068-music.user.interacted_artist->539<-music.user.interacted_artist-u.1663-music.user.interacted_artist->66
+beam 17: score = -5.574883460998535
+<PATH> u.2068-music.user.interacted_artist->539<-music.user.interacted_artist-u.862-music.user.interacted_artist->254
+beam 1: score = -3.4552977085113525
+<PATH> u.1705-music.user.interacted_artist->392<-music.user.interacted_artist-u.619-music.user.interacted_artist->105
+beam 10: score = -5.751338481903076
+<PATH> u.1705-music.user.interacted_artist->392<-music.user.interacted_artist-u.211-music.user.interacted_artist->528
+beam 14: score = -6.50227165222168
+<PATH> u.1828-music.user.interacted_artist->87<-music.user.interacted_artist-u.1124-music.user.interacted_artist->75
+beam 5: score = -4.581323146820068
+<PATH> u.435-music.user.interacted_artist->776<-music.user.interacted_artist-u.1741-music.user.interacted_artist->199
+beam 18: score = -5.670746803283691
+<PATH> u.435-music.user.interacted_artist->302<-music.user.interacted_artist-u.532-music.user.interacted_artist->303
+beam 6: score = -5.172870635986328
+<PATH> u.1453-music.user.interacted_artist->538<-music.user.interacted_artist-u.1478-music.user.interacted_artist->79
+beam 13: score = -6.108215808868408
+<PATH> u.1453-music.user.interacted_artist->78<-music.user.interacted_artist-u.1283-music.user.interacted_artist->184
+beam 3: score = -4.9268999099731445
+<PATH> u.1283-music.user.interacted_artist->91<-music.user.interacted_artist-u.1124-music.user.interacted_artist->87
+beam 6: score = -5.599459648132324
+<PATH> u.1053-music.user.interacted_artist->78<-music.user.interacted_artist-u.1607-music.user.interacted_artist->98
+beam 3: score = -4.392913818359375
+<PATH> u.1239-music.user.interacted_artist->34<-music.user.interacted_artist-u.623-music.user.interacted_artist->109
+beam 7: score = -4.923478603363037
+<PATH> u.1188-music.user.interacted_artist->1324<-music.user.interacted_artist-u.1075-music.user.interacted_artist->187
+beam 8: score = -5.524061679840088
+<PATH> u.1188-music.user.interacted_artist->1324<-music.user.interacted_artist-u.2033-music.user.interacted_artist->137
+beam 18: score = -5.948460578918457
+<PATH> u.1051-music.user.interacted_artist->755<-music.user.interacted_artist-u.109-music.user.interacted_artist->105
+beam 19: score = -6.089620590209961
+<PATH> u.1051-music.user.interacted_artist->243<-music.user.interacted_artist-u.1428-music.user.interacted_artist->46
+beam 11: score = -6.6888275146484375
+<PATH> u.1959-music.user.interacted_artist->184<-music.user.interacted_artist-u.1001-music.user.interacted_artist->267
+beam 14: score = -5.549685001373291
+<PATH> u.567-music.user.interacted_artist->106<-music.user.interacted_artist-u.369-music.user.interacted_artist->878
+beam 3: score = -4.542459964752197
+<PATH> u.1118-music.user.interacted_artist->199<-music.user.interacted_artist-u.1422-music.user.interacted_artist->52
+beam 6: score = -4.924953460693359
+<PATH> u.411-music.user.interacted_artist->601<-music.user.interacted_artist-u.957-music.user.interacted_artist->1624
+beam 8: score = -3.990605592727661
+<PATH> u.1759-music.user.interacted_artist->120<-music.user.interacted_artist-u.1954-music.user.interacted_artist->96
+beam 20: score = -5.299644947052002
+<PATH> u.1759-music.user.interacted_artist->1624<-music.user.interacted_artist-u.957-music.user.interacted_artist->601
+beam 3: score = -3.6472368240356445
+<PATH> u.1210-music.user.interacted_artist->257<-music.user.interacted_artist-u.66-music.user.interacted_artist->499
+beam 1: score = -3.425123691558838
+<PATH> u.680-music.user.interacted_artist->2175<-music.user.interacted_artist-u.1465-music.user.interacted_artist->80
+beam 4: score = -3.4314069747924805
+<PATH> u.235-music.user.interacted_artist->211<-music.user.interacted_artist-u.546-music.user.interacted_artist->42
+beam 7: score = -4.386248588562012
+<PATH> u.235-music.user.interacted_artist->1216<-music.user.interacted_artist-u.1324-music.user.interacted_artist->36
+beam 20: score = -5.660423278808594
+<PATH> u.520-music.user.interacted_artist->445<-music.user.interacted_artist-u.686-music.user.interacted_artist->227
+beam 4: score = -4.704732418060303
+<PATH> u.7-music.user.interacted_artist->75<-music.user.interacted_artist-u.873-music.user.interacted_artist->79
+beam 10: score = -5.736114025115967
+<PATH> u.7-music.user.interacted_artist->77<-music.user.interacted_artist-u.380-music.user.interacted_artist->73
+beam 3: score = -4.10073184967041
+<PATH> u.1049-music.user.interacted_artist->277<-music.user.interacted_artist-u.2014-music.user.interacted_artist->109
+beam 6: score = -3.8249411582946777
+<PATH> u.203-music.user.interacted_artist->215<-music.user.interacted_artist-u.582-music.user.interacted_artist->208
+beam 8: score = -4.546746730804443
+<PATH> u.1030-music.user.interacted_artist->208<-music.user.interacted_artist-u.1501-music.user.interacted_artist->220
+beam 4: score = -4.341825008392334
+<PATH> u.1659-music.user.interacted_artist->3196<-music.user.interacted_artist-u.1425-music.user.interacted_artist->413
+beam 17: score = -5.424039363861084
+<PATH> u.1659-music.user.interacted_artist->167<-music.user.interacted_artist-u.1017-music.user.interacted_artist->79
+beam 4: score = -5.166552543640137
+<PATH> u.679-music.user.interacted_artist->117<-music.user.interacted_artist-u.1600-music.user.interacted_artist->87
+beam 3: score = -4.02882719039917
+<PATH> u.1825-music.user.interacted_artist->902<-music.user.interacted_artist-u.516-music.user.interacted_artist->102
+beam 6: score = -5.882585525512695
+<PATH> u.975-music.user.interacted_artist->254<-music.user.interacted_artist-u.75-music.user.interacted_artist->133
+beam 14: score = -7.12407112121582
+<PATH> u.1192-music.user.interacted_artist->52<-music.user.interacted_artist-u.1165-music.user.interacted_artist->1662
+beam 4: score = -4.254710674285889
+<PATH> u.1922-music.user.interacted_artist->708<-music.user.interacted_artist-u.670-music.user.interacted_artist->46
+beam 3: score = -4.356967926025391
+<PATH> u.243-music.user.interacted_artist->483<-music.user.interacted_artist-u.1926-music.user.interacted_artist->24
+beam 1: score = -4.061526775360107
+<PATH> u.851-music.user.interacted_artist->74<-music.user.interacted_artist-u.470-music.user.interacted_artist->79
+beam 9: score = -6.148942470550537
+<PATH> u.851-music.user.interacted_artist->74<-music.user.interacted_artist-u.136-music.user.interacted_artist->98
+beam 3: score = -3.993741989135742
+<PATH> u.241-music.user.interacted_artist->42<-music.user.interacted_artist-u.1159-music.user.interacted_artist->34
+beam 14: score = -5.947159767150879
+<PATH> u.1336-music.user.interacted_artist->1001<-music.user.interacted_artist-u.306-music.user.interacted_artist->445
+beam 2: score = -4.0060882568359375
+<PATH> u.1109-music.user.interacted_artist->171<-music.user.interacted_artist-u.1564-music.user.interacted_artist->79
+beam 6: score = -6.4359612464904785
+<PATH> u.1441-music.user.interacted_artist->765<-music.user.interacted_artist-u.172-music.user.interacted_artist->107
+beam 5: score = -6.452786922454834
+<PATH> u.965-music.user.interacted_artist->127<-music.user.interacted_artist-u.72-music.user.interacted_artist->185
+beam 11: score = -4.427626609802246
+<PATH> u.1589-music.user.interacted_artist->398<-music.user.interacted_artist-u.279-music.user.interacted_artist->212
+beam 2: score = -4.241629600524902
+<PATH> u.539-music.user.interacted_artist->474<-music.user.interacted_artist-u.904-music.user.interacted_artist->96
+beam 20: score = -5.7762956619262695
+<PATH> u.539-music.user.interacted_artist->474<-music.user.interacted_artist-u.191-music.user.interacted_artist->445
+beam 2: score = -4.718304634094238
+<PATH> u.421-music.user.interacted_artist->127<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 11: score = -5.841838359832764
+<PATH> u.421-music.user.interacted_artist->134<-music.user.interacted_artist-u.717-music.user.interacted_artist->75
+beam 7: score = -5.005731105804443
+<PATH> u.455-music.user.interacted_artist->155<-music.user.interacted_artist-u.1557-music.user.interacted_artist->460
+beam 2: score = -3.720641613006592
+<PATH> u.1466-music.user.interacted_artist->115<-music.user.interacted_artist-u.11-music.user.interacted_artist->87
+beam 12: score = -6.609606742858887
+<PATH> u.1466-music.user.interacted_artist->115<-music.user.interacted_artist-u.136-music.user.interacted_artist->377
+beam 9: score = -4.681698799133301
+<PATH> u.1111-music.user.interacted_artist->212<-music.user.interacted_artist-u.854-music.user.interacted_artist->303
+beam 19: score = -5.9105024337768555
+<PATH> u.1111-music.user.interacted_artist->212<-music.user.interacted_artist-u.716-music.user.interacted_artist->714
+beam 2: score = -4.374783039093018
+<PATH> u.113-music.user.interacted_artist->245<-music.user.interacted_artist-u.191-music.user.interacted_artist->52
+beam 11: score = -5.327513694763184
+<PATH> u.98-music.user.interacted_artist->80<-music.user.interacted_artist-u.1365-music.user.interacted_artist->127
+beam 4: score = -4.4504265785217285
+<PATH> u.333-music.user.interacted_artist->98<-music.user.interacted_artist-u.1071-music.user.interacted_artist->87
+beam 3: score = -4.056373596191406
+<PATH> u.1797-music.user.interacted_artist->96<-music.user.interacted_artist-u.1686-music.user.interacted_artist->118
+beam 15: score = -4.864051818847656
+<PATH> u.211-music.user.interacted_artist->41<-music.user.interacted_artist-u.1458-music.user.interacted_artist->118
+beam 5: score = -5.951775074005127
+<PATH> u.1814-music.user.interacted_artist->1253<-music.user.interacted_artist-u.849-music.user.interacted_artist->190
+beam 3: score = -4.227707862854004
+<PATH> u.568-music.user.interacted_artist->221<-music.user.interacted_artist-u.1486-music.user.interacted_artist->46
+beam 10: score = -5.711605072021484
+<PATH> u.233-music.user.interacted_artist->861<-music.user.interacted_artist-u.1826-music.user.interacted_artist->127
+beam 18: score = -7.687163829803467
+<PATH> u.1788-music.user.interacted_artist->79<-music.user.interacted_artist-u.1856-music.user.interacted_artist->171
+beam 3: score = -3.6695961952209473
+<PATH> u.624-music.user.interacted_artist->1046<-music.user.interacted_artist-u.183-music.user.interacted_artist->36
+beam 19: score = -7.357283592224121
+<PATH> u.1734-music.user.interacted_artist->171<-music.user.interacted_artist-u.30-music.user.interacted_artist->55
+beam 0: score = -3.319819450378418
+<PATH> u.769-music.user.interacted_artist->107<-music.user.interacted_artist-u.1685-music.user.interacted_artist->46
+beam 7: score = -5.367105960845947
+<PATH> u.402-music.user.interacted_artist->393<-music.user.interacted_artist-u.1428-music.user.interacted_artist->325
+beam 9: score = -5.575431823730469
+<PATH> u.472-music.user.interacted_artist->118<-music.user.interacted_artist-u.809-music.user.interacted_artist->130
+beam 0: score = -2.3591713905334473
+<PATH> u.491-music.user.interacted_artist->346<-music.user.interacted_artist-u.595-music.user.interacted_artist->36
+beam 2: score = -3.771714925765991
+<PATH> u.219-music.user.interacted_artist->286<-music.user.interacted_artist-u.189-music.user.interacted_artist->118
+beam 1: score = -2.9660861492156982
+<PATH> u.1191-music.user.interacted_artist->788<-music.user.interacted_artist-u.640-music.user.interacted_artist->52
+beam 2: score = -3.841012954711914
+<PATH> u.194-music.user.interacted_artist->474<-music.user.interacted_artist-u.2028-music.user.interacted_artist->22
+beam 5: score = -3.8162620067596436
+<PATH> u.1292-music.user.interacted_artist->1153<-music.user.interacted_artist-u.1872-music.user.interacted_artist->184
+beam 0: score = -4.040230751037598
+<PATH> u.1528-music.user.interacted_artist->134<-music.user.interacted_artist-u.1189-music.user.interacted_artist->185
+beam 20: score = -7.014362335205078
+<PATH> u.1528-music.user.interacted_artist->364<-music.user.interacted_artist-u.45-music.user.interacted_artist->81
+beam 16: score = -4.885991096496582
+<PATH> u.579-music.user.interacted_artist->1554<-music.user.interacted_artist-u.1287-music.user.interacted_artist->242
+beam 11: score = -6.787134170532227
+<PATH> u.1519-music.user.interacted_artist->46<-music.user.interacted_artist-u.1804-music.user.interacted_artist->47
+beam 5: score = -5.047863006591797
+<PATH> u.1821-music.user.interacted_artist->78<-music.user.interacted_artist-u.1478-music.user.interacted_artist->538
+beam 18: score = -6.500138282775879
+<PATH> u.1821-music.user.interacted_artist->372<-music.user.interacted_artist-u.130-music.user.interacted_artist->132
+beam 1: score = -4.007577419281006
+<PATH> u.1002-music.user.interacted_artist->132<-music.user.interacted_artist-u.1600-music.user.interacted_artist->87
+beam 1: score = -3.205235004425049
+<PATH> u.2070-music.user.interacted_artist->376<-music.user.interacted_artist-u.700-music.user.interacted_artist->96
+beam 1: score = -3.417546510696411
+<PATH> u.1284-music.user.interacted_artist->2579<-music.user.interacted_artist-u.936-music.user.interacted_artist->155
+beam 8: score = -6.766719818115234
+<PATH> u.227-music.user.interacted_artist->127<-music.user.interacted_artist-u.380-music.user.interacted_artist->135
+beam 1: score = -3.2393178939819336
+<PATH> u.177-music.user.interacted_artist->250<-music.user.interacted_artist-u.1655-music.user.interacted_artist->36
+beam 2: score = -3.77490496635437
+<PATH> u.177-music.user.interacted_artist->250<-music.user.interacted_artist-u.1655-music.user.interacted_artist->42
+beam 2: score = -3.276670455932617
+<PATH> u.178-music.user.interacted_artist->211<-music.user.interacted_artist-u.546-music.user.interacted_artist->42
+beam 15: score = -5.354058265686035
+<PATH> u.178-music.user.interacted_artist->996<-music.user.interacted_artist-u.1093-music.user.interacted_artist->740
+beam 1: score = -4.355235576629639
+<PATH> u.1831-music.user.interacted_artist->105<-music.user.interacted_artist-u.315-music.user.interacted_artist->46
+beam 2: score = -3.842301607131958
+<PATH> u.1235-music.user.interacted_artist->96<-music.user.interacted_artist-u.835-music.user.interacted_artist->36
+beam 11: score = -4.8519792556762695
+<PATH> u.396-music.user.interacted_artist->13<-music.user.interacted_artist-u.1163-music.user.interacted_artist->227
+beam 9: score = -4.804147243499756
+<PATH> u.36-music.user.interacted_artist->305<-music.user.interacted_artist-u.532-music.user.interacted_artist->303
+beam 17: score = -5.578161239624023
+<PATH> u.1551-music.user.interacted_artist->8<-music.user.interacted_artist-u.729-music.user.interacted_artist->329
+beam 13: score = -5.251645565032959
+<PATH> u.407-music.user.interacted_artist->107<-music.user.interacted_artist-u.2086-music.user.interacted_artist->295
+beam 2: score = -3.7923660278320312
+<PATH> u.249-music.user.interacted_artist->210<-music.user.interacted_artist-u.741-music.user.interacted_artist->118
+beam 2: score = -4.647040367126465
+<PATH> u.1135-music.user.interacted_artist->74<-music.user.interacted_artist-u.470-music.user.interacted_artist->127
+beam 8: score = -5.039298057556152
+<PATH> u.129-music.user.interacted_artist->137<-music.user.interacted_artist-u.862-music.user.interacted_artist->254
+beam 7: score = -4.4823760986328125
+<PATH> u.1202-music.user.interacted_artist->887<-music.user.interacted_artist-u.1514-music.user.interacted_artist->155
+beam 5: score = -5.228534698486328
+<PATH> u.1647-music.user.interacted_artist->118<-music.user.interacted_artist-u.875-music.user.interacted_artist->184
+beam 8: score = -5.581973075866699
+<PATH> u.1647-music.user.interacted_artist->120<-music.user.interacted_artist-u.1954-music.user.interacted_artist->80
+beam 6: score = -4.17117977142334
+<PATH> u.677-music.user.interacted_artist->289<-music.user.interacted_artist-u.720-music.user.interacted_artist->250
+beam 6: score = -5.5699381828308105
+<PATH> u.795-music.user.interacted_artist->72<-music.user.interacted_artist-u.873-music.user.interacted_artist->135
+beam 20: score = -6.620998382568359
+<PATH> u.795-music.user.interacted_artist->185<-music.user.interacted_artist-u.72-music.user.interacted_artist->254
+beam 0: score = -3.1811704635620117
+<PATH> u.1527-music.user.interacted_artist->1396<-music.user.interacted_artist-u.1919-music.user.interacted_artist->46
+beam 2: score = -4.090270042419434
+<PATH> u.1527-music.user.interacted_artist->1396<-music.user.interacted_artist-u.1919-music.user.interacted_artist->107
+beam 4: score = -4.827261924743652
+<PATH> u.1527-music.user.interacted_artist->1396<-music.user.interacted_artist-u.1919-music.user.interacted_artist->528
+beam 11: score = -5.4557952880859375
+<PATH> u.1995-music.user.interacted_artist->210<-music.user.interacted_artist-u.1414-music.user.interacted_artist->118
+beam 8: score = -5.024994850158691
+<PATH> u.1216-music.user.interacted_artist->102<-music.user.interacted_artist-u.289-music.user.interacted_artist->78
+beam 10: score = -5.774130821228027
+<PATH> u.910-music.user.interacted_artist->81<-music.user.interacted_artist-u.1120-music.user.interacted_artist->237
+beam 12: score = -5.964560508728027
+<PATH> u.910-music.user.interacted_artist->81<-music.user.interacted_artist-u.684-music.user.interacted_artist->80
+beam 19: score = -7.110883712768555
+<PATH> u.910-music.user.interacted_artist->75<-music.user.interacted_artist-u.873-music.user.interacted_artist->73
+beam 5: score = -4.124955654144287
+<PATH> u.1652-music.user.interacted_artist->119<-music.user.interacted_artist-u.189-music.user.interacted_artist->118
+beam 2: score = -3.68896222114563
+<PATH> u.1539-music.user.interacted_artist->528<-music.user.interacted_artist-u.1919-music.user.interacted_artist->105
+beam 0: score = -1.9185006618499756
+<PATH> u.1702-music.user.interacted_artist->141<-music.user.interacted_artist-u.824-music.user.interacted_artist->36
+beam 19: score = -5.396450042724609
+<PATH> u.1541-music.user.interacted_artist->16<-music.user.interacted_artist-u.176-music.user.interacted_artist->498
+beam 12: score = -6.541681289672852
+<PATH> u.845-music.user.interacted_artist->42<-music.user.interacted_artist-u.1147-music.user.interacted_artist->211
+beam 4: score = -4.0000810623168945
+<PATH> u.1972-music.user.interacted_artist->486<-music.user.interacted_artist-u.1557-music.user.interacted_artist->155
+beam 8: score = -4.276893615722656
+<PATH> u.1972-music.user.interacted_artist->727<-music.user.interacted_artist-u.1907-music.user.interacted_artist->196
+beam 1: score = -4.128847122192383
+<PATH> u.916-music.user.interacted_artist->75<-music.user.interacted_artist-u.1017-music.user.interacted_artist->87
+beam 3: score = -4.758456230163574
+<PATH> u.916-music.user.interacted_artist->75<-music.user.interacted_artist-u.1580-music.user.interacted_artist->184
+beam 4: score = -4.346515655517578
+<PATH> u.1255-music.user.interacted_artist->111<-music.user.interacted_artist-u.10-music.user.interacted_artist->107
+beam 10: score = -6.478219509124756
+<PATH> u.1725-music.user.interacted_artist->79<-music.user.interacted_artist-u.350-music.user.interacted_artist->72
+beam 5: score = -4.829056262969971
+<PATH> u.1383-music.user.interacted_artist->1406<-music.user.interacted_artist-u.1387-music.user.interacted_artist->104
+beam 1: score = -3.5840282440185547
+<PATH> u.952-music.user.interacted_artist->391<-music.user.interacted_artist-u.1178-music.user.interacted_artist->46
+beam 20: score = -5.813633918762207
+<PATH> u.1829-music.user.interacted_artist->134<-music.user.interacted_artist-u.906-music.user.interacted_artist->267
+beam 5: score = -5.183706283569336
+<PATH> u.1220-music.user.interacted_artist->109<-music.user.interacted_artist-u.10-music.user.interacted_artist->107
+beam 13: score = -7.393939018249512
+<PATH> u.631-music.user.interacted_artist->105<-music.user.interacted_artist-u.824-music.user.interacted_artist->190
+beam 1: score = -4.040110111236572
+<PATH> u.1198-music.user.interacted_artist->117<-music.user.interacted_artist-u.1332-music.user.interacted_artist->185
+beam 5: score = -4.880622386932373
+<PATH> u.1198-music.user.interacted_artist->923<-music.user.interacted_artist-u.1693-music.user.interacted_artist->78
+beam 9: score = -5.458661079406738
+<PATH> u.1605-music.user.interacted_artist->130<-music.user.interacted_artist-u.1351-music.user.interacted_artist->118
+beam 15: score = -5.848364353179932
+<PATH> u.1605-music.user.interacted_artist->1344<-music.user.interacted_artist-u.322-music.user.interacted_artist->137
+beam 11: score = -5.841670036315918
+<PATH> u.1850-music.user.interacted_artist->539<-music.user.interacted_artist-u.1663-music.user.interacted_artist->66
+beam 15: score = -6.437217712402344
+<PATH> u.1389-music.user.interacted_artist->111<-music.user.interacted_artist-u.10-music.user.interacted_artist->107
+beam 1: score = -3.841282606124878
+<PATH> u.1039-music.user.interacted_artist->494<-music.user.interacted_artist-u.1480-music.user.interacted_artist->96
+beam 7: score = -5.569823741912842
+<PATH> u.999-music.user.interacted_artist->42<-music.user.interacted_artist-u.587-music.user.interacted_artist->96
+beam 15: score = -4.933180809020996
+<PATH> u.1279-music.user.interacted_artist->462<-music.user.interacted_artist-u.60-music.user.interacted_artist->197
+beam 5: score = -3.9435629844665527
+<PATH> u.1032-music.user.interacted_artist->774<-music.user.interacted_artist-u.1061-music.user.interacted_artist->785
+beam 0: score = -3.1125833988189697
+<PATH> u.1346-music.user.interacted_artist->2269<-music.user.interacted_artist-u.1954-music.user.interacted_artist->96
+beam 10: score = -5.970542907714844
+<PATH> u.1895-music.user.interacted_artist->1202<-music.user.interacted_artist-u.910-music.user.interacted_artist->81
+beam 17: score = -6.669571399688721
+<PATH> u.1895-music.user.interacted_artist->127<-music.user.interacted_artist-u.380-music.user.interacted_artist->77
+beam 3: score = -3.3074769973754883
+<PATH> u.1067-music.user.interacted_artist->36<-music.user.interacted_artist-u.237-music.user.interacted_artist->105
+beam 12: score = -4.480600357055664
+<PATH> u.1286-music.user.interacted_artist->1416<-music.user.interacted_artist-u.1977-music.user.interacted_artist->46
+beam 5: score = -4.3243584632873535
+<PATH> u.1194-music.user.interacted_artist->223<-music.user.interacted_artist-u.1926-music.user.interacted_artist->24
+beam 4: score = -4.322389125823975
+<PATH> u.346-music.user.interacted_artist->102<-music.user.interacted_artist-u.289-music.user.interacted_artist->55
+beam 5: score = -3.957170248031616
+<PATH> u.1824-music.user.interacted_artist->3441<-music.user.interacted_artist-u.1951-music.user.interacted_artist->878
+beam 2: score = -4.6060380935668945
+<PATH> u.53-music.user.interacted_artist->74<-music.user.interacted_artist-u.470-music.user.interacted_artist->127
+beam 6: score = -5.961759567260742
+<PATH> u.1365-music.user.interacted_artist->127<-music.user.interacted_artist-u.380-music.user.interacted_artist->135
+beam 1: score = -3.0082757472991943
+<PATH> u.1099-music.user.interacted_artist->788<-music.user.interacted_artist-u.1163-music.user.interacted_artist->36
+beam 9: score = -5.534140586853027
+<PATH> u.1399-music.user.interacted_artist->698<-music.user.interacted_artist-u.248-music.user.interacted_artist->135
+beam 3: score = -4.645370006561279
+<PATH> u.646-music.user.interacted_artist->374<-music.user.interacted_artist-u.878-music.user.interacted_artist->184
+beam 18: score = -6.0985636711120605
+<PATH> u.1909-music.user.interacted_artist->134<-music.user.interacted_artist-u.1829-music.user.interacted_artist->47
+beam 5: score = -3.9407010078430176
+<PATH> u.812-music.user.interacted_artist->215<-music.user.interacted_artist-u.1442-music.user.interacted_artist->199
+beam 11: score = -4.930082321166992
+<PATH> u.812-music.user.interacted_artist->220<-music.user.interacted_artist-u.225-music.user.interacted_artist->218
+beam 2: score = -3.9445199966430664
+<PATH> u.1920-music.user.interacted_artist->102<-music.user.interacted_artist-u.1686-music.user.interacted_artist->118
+beam 8: score = -6.323803901672363
+<PATH> u.1060-music.user.interacted_artist->228<-music.user.interacted_artist-u.1325-music.user.interacted_artist->35
+beam 9: score = -4.957298278808594
+<PATH> u.560-music.user.interacted_artist->277<-music.user.interacted_artist-u.2047-music.user.interacted_artist->883
+beam 1: score = -3.9830241203308105
+<PATH> u.756-music.user.interacted_artist->105<-music.user.interacted_artist-u.315-music.user.interacted_artist->46
+beam 7: score = -6.045287609100342
+<PATH> u.756-music.user.interacted_artist->190<-music.user.interacted_artist-u.1496-music.user.interacted_artist->52
+beam 20: score = -6.563564300537109
+<PATH> u.815-music.user.interacted_artist->373<-music.user.interacted_artist-u.146-music.user.interacted_artist->75
+beam 8: score = -5.623641490936279
+<PATH> u.1765-music.user.interacted_artist->572<-music.user.interacted_artist-u.2033-music.user.interacted_artist->137
+beam 16: score = -6.298320770263672
+<PATH> u.1765-music.user.interacted_artist->572<-music.user.interacted_artist-u.1114-music.user.interacted_artist->361
+beam 1: score = -3.9109630584716797
+<PATH> u.1688-music.user.interacted_artist->45<-music.user.interacted_artist-u.1075-music.user.interacted_artist->187
+beam 8: score = -4.608624458312988
+<PATH> u.1688-music.user.interacted_artist->2226<-music.user.interacted_artist-u.712-music.user.interacted_artist->413
+beam 3: score = -4.407469749450684
+<PATH> u.1289-music.user.interacted_artist->158<-music.user.interacted_artist-u.813-music.user.interacted_artist->196
+beam 12: score = -5.680760860443115
+<PATH> u.487-music.user.interacted_artist->98<-music.user.interacted_artist-u.1466-music.user.interacted_artist->115
+beam 16: score = -6.518346786499023
+<PATH> u.1304-music.user.interacted_artist->538<-music.user.interacted_artist-u.1478-music.user.interacted_artist->81
+beam 4: score = -4.144124984741211
+<PATH> u.1496-music.user.interacted_artist->354<-music.user.interacted_artist-u.237-music.user.interacted_artist->109
+beam 2: score = -4.087715148925781
+<PATH> u.1353-music.user.interacted_artist->216<-music.user.interacted_artist-u.347-music.user.interacted_artist->96
+beam 3: score = -4.595800876617432
+<PATH> u.1353-music.user.interacted_artist->217<-music.user.interacted_artist-u.22-music.user.interacted_artist->102
+beam 11: score = -4.3789873123168945
+<PATH> u.341-music.user.interacted_artist->314<-music.user.interacted_artist-u.1975-music.user.interacted_artist->508
+beam 7: score = -5.701933860778809
+<PATH> u.594-music.user.interacted_artist->36<-music.user.interacted_artist-u.773-music.user.interacted_artist->47
+beam 9: score = -6.295187950134277
+<PATH> u.1564-music.user.interacted_artist->184<-music.user.interacted_artist-u.1607-music.user.interacted_artist->538
+beam 1: score = -3.673590898513794
+<PATH> u.1163-music.user.interacted_artist->13<-music.user.interacted_artist-u.767-music.user.interacted_artist->445
+beam 13: score = -5.095842361450195
+<PATH> u.1163-music.user.interacted_artist->275<-music.user.interacted_artist-u.1029-music.user.interacted_artist->499
+beam 17: score = -5.267299652099609
+<PATH> u.71-music.user.interacted_artist->285<-music.user.interacted_artist-u.113-music.user.interacted_artist->250
+beam 6: score = -5.527153491973877
+<PATH> u.1376-music.user.interacted_artist->1144<-music.user.interacted_artist-u.1216-music.user.interacted_artist->47
+beam 4: score = -5.716783046722412
+<PATH> u.1580-music.user.interacted_artist->377<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 16: score = -7.471583366394043
+<PATH> u.1580-music.user.interacted_artist->79<-music.user.interacted_artist-u.1856-music.user.interacted_artist->237
+beam 7: score = -5.961208343505859
+<PATH> u.1986-music.user.interacted_artist->34<-music.user.interacted_artist-u.177-music.user.interacted_artist->250
+beam 19: score = -7.570901870727539
+<PATH> u.248-music.user.interacted_artist->538<-music.user.interacted_artist-u.1478-music.user.interacted_artist->81
+beam 11: score = -4.75886344909668
+<PATH> u.1211-music.user.interacted_artist->257<-music.user.interacted_artist-u.142-music.user.interacted_artist->883
+beam 18: score = -6.999310493469238
+<PATH> u.99-music.user.interacted_artist->354<-music.user.interacted_artist-u.446-music.user.interacted_artist->445
+beam 16: score = -6.25705099105835
+<PATH> u.2004-music.user.interacted_artist->385<-music.user.interacted_artist-u.49-music.user.interacted_artist->78
+beam 1: score = -2.0538859367370605
+<PATH> u.1586-music.user.interacted_artist->992<-music.user.interacted_artist-u.1676-music.user.interacted_artist->52
+beam 6: score = -5.525262832641602
+<PATH> u.572-music.user.interacted_artist->137<-music.user.interacted_artist-u.494-music.user.interacted_artist->132
+beam 18: score = -7.165214538574219
+<PATH> u.250-music.user.interacted_artist->42<-music.user.interacted_artist-u.450-music.user.interacted_artist->362
+beam 5: score = -4.473589897155762
+<PATH> u.1020-music.user.interacted_artist->802<-music.user.interacted_artist-u.2064-music.user.interacted_artist->96
+beam 3: score = -4.99310302734375
+<PATH> u.2077-music.user.interacted_artist->1315<-music.user.interacted_artist-u.1293-music.user.interacted_artist->47
+beam 11: score = -6.232388496398926
+<PATH> u.75-music.user.interacted_artist->560<-music.user.interacted_artist-u.1253-music.user.interacted_artist->171
+beam 7: score = -4.869152545928955
+<PATH> u.1516-music.user.interacted_artist->830<-music.user.interacted_artist-u.126-music.user.interacted_artist->118
+beam 8: score = -4.927364826202393
+<PATH> u.1516-music.user.interacted_artist->830<-music.user.interacted_artist-u.126-music.user.interacted_artist->41
+beam 2: score = -3.7587594985961914
+<PATH> u.431-music.user.interacted_artist->102<-music.user.interacted_artist-u.1804-music.user.interacted_artist->46
+beam 11: score = -6.160361289978027
+<PATH> u.538-music.user.interacted_artist->374<-music.user.interacted_artist-u.1687-music.user.interacted_artist->80
+beam 9: score = -6.192662715911865
+<PATH> u.364-music.user.interacted_artist->608<-music.user.interacted_artist-u.1864-music.user.interacted_artist->35
+beam 7: score = -4.891292095184326
+<PATH> u.780-music.user.interacted_artist->254<-music.user.interacted_artist-u.72-music.user.interacted_artist->22
+beam 12: score = -5.165765285491943
+<PATH> u.780-music.user.interacted_artist->131<-music.user.interacted_artist-u.1590-music.user.interacted_artist->24
+beam 19: score = -5.515151500701904
+<PATH> u.780-music.user.interacted_artist->254<-music.user.interacted_artist-u.72-music.user.interacted_artist->127
+beam 16: score = -5.324277877807617
+<PATH> u.1637-music.user.interacted_artist->2290<-music.user.interacted_artist-u.1407-music.user.interacted_artist->55
+beam 2: score = -4.919401168823242
+<PATH> u.497-music.user.interacted_artist->91<-music.user.interacted_artist-u.1124-music.user.interacted_artist->74
+beam 6: score = -3.8800573348999023
+<PATH> u.1839-music.user.interacted_artist->241<-music.user.interacted_artist-u.26-music.user.interacted_artist->250
+beam 14: score = -5.141749858856201
+<PATH> u.1861-music.user.interacted_artist->677<-music.user.interacted_artist-u.846-music.user.interacted_artist->676
+beam 9: score = -6.167300224304199
+<PATH> u.700-music.user.interacted_artist->96<-music.user.interacted_artist-u.75-music.user.interacted_artist->133
+beam 4: score = -5.157083988189697
+<PATH> u.575-music.user.interacted_artist->358<-music.user.interacted_artist-u.639-music.user.interacted_artist->80
+beam 2: score = -3.541667938232422
+<PATH> u.1674-music.user.interacted_artist->863<-music.user.interacted_artist-u.1685-music.user.interacted_artist->105
+beam 20: score = -7.290505409240723
+<PATH> u.1674-music.user.interacted_artist->78<-music.user.interacted_artist-u.490-music.user.interacted_artist->47
+beam 7: score = -3.8354692459106445
+<PATH> u.635-music.user.interacted_artist->110<-music.user.interacted_artist-u.1265-music.user.interacted_artist->46
+beam 16: score = -4.631632328033447
+<PATH> u.635-music.user.interacted_artist->1923<-music.user.interacted_artist-u.1806-music.user.interacted_artist->57
+beam 8: score = -4.568552017211914
+<PATH> u.327-music.user.interacted_artist->269<-music.user.interacted_artist-u.1921-music.user.interacted_artist->185
+beam 17: score = -7.576395511627197
+<PATH> u.2018-music.user.interacted_artist->115<-music.user.interacted_artist-u.1197-music.user.interacted_artist->206
+beam 7: score = -4.493060111999512
+<PATH> u.1069-music.user.interacted_artist->261<-music.user.interacted_artist-u.2058-music.user.interacted_artist->127
+beam 17: score = -5.548377990722656
+<PATH> u.848-music.user.interacted_artist->163<-music.user.interacted_artist-u.1922-music.user.interacted_artist->53
+beam 1: score = -3.1830761432647705
+<PATH> u.928-music.user.interacted_artist->2579<-music.user.interacted_artist-u.936-music.user.interacted_artist->155
+beam 3: score = -3.939054489135742
+<PATH> u.928-music.user.interacted_artist->727<-music.user.interacted_artist-u.1907-music.user.interacted_artist->196
+beam 5: score = -4.224245548248291
+<PATH> u.2028-music.user.interacted_artist->729<-music.user.interacted_artist-u.936-music.user.interacted_artist->155
+beam 15: score = -6.779489040374756
+<PATH> u.25-music.user.interacted_artist->79<-music.user.interacted_artist-u.1856-music.user.interacted_artist->237
+beam 15: score = -7.190698623657227
+<PATH> u.458-music.user.interacted_artist->107<-music.user.interacted_artist-u.172-music.user.interacted_artist->36
+beam 9: score = -4.076666355133057
+<PATH> u.636-music.user.interacted_artist->674<-music.user.interacted_artist-u.1791-music.user.interacted_artist->74
+beam 14: score = -6.3143510818481445
+<PATH> u.1717-music.user.interacted_artist->96<-music.user.interacted_artist-u.1795-music.user.interacted_artist->72
+beam 0: score = -3.1353883743286133
+<PATH> u.146-music.user.interacted_artist->373<-music.user.interacted_artist-u.286-music.user.interacted_artist->87
+beam 18: score = -7.115826606750488
+<PATH> u.1075-music.user.interacted_artist->45<-music.user.interacted_artist-u.1688-music.user.interacted_artist->104
+beam 6: score = -5.877959728240967
+<PATH> u.292-music.user.interacted_artist->34<-music.user.interacted_artist-u.541-music.user.interacted_artist->362
+beam 1: score = -3.6118276119232178
+<PATH> u.873-music.user.interacted_artist->73<-music.user.interacted_artist-u.380-music.user.interacted_artist->87
+beam 9: score = -5.997219085693359
+<PATH> u.873-music.user.interacted_artist->73<-music.user.interacted_artist-u.380-music.user.interacted_artist->77
+beam 20: score = -5.733407497406006
+<PATH> u.426-music.user.interacted_artist->462<-music.user.interacted_artist-u.60-music.user.interacted_artist->158
+beam 5: score = -4.858624458312988
+<PATH> u.1476-music.user.interacted_artist->78<-music.user.interacted_artist-u.1478-music.user.interacted_artist->538
+beam 13: score = -6.006208419799805
+<PATH> u.1476-music.user.interacted_artist->78<-music.user.interacted_artist-u.1132-music.user.interacted_artist->267
+beam 13: score = -6.92417049407959
+<PATH> u.1040-music.user.interacted_artist->776<-music.user.interacted_artist-u.1559-music.user.interacted_artist->133
+beam 5: score = -4.669745445251465
+<PATH> u.703-music.user.interacted_artist->374<-music.user.interacted_artist-u.1687-music.user.interacted_artist->87
+beam 3: score = -3.623880386352539
+<PATH> u.1796-music.user.interacted_artist->78<-music.user.interacted_artist-u.289-music.user.interacted_artist->55
+beam 6: score = -4.650174617767334
+<PATH> u.1983-music.user.interacted_artist->382<-music.user.interacted_artist-u.987-music.user.interacted_artist->127
+beam 6: score = -4.108953952789307
+<PATH> u.1663-music.user.interacted_artist->539<-music.user.interacted_artist-u.350-music.user.interacted_artist->72
+beam 8: score = -4.556168556213379
+<PATH> u.1820-music.user.interacted_artist->130<-music.user.interacted_artist-u.25-music.user.interacted_artist->80
+beam 2: score = -4.331826210021973
+<PATH> u.781-music.user.interacted_artist->184<-music.user.interacted_artist-u.1607-music.user.interacted_artist->185
+beam 14: score = -5.698003768920898
+<PATH> u.2033-music.user.interacted_artist->923<-music.user.interacted_artist-u.1776-music.user.interacted_artist->863
+beam 1: score = -3.6507411003112793
+<PATH> u.226-music.user.interacted_artist->376<-music.user.interacted_artist-u.646-music.user.interacted_artist->79
+beam 3: score = -4.988559246063232
+<PATH> u.226-music.user.interacted_artist->376<-music.user.interacted_artist-u.646-music.user.interacted_artist->185
+beam 1: score = -3.1742022037506104
+<PATH> u.545-music.user.interacted_artist->126<-music.user.interacted_artist-u.904-music.user.interacted_artist->96
+beam 3: score = -3.6530752182006836
+<PATH> u.545-music.user.interacted_artist->43<-music.user.interacted_artist-u.1703-music.user.interacted_artist->118
+beam 3: score = -4.975748062133789
+<PATH> u.156-music.user.interacted_artist->109<-music.user.interacted_artist-u.237-music.user.interacted_artist->36
+beam 1: score = -4.414395332336426
+<PATH> u.809-music.user.interacted_artist->118<-music.user.interacted_artist-u.425-music.user.interacted_artist->87
+beam 8: score = -6.190267562866211
+<PATH> u.809-music.user.interacted_artist->130<-music.user.interacted_artist-u.1564-music.user.interacted_artist->80
+beam 17: score = -6.686152458190918
+<PATH> u.809-music.user.interacted_artist->374<-music.user.interacted_artist-u.134-music.user.interacted_artist->135
+beam 6: score = -4.374878406524658
+<PATH> u.1662-music.user.interacted_artist->590<-music.user.interacted_artist-u.2091-music.user.interacted_artist->3428
+beam 20: score = -5.879985809326172
+<PATH> u.2100-music.user.interacted_artist->3494<-music.user.interacted_artist-u.1751-music.user.interacted_artist->289
+beam 6: score = -4.338674545288086
+<PATH> u.1375-music.user.interacted_artist->35<-music.user.interacted_artist-u.4-music.user.interacted_artist->34
+beam 4: score = -4.963270664215088
+<PATH> u.355-music.user.interacted_artist->137<-music.user.interacted_artist-u.1387-music.user.interacted_artist->118
+beam 8: score = -5.564064025878906
+<PATH> u.1418-music.user.interacted_artist->303<-music.user.interacted_artist-u.532-music.user.interacted_artist->302
+beam 18: score = -6.554100036621094
+<PATH> u.1418-music.user.interacted_artist->303<-music.user.interacted_artist-u.844-music.user.interacted_artist->199
+beam 3: score = -4.994696617126465
+<PATH> u.361-music.user.interacted_artist->127<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 10: score = -5.842648983001709
+<PATH> u.267-music.user.interacted_artist->91<-music.user.interacted_artist-u.1283-music.user.interacted_artist->78
+beam 6: score = -5.478959560394287
+<PATH> u.1871-music.user.interacted_artist->81<-music.user.interacted_artist-u.1517-music.user.interacted_artist->75
+beam 18: score = -5.733867168426514
+<PATH> u.1582-music.user.interacted_artist->282<-music.user.interacted_artist-u.1245-music.user.interacted_artist->47
+beam 5: score = -4.303335189819336
+<PATH> u.125-music.user.interacted_artist->133<-music.user.interacted_artist-u.985-music.user.interacted_artist->96
+beam 8: score = -4.974403381347656
+<PATH> u.984-music.user.interacted_artist->1258<-music.user.interacted_artist-u.2037-music.user.interacted_artist->77
+beam 10: score = -5.201589107513428
+<PATH> u.984-music.user.interacted_artist->1258<-music.user.interacted_artist-u.1351-music.user.interacted_artist->118
+beam 1: score = -3.5767617225646973
+<PATH> u.1565-music.user.interacted_artist->391<-music.user.interacted_artist-u.1949-music.user.interacted_artist->46
+beam 0: score = -2.455986499786377
+<PATH> u.1407-music.user.interacted_artist->221<-music.user.interacted_artist-u.1486-music.user.interacted_artist->105
+beam 7: score = -4.598289966583252
+<PATH> u.1944-music.user.interacted_artist->242<-music.user.interacted_artist-u.295-music.user.interacted_artist->36
+beam 0: score = -1.4632705450057983
+<PATH> u.1021-music.user.interacted_artist->223<-music.user.interacted_artist-u.1538-music.user.interacted_artist->36
+beam 1: score = -2.4771461486816406
+<PATH> u.1021-music.user.interacted_artist->223<-music.user.interacted_artist-u.547-music.user.interacted_artist->109
+beam 14: score = -5.202977657318115
+<PATH> u.265-music.user.interacted_artist->286<-music.user.interacted_artist-u.1737-music.user.interacted_artist->280
+beam 5: score = -4.5330095291137695
+<PATH> u.1481-music.user.interacted_artist->102<-music.user.interacted_artist-u.1804-music.user.interacted_artist->55
+beam 8: score = -4.7983293533325195
+<PATH> u.1481-music.user.interacted_artist->102<-music.user.interacted_artist-u.1804-music.user.interacted_artist->47
+beam 5: score = -3.7154417037963867
+<PATH> u.1347-music.user.interacted_artist->147<-music.user.interacted_artist-u.1061-music.user.interacted_artist->785
+beam 14: score = -4.905079364776611
+<PATH> u.1347-music.user.interacted_artist->147<-music.user.interacted_artist-u.1032-music.user.interacted_artist->820
+beam 10: score = -5.10267448425293
+<PATH> u.954-music.user.interacted_artist->332<-music.user.interacted_artist-u.496-music.user.interacted_artist->13
+beam 7: score = -5.672284126281738
+<PATH> u.1173-music.user.interacted_artist->111<-music.user.interacted_artist-u.1155-music.user.interacted_artist->516
+beam 5: score = -4.25339937210083
+<PATH> u.1498-music.user.interacted_artist->277<-music.user.interacted_artist-u.2014-music.user.interacted_artist->883
+beam 4: score = -4.794708251953125
+<PATH> u.134-music.user.interacted_artist->374<-music.user.interacted_artist-u.1413-music.user.interacted_artist->185
+beam 6: score = -4.871893882751465
+<PATH> u.134-music.user.interacted_artist->374<-music.user.interacted_artist-u.646-music.user.interacted_artist->79
+beam 11: score = -5.550276756286621
+<PATH> u.2059-music.user.interacted_artist->22<-music.user.interacted_artist-u.72-music.user.interacted_artist->127
+beam 18: score = -5.5360565185546875
+<PATH> u.1793-music.user.interacted_artist->1956<-music.user.interacted_artist-u.570-music.user.interacted_artist->807
+beam 18: score = -7.112617492675781
+<PATH> u.513-music.user.interacted_artist->46<-music.user.interacted_artist-u.1539-music.user.interacted_artist->528
+beam 14: score = -5.717779159545898
+<PATH> u.2080-music.user.interacted_artist->887<-music.user.interacted_artist-u.1514-music.user.interacted_artist->155
+beam 1: score = -4.05219030380249
+<PATH> u.667-music.user.interacted_artist->78<-music.user.interacted_artist-u.1478-music.user.interacted_artist->79
+beam 13: score = -5.488584518432617
+<PATH> u.667-music.user.interacted_artist->78<-music.user.interacted_artist-u.503-music.user.interacted_artist->127
+beam 9: score = -5.402436256408691
+<PATH> u.1042-music.user.interacted_artist->376<-music.user.interacted_artist-u.2059-music.user.interacted_artist->87
+beam 10: score = -5.475501537322998
+<PATH> u.1042-music.user.interacted_artist->2147<-music.user.interacted_artist-u.1742-music.user.interacted_artist->79
+beam 15: score = -5.770171165466309
+<PATH> u.135-music.user.interacted_artist->98<-music.user.interacted_artist-u.72-music.user.interacted_artist->254
+beam 6: score = -4.563272476196289
+<PATH> u.959-music.user.interacted_artist->499<-music.user.interacted_artist-u.1038-music.user.interacted_artist->498
+beam 5: score = -4.837045669555664
+<PATH> u.474-music.user.interacted_artist->261<-music.user.interacted_artist-u.2058-music.user.interacted_artist->80
+beam 7: score = -6.1284308433532715
+<PATH> u.878-music.user.interacted_artist->374<-music.user.interacted_artist-u.1511-music.user.interacted_artist->87
+beam 13: score = -6.735417366027832
+<PATH> u.878-music.user.interacted_artist->374<-music.user.interacted_artist-u.2037-music.user.interacted_artist->77
+beam 10: score = -5.448483943939209
+<PATH> u.1899-music.user.interacted_artist->109<-music.user.interacted_artist-u.1950-music.user.interacted_artist->134
+beam 14: score = -5.648289680480957
+<PATH> u.401-music.user.interacted_artist->776<-music.user.interacted_artist-u.1559-music.user.interacted_artist->52
+beam 13: score = -4.190392971038818
+<PATH> u.980-music.user.interacted_artist->195<-music.user.interacted_artist-u.1167-music.user.interacted_artist->200
+beam 3: score = -3.8981945514678955
+<PATH> u.978-music.user.interacted_artist->1673<-music.user.interacted_artist-u.450-music.user.interacted_artist->42
+beam 14: score = -6.239452362060547
+<PATH> u.978-music.user.interacted_artist->285<-music.user.interacted_artist-u.897-music.user.interacted_artist->289
+beam 13: score = -5.366514205932617
+<PATH> u.1435-music.user.interacted_artist->74<-music.user.interacted_artist-u.571-music.user.interacted_artist->127
+beam 13: score = -6.798398494720459
+<PATH> u.406-music.user.interacted_artist->42<-music.user.interacted_artist-u.450-music.user.interacted_artist->362
+beam 1: score = -3.671534538269043
+<PATH> u.1046-music.user.interacted_artist->538<-music.user.interacted_artist-u.1607-music.user.interacted_artist->185
+beam 4: score = -4.420625686645508
+<PATH> u.1973-music.user.interacted_artist->276<-music.user.interacted_artist-u.1979-music.user.interacted_artist->74
+beam 3: score = -4.646916389465332
+<PATH> u.1489-music.user.interacted_artist->126<-music.user.interacted_artist-u.1703-music.user.interacted_artist->118
+beam 2: score = -4.011096477508545
+<PATH> u.350-music.user.interacted_artist->539<-music.user.interacted_artist-u.1856-music.user.interacted_artist->237
+beam 8: score = -4.852234840393066
+<PATH> u.350-music.user.interacted_artist->539<-music.user.interacted_artist-u.1965-music.user.interacted_artist->74
+beam 3: score = -3.9411323070526123
+<PATH> u.762-music.user.interacted_artist->13<-music.user.interacted_artist-u.520-music.user.interacted_artist->445
+beam 6: score = -4.793637275695801
+<PATH> u.1165-music.user.interacted_artist->52<-music.user.interacted_artist-u.856-music.user.interacted_artist->109
+beam 17: score = -31.795978546142578
+<PATH> u.1930-music.user.interacted_artist->3671-music.artist.origin->5845<-music.artist.origin-3672
+beam 17: score = -4.887294769287109
+<PATH> u.694-music.user.interacted_artist->13<-music.user.interacted_artist-u.767-music.user.interacted_artist->332
+beam 0: score = -2.600693941116333
+<PATH> u.1626-music.user.interacted_artist->60<-music.user.interacted_artist-u.213-music.user.interacted_artist->36
+beam 3: score = -4.1554036140441895
+<PATH> u.1132-music.user.interacted_artist->267<-music.user.interacted_artist-u.875-music.user.interacted_artist->87
+beam 6: score = -4.187366962432861
+<PATH> u.530-music.user.interacted_artist->1545<-music.user.interacted_artist-u.1054-music.user.interacted_artist->137
+beam 2: score = -3.711223602294922
+<PATH> u.790-music.user.interacted_artist->127<-music.user.interacted_artist-u.470-music.user.interacted_artist->79
+beam 4: score = -5.4129533767700195
+<PATH> u.790-music.user.interacted_artist->91<-music.user.interacted_artist-u.1283-music.user.interacted_artist->184
+beam 9: score = -5.224817276000977
+<PATH> u.764-music.user.interacted_artist->46<-music.user.interacted_artist-u.237-music.user.interacted_artist->109
+beam 17: score = -6.094841003417969
+<PATH> u.1410-music.user.interacted_artist->1278<-music.user.interacted_artist-u.1647-music.user.interacted_artist->239
+beam 12: score = -5.587592601776123
+<PATH> u.183-music.user.interacted_artist->445<-music.user.interacted_artist-u.2047-music.user.interacted_artist->277
+beam 17: score = -6.164464950561523
+<PATH> u.481-music.user.interacted_artist->127<-music.user.interacted_artist-u.632-music.user.interacted_artist->863
+beam 8: score = -6.674312114715576
+<PATH> u.1508-music.user.interacted_artist->36<-music.user.interacted_artist-u.237-music.user.interacted_artist->109
+beam 14: score = -5.563934326171875
+<PATH> u.548-music.user.interacted_artist->42<-music.user.interacted_artist-u.1619-music.user.interacted_artist->3
+beam 2: score = -4.254354953765869
+<PATH> u.1457-music.user.interacted_artist->77<-music.user.interacted_artist-u.380-music.user.interacted_artist->79
+beam 15: score = -4.46966552734375
+<PATH> u.712-music.user.interacted_artist->2226<-music.user.interacted_artist-u.1688-music.user.interacted_artist->45
+beam 9: score = -5.121494293212891
+<PATH> u.440-music.user.interacted_artist->516<-music.user.interacted_artist-u.1470-music.user.interacted_artist->56
+beam 12: score = -5.299574375152588
+<PATH> u.440-music.user.interacted_artist->196<-music.user.interacted_artist-u.813-music.user.interacted_artist->158
+beam 1: score = -2.5244104862213135
+<PATH> u.1592-music.user.interacted_artist->119<-music.user.interacted_artist-u.189-music.user.interacted_artist->96
+beam 19: score = -6.875429630279541
+<PATH> u.1701-music.user.interacted_artist->53<-music.user.interacted_artist-u.629-music.user.interacted_artist->109
+beam 8: score = -5.3756914138793945
+<PATH> u.303-music.user.interacted_artist->788<-music.user.interacted_artist-u.1163-music.user.interacted_artist->36
+beam 0: score = -2.505222797393799
+<PATH> u.738-music.user.interacted_artist->325<-music.user.interacted_artist-u.595-music.user.interacted_artist->36
+beam 3: score = -4.1142072677612305
+<PATH> u.2088-music.user.interacted_artist->1612<-music.user.interacted_artist-u.405-music.user.interacted_artist->77
+beam 14: score = -5.3109211921691895
+<PATH> u.1857-music.user.interacted_artist->1130<-music.user.interacted_artist-u.1019-music.user.interacted_artist->906
+beam 15: score = -5.243629455566406
+<PATH> u.1885-music.user.interacted_artist->1923<-music.user.interacted_artist-u.1806-music.user.interacted_artist->1528
+beam 5: score = -5.324835300445557
+<PATH> u.2086-music.user.interacted_artist->295<-music.user.interacted_artist-u.1496-music.user.interacted_artist->52
+beam 8: score = -5.610551834106445
+<PATH> u.87-music.user.interacted_artist->132<-music.user.interacted_artist-u.1120-music.user.interacted_artist->81
+beam 19: score = -6.819350242614746
+<PATH> u.87-music.user.interacted_artist->372<-music.user.interacted_artist-u.130-music.user.interacted_artist->66
+beam 7: score = -5.5280070304870605
+<PATH> u.1058-music.user.interacted_artist->560<-music.user.interacted_artist-u.1678-music.user.interacted_artist->80
+beam 10: score = -6.16273307800293
+<PATH> u.1081-music.user.interacted_artist->46<-music.user.interacted_artist-u.1539-music.user.interacted_artist->391
+beam 9: score = -4.385138034820557
+<PATH> u.166-music.user.interacted_artist->54<-music.user.interacted_artist-u.1987-music.user.interacted_artist->879
+beam 1: score = -4.140344619750977
+<PATH> u.1253-music.user.interacted_artist->134<-music.user.interacted_artist-u.1189-music.user.interacted_artist->87
+beam 18: score = -6.380125999450684
+<PATH> u.870-music.user.interacted_artist->134<-music.user.interacted_artist-u.739-music.user.interacted_artist->188
+beam 14: score = -5.8892364501953125
+<PATH> u.1726-music.user.interacted_artist->538<-music.user.interacted_artist-u.1351-music.user.interacted_artist->130
+beam 2: score = -4.26661491394043
+<PATH> u.717-music.user.interacted_artist->75<-music.user.interacted_artist-u.873-music.user.interacted_artist->79
+beam 4: score = -4.903669357299805
+<PATH> u.1572-music.user.interacted_artist->74<-music.user.interacted_artist-u.470-music.user.interacted_artist->79
+beam 2: score = -4.184395790100098
+<PATH> u.1113-music.user.interacted_artist->1612<-music.user.interacted_artist-u.405-music.user.interacted_artist->77
+beam 3: score = -4.3187103271484375
+<PATH> u.885-music.user.interacted_artist->74<-music.user.interacted_artist-u.722-music.user.interacted_artist->87
+beam 17: score = -7.472142219543457
+<PATH> u.885-music.user.interacted_artist->74<-music.user.interacted_artist-u.136-music.user.interacted_artist->115
+beam 8: score = -4.236251354217529
+<PATH> u.424-music.user.interacted_artist->654<-music.user.interacted_artist-u.676-music.user.interacted_artist->325
+beam 15: score = -6.728798866271973
+<PATH> u.1446-music.user.interacted_artist->206<-music.user.interacted_artist-u.425-music.user.interacted_artist->118
+beam 1: score = -3.8982784748077393
+<PATH> u.531-music.user.interacted_artist->127<-music.user.interacted_artist-u.470-music.user.interacted_artist->79
+beam 2: score = -3.842210292816162
+<PATH> u.804-music.user.interacted_artist->127<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 20: score = -5.221498489379883
+<PATH> u.2025-music.user.interacted_artist->275<-music.user.interacted_artist-u.1163-music.user.interacted_artist->36
+beam 3: score = -3.69514536857605
+<PATH> u.725-music.user.interacted_artist->151<-music.user.interacted_artist-u.195-music.user.interacted_artist->36
+beam 2: score = -3.8570024967193604
+<PATH> u.840-music.user.interacted_artist->286<-music.user.interacted_artist-u.1879-music.user.interacted_artist->52
+beam 0: score = -2.592001438140869
+<PATH> u.834-music.user.interacted_artist->969<-music.user.interacted_artist-u.1490-music.user.interacted_artist->210
+beam 1: score = -4.2614593505859375
+<PATH> u.1906-music.user.interacted_artist->1589<-music.user.interacted_artist-u.404-music.user.interacted_artist->96
+beam 0: score = -3.1993536949157715
+<PATH> u.1665-music.user.interacted_artist->77<-music.user.interacted_artist-u.650-music.user.interacted_artist->96
+beam 3: score = -4.250764846801758
+<PATH> u.269-music.user.interacted_artist->1303<-music.user.interacted_artist-u.1778-music.user.interacted_artist->96
+beam 2: score = -3.6553990840911865
+<PATH> u.953-music.user.interacted_artist->78<-music.user.interacted_artist-u.289-music.user.interacted_artist->46
+beam 1: score = -3.5682268142700195
+<PATH> u.938-music.user.interacted_artist->376<-music.user.interacted_artist-u.700-music.user.interacted_artist->96
+beam 6: score = -5.045349597930908
+<PATH> u.784-music.user.interacted_artist->163<-music.user.interacted_artist-u.989-music.user.interacted_artist->159
+beam 15: score = -4.6995086669921875
+<PATH> u.1905-music.user.interacted_artist->297<-music.user.interacted_artist-u.1405-music.user.interacted_artist->878
+beam 10: score = -6.712619304656982
+<PATH> u.1696-music.user.interacted_artist->34<-music.user.interacted_artist-u.541-music.user.interacted_artist->362
+beam 0: score = -3.0395917892456055
+<PATH> u.924-music.user.interacted_artist->2560<-music.user.interacted_artist-u.1116-music.user.interacted_artist->2562
+beam 2: score = -4.717182636260986
+<PATH> u.1087-music.user.interacted_artist->105<-music.user.interacted_artist-u.315-music.user.interacted_artist->55
+beam 15: score = -5.641671180725098
+<PATH> u.1506-music.user.interacted_artist->293<-music.user.interacted_artist-u.2024-music.user.interacted_artist->57
+beam 18: score = -6.183288097381592
+<PATH> u.1458-music.user.interacted_artist->115<-music.user.interacted_artist-u.30-music.user.interacted_artist->267
+beam 3: score = -4.098466396331787
+<PATH> u.1281-music.user.interacted_artist->42<-music.user.interacted_artist-u.1159-music.user.interacted_artist->34
+beam 0: score = -2.7568881511688232
+<PATH> u.1200-music.user.interacted_artist->55<-music.user.interacted_artist-u.315-music.user.interacted_artist->52
+beam 10: score = -4.403398513793945
+<PATH> u.387-music.user.interacted_artist->45<-music.user.interacted_artist-u.560-music.user.interacted_artist->295
+beam 4: score = -5.6000776290893555
+<PATH> u.1120-music.user.interacted_artist->75<-music.user.interacted_artist-u.1791-music.user.interacted_artist->127
+beam 2: score = -2.7103772163391113
+<PATH> u.489-music.user.interacted_artist->141<-music.user.interacted_artist-u.824-music.user.interacted_artist->36
+beam 3: score = -4.489934921264648
+<PATH> u.632-music.user.interacted_artist->127<-music.user.interacted_artist-u.470-music.user.interacted_artist->74
+beam 10: score = -6.665884017944336
+<PATH> u.632-music.user.interacted_artist->127<-music.user.interacted_artist-u.72-music.user.interacted_artist->254
+beam 0: score = -1.3526244163513184
+<PATH> u.141-music.user.interacted_artist->450<-music.user.interacted_artist-u.994-music.user.interacted_artist->36
+beam 4: score = -4.047445297241211
+<PATH> u.1505-music.user.interacted_artist->445<-music.user.interacted_artist-u.650-music.user.interacted_artist->96
+beam 17: score = -5.386964321136475
+<PATH> u.1505-music.user.interacted_artist->445<-music.user.interacted_artist-u.1225-music.user.interacted_artist->126
+beam 8: score = -5.203428268432617
+<PATH> u.504-music.user.interacted_artist->78<-music.user.interacted_artist-u.503-music.user.interacted_artist->376
+beam 5: score = -4.859784126281738
+<PATH> u.1591-music.user.interacted_artist->372<-music.user.interacted_artist-u.45-music.user.interacted_artist->74
+beam 14: score = -6.048238754272461
+<PATH> u.1676-music.user.interacted_artist->52<-music.user.interacted_artist-u.1165-music.user.interacted_artist->1662
+beam 13: score = -7.151216506958008
+<PATH> u.1072-music.user.interacted_artist->79<-music.user.interacted_artist-u.749-music.user.interacted_artist->377
+beam 15: score = -6.027456283569336
+<PATH> u.1424-music.user.interacted_artist->776<-music.user.interacted_artist-u.1559-music.user.interacted_artist->105
+beam 18: score = -6.023897647857666
+<PATH> u.1312-music.user.interacted_artist->1503<-music.user.interacted_artist-u.435-music.user.interacted_artist->302
+beam 13: score = -5.602407455444336
+<PATH> u.1356-music.user.interacted_artist->919<-music.user.interacted_artist-u.1017-music.user.interacted_artist->75
+beam 14: score = -5.630853652954102
+<PATH> u.1356-music.user.interacted_artist->1258<-music.user.interacted_artist-u.1332-music.user.interacted_artist->73
+beam 20: score = -7.339262962341309
+<PATH> u.1264-music.user.interacted_artist->52<-music.user.interacted_artist-u.696-music.user.interacted_artist->191
+beam 12: score = -4.842521667480469
+<PATH> u.1083-music.user.interacted_artist->1590<-music.user.interacted_artist-u.392-music.user.interacted_artist->45
+beam 16: score = -6.252906322479248
+<PATH> u.1394-music.user.interacted_artist->187<-music.user.interacted_artist-u.1075-music.user.interacted_artist->55
+beam 2: score = -3.850529909133911
+<PATH> u.173-music.user.interacted_artist->36<-music.user.interacted_artist-u.237-music.user.interacted_artist->46
+beam 9: score = -5.75271463394165
+<PATH> u.173-music.user.interacted_artist->302<-music.user.interacted_artist-u.2043-music.user.interacted_artist->102
+beam 11: score = -4.17051362991333
+<PATH> u.224-music.user.interacted_artist->883<-music.user.interacted_artist-u.2014-music.user.interacted_artist->257
+beam 10: score = -5.811458110809326
+<PATH> u.991-music.user.interacted_artist->34<-music.user.interacted_artist-u.1534-music.user.interacted_artist->96
+beam 0: score = -3.5756804943084717
+<PATH> u.674-music.user.interacted_artist->1258<-music.user.interacted_artist-u.1332-music.user.interacted_artist->185
+beam 15: score = -6.92086124420166
+<PATH> u.669-music.user.interacted_artist->560<-music.user.interacted_artist-u.906-music.user.interacted_artist->134
+beam 7: score = -5.5215253829956055
+<PATH> u.340-music.user.interacted_artist->80<-music.user.interacted_artist-u.1954-music.user.interacted_artist->127
+beam 13: score = -7.0235209465026855
+<PATH> u.470-music.user.interacted_artist->79<-music.user.interacted_artist-u.1564-music.user.interacted_artist->171
+beam 12: score = -5.968039035797119
+<PATH> u.140-music.user.interacted_artist->154<-music.user.interacted_artist-u.1790-music.user.interacted_artist->159
+beam 13: score = -5.974596977233887
+<PATH> u.140-music.user.interacted_artist->516<-music.user.interacted_artist-u.465-music.user.interacted_artist->54
+beam 5: score = -4.694631099700928
+<PATH> u.502-music.user.interacted_artist->539<-music.user.interacted_artist-u.1856-music.user.interacted_artist->237
+beam 7: score = -4.736101150512695
+<PATH> u.889-music.user.interacted_artist->221<-music.user.interacted_artist-u.2096-music.user.interacted_artist->36
+beam 9: score = -4.9110565185546875
+<PATH> u.1728-music.user.interacted_artist->20<-music.user.interacted_artist-u.2047-music.user.interacted_artist->445
+beam 13: score = -5.074892044067383
+<PATH> u.1728-music.user.interacted_artist->223<-music.user.interacted_artist-u.1181-music.user.interacted_artist->883
+beam 4: score = -4.104857444763184
+<PATH> u.776-music.user.interacted_artist->220<-music.user.interacted_artist-u.78-music.user.interacted_artist->119
+beam 11: score = -5.9783830642700195
+<PATH> u.835-music.user.interacted_artist->96<-music.user.interacted_artist-u.189-music.user.interacted_artist->118
+beam 14: score = -6.499664306640625
+<PATH> u.627-music.user.interacted_artist->673<-music.user.interacted_artist-u.1093-music.user.interacted_artist->250
+beam 8: score = -5.107146263122559
+<PATH> u.898-music.user.interacted_artist->81<-music.user.interacted_artist-u.1120-music.user.interacted_artist->237
+beam 7: score = -3.8023762702941895
+<PATH> u.1213-music.user.interacted_artist->329<-music.user.interacted_artist-u.935-music.user.interacted_artist->13

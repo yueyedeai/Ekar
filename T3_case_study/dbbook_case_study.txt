@@ -1,0 +1,176 @@
+** Create point.rs.conve knowledge graph **
+Sanity check: 15727 entities loaded
+Sanity check: 1 types loaded
+Sanity check: 31 relations loaded
+Sanity check: maximum out degree: 2516
+Sanity check: 334954 facts in knowledge graph
+Vectorizing action spaces...
+** Create conve knowledge graph **
+Sanity check: 15727 entities loaded
+Sanity check: 1 types loaded
+Sanity check: 31 relations loaded
+point.rs.conve module created
+loading pretrained embeddings...
+*********case study for the test data
+5576 triples loaded from data/dbbook2014-one/test.triples
+
+Model Parameters
+--------------------------
+kg.entity_embeddings.weight 503264 requires_grad=False
+kg.relation_embeddings.weight 992 requires_grad=False
+mdl.W1.weight 2048 requires_grad=True
+mdl.W1.bias 64 requires_grad=True
+mdl.W2.weight 4096 requires_grad=True
+mdl.W2.bias 64 requires_grad=True
+mdl.path_encoder.weight_ih_l0 8192 requires_grad=True
+mdl.path_encoder.weight_hh_l0 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l0 128 requires_grad=True
+mdl.path_encoder.bias_hh_l0 128 requires_grad=True
+mdl.path_encoder.weight_ih_l1 4096 requires_grad=True
+mdl.path_encoder.weight_hh_l1 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l1 128 requires_grad=True
+mdl.path_encoder.bias_hh_l1 128 requires_grad=True
+mdl.path_encoder.weight_ih_l2 4096 requires_grad=True
+mdl.path_encoder.weight_hh_l2 4096 requires_grad=True
+mdl.path_encoder.bias_ih_l2 128 requires_grad=True
+mdl.path_encoder.bias_hh_l2 128 requires_grad=True
+fn_kg.entity_embeddings.weight 503264 requires_grad=False
+fn_kg.relation_embeddings.weight 992 requires_grad=False
+fn.b 15727 requires_grad=False
+fn.conv1.weight 288 requires_grad=False
+fn.conv1.bias 32 requires_grad=False
+fn.bn0.weight 1 requires_grad=False
+fn.bn0.bias 1 requires_grad=False
+fn.bn1.weight 32 requires_grad=False
+fn.bn1.bias 32 requires_grad=False
+fn.bn2.weight 32 requires_grad=False
+fn.bn2.bias 32 requires_grad=False
+fn.fc.weight 36864 requires_grad=False
+fn.fc.bias 32 requires_grad=False
+Total # parameters = 1097297
+--------------------------
+
+size of item set =  2598
+=> loading checkpoint '/home1/duanzhijian/kgrec/point/model/dbbook2014-one-point.rs.conve-xavier-pretrain-fix-n/a-32-32-3-3-0.001-0.0-0.0-0.3-256-0.05-ho/model_best.tar'
+********All meta path**********
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:284085(19.9)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:301427(21.1)%
+==>http://interacted==>http://interacted_inv==>http://interacted:525510(36.8)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:168933(11.8)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:32359(2.3)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:31708(2.2)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:34609(2.4)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:16469(1.2)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink:314(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink:3798(0.3)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2046(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:2330(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:767(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/property/books:391(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:5313(0.4)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist_inv:436(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/basedOn_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:42(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1923(0.1)%
+==>http://interacted==><null>==><null>:299(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://purl.org/linguistics/gold/hypernym_inv:141(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:606(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==><null>:1346(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv:9(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==><null>:323(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:95(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books:292(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:292(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink:466(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv:22(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/illustrator_inv:315(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:123(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:1089(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/illustrator==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:146(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher_inv:294(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/property/books:902(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv:1290(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/coverArtist_inv:853(0.1)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink:295(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/coverArtist_inv:522(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:1634(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/illustrator==>http://dbpedia.org/ontology/wikiPageWikiLink:352(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://purl.org/linguistics/gold/hypernym_inv:406(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv:615(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/wikiPageWikiLink:295(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:160(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso==>http://dbpedia.org/ontology/wikiPageWikiLink:102(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/illustrator==>http://dbpedia.org/ontology/illustrator_inv:328(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/illustrator==>http://dbpedia.org/ontology/coverArtist_inv:53(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/illustrator_inv:57(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:178(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/lastAppearance_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:155(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/lastAppearance_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:36(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/property/books:26(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==><null>:6(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso==><null>:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:343(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv:157(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/translator_inv:21(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==><null>:12(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==><null>:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:95(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/illustrator_inv:88(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/literaryGenre_inv:44(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==>http://dbpedia.org/ontology/wikiPageWikiLink:9(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/language_inv:21(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher:13(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==><null>:5(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/literaryGenre_inv:13(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv:8(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==><null>:23(0.0)%
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==><null>:7(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://www.w3.org/2000/01/rdf-schema#seeAlso:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/language==><null>:1(0.0)%
+********Positive meta path**********
+==>http://interacted==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type==>http://www.w3.org/1999/02/22-rdf-syntax-ns#type_inv:2048(25.4)%
+==>http://interacted==>http://interacted_inv==>http://interacted:2384(29.6)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:603(7.5)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:2209(27.4)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:194(2.4)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:9(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/wikiPageWikiLink:151(1.9)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/publisher_inv:27(0.3)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink:22(0.3)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://purl.org/linguistics/gold/hypernym_inv:119(1.5)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/wikiPageWikiLink:4(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:38(0.5)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink:8(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:4(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:3(0.0)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/property/books:48(0.6)%
+==>http://interacted==>http://dbpedia.org/ontology/translator==>http://dbpedia.org/ontology/translator_inv:11(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/illustrator==>http://dbpedia.org/ontology/illustrator_inv:9(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:75(0.9)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/publisher_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:8(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/lastAppearance_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:6(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/illustrator==>http://dbpedia.org/ontology/wikiPageWikiLink:5(0.1)%
+==>http://interacted==>http://dbpedia.org/property/books_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:6(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://purl.org/linguistics/gold/hypernym_inv:4(0.0)%
+==>http://interacted==>http://purl.org/linguistics/gold/hypernym==>http://dbpedia.org/ontology/wikiPageWikiLink:8(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/translator_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/publisher_inv:16(0.2)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/literaryGenre_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/coverArtist_inv:10(0.1)%
+==>http://interacted==>http://dbpedia.org/ontology/literaryGenre==>http://dbpedia.org/ontology/literaryGenre_inv:3(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/publisher==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso==>http://dbpedia.org/ontology/wikiPageWikiLink:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/property/books:2(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/lastAppearance_inv==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso_inv==>http://dbpedia.org/property/books:3(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/coverArtist_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/ontology/coverArtist_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/coverArtist==>http://dbpedia.org/ontology/illustrator_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink_inv==>http://dbpedia.org/ontology/illustrator_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/illustrator==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/basedOn_inv==>http://dbpedia.org/ontology/wikiPageWikiLink:1(0.0)%
+==>http://interacted==>http://www.w3.org/2000/01/rdf-schema#seeAlso==>http://dbpedia.org/ontology/wikiPageWikiLink_inv:1(0.0)%
+==>http://interacted==>http://dbpedia.org/ontology/wikiPageWikiLink==>http://dbpedia.org/property/books:1(0.0)%

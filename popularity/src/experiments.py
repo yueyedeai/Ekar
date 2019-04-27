@@ -434,7 +434,7 @@ def run_experiment(args):
                 if args.model_dir is None:
                     initialize_model_directory(args)
                 print ("model directory : %s" % args.model_dir)
-                sys.stdout = open(os.path.join(args.model_dir, "case_study.txt"), "w")
+                sys.stdout = open(os.path.join(args.model_dir, "T3_case_study.txt"), "w")
                 lf = construct_model(args)
                 lf.cuda()
                 case_study(lf)
