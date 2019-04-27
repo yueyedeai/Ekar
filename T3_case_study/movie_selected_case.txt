@@ -1,0 +1,2 @@
+u.2685-film.user.interacted_film->Edge of Seventeen-film.film.genre->Comedy<-film.film.genre-Airplane!
+u.2685-film.user.interacted_film->The Boys of St. Vincent<-film.user.interacted_film-u.4169-film.user.interacted_film->Raiders of the Lost Ark
