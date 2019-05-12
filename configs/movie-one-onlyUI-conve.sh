@@ -18,7 +18,6 @@ train_batch_size=1024
 dev_batch_size=128
 learning_rate=0.01
 grad_norm=5
-emb_dropout_rate=0 #
 beam_size=128
 emb_dropout_rate=0.1
 feat_dropout_rate=0.1

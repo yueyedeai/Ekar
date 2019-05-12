@@ -53,6 +53,7 @@ class LFramework(nn.Module):
         self.run_analysis = args.run_analysis
         self.case_study = args.case_study
         self.max_decrease_count = args.max_decrease_count
+        self.reward_as_score = args.reward_as_score
 
         self.kg = kg
         self.mdl = mdl
@@ -224,17 +225,15 @@ class LFramework(nn.Module):
                         for i in range(len(self.K)):
                             o_f.write("Recall@%d = %.4f\n" % (self.K[i], Recall[i]))
                         # We can add more information
-
-                else:
-                    # Early stopping
-                    if n_valid > self.max_decrease_count:
-                        if metrics < dev_metrics_history[-1]:
-                            decrease_count += 1
-                        else:
-                            decrease_count = 0
-                        if decrease_count >= self.max_decrease_count:
-                            self.num_epochs = epoch_id + 1
-                            break
+                # Early stopping
+                if n_valid > self.max_decrease_count:
+                    if metrics < dev_metrics_history[-1]:
+                        decrease_count += 1
+                    else:
+                        decrease_count = 0
+                    if decrease_count >= self.max_decrease_count:
+                        self.num_epochs = epoch_id + 1
+                        break
 
                 dev_metrics_history.append(metrics)
                 if self.run_analysis:
@@ -281,7 +280,7 @@ class LFramework(nn.Module):
         self.batch_size = self.dev_batch_size
         test_scores = self.forward(test_data)
 
-        if self.args.reward_as_score:
+        if self.reward_as_score:
             print ("*********reward as score*********")
         elif self.args.rollout_inference:
             print ("*********rollout inference*******")
@@ -311,7 +310,10 @@ class LFramework(nn.Module):
         all_meta_path_sum  = 0
         pos_meta_path_dict = defaultdict(int)
         pos_meta_path_sum  = 0
-        show_case_f = open(os.path.join(self.args.model_dir, "movie_show_case.txt"), "w")
+        if self.args.filename:
+            show_case_f = open(os.path.join(self.args.model_dir, self.args.filename + "_detail"), "w")
+        else:
+            show_case_f = open(os.path.join(self.args.model_dir, "show_case.txt"), "w")
         for example_id in tqdm(range(0, len(examples), self.batch_size)):
             mini_batch = examples[example_id:example_id + self.batch_size]
             mini_batch_size = len(mini_batch)

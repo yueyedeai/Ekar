@@ -43,7 +43,6 @@ cmd="python3 -u -m src.experiments \
     --num_rollout_steps $num_rollout_steps \
     --bucket_interval $bucket_interval \
     --num_epochs $num_epochs \
-    --num_wait_epochs $num_wait_epochs \
     --num_peek_epochs $num_peek_epochs \
     --batch_size $batch_size \
     --train_batch_size $train_batch_size \

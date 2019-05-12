@@ -241,6 +241,9 @@ parser.add_argument('--train_raw_graph', action='store_true')
 parser.add_argument('--reward_as_score', action='store_true')
 parser.add_argument('--rollout_inference', action='store_true')
 parser.add_argument('--max_decrease_count', type=int, default=5)
+parser.add_argument('--multi_path', action='store_true')
+parser.add_argument('--tag', type=str, default=None)
+parser.add_argument('--filename', type=str, default=None)
 
 def str2list(v):
     v=v.split(',')

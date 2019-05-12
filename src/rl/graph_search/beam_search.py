@@ -15,7 +15,8 @@ from IPython import embed
 
 def beam_search(pn, e_s, q, e_t, kg, num_steps, beam_size,
                 return_search_traces=False,
-                use_action_space_bucketing=True):
+                use_action_space_bucketing=True,
+                multi_path=False):
     """
     Beam search from source.
 
@@ -166,7 +167,7 @@ def beam_search(pn, e_s, q, e_t, kg, num_steps, beam_size,
         # => [batch_size*k, action_space_size]
         log_action_dist = log_action_prob.view(-1, 1) + ops.safe_log(action_dist)
         # [batch_size*k, action_space_size] => [batch_size*new_k]
-        if t == num_steps - 1:
+        if t == num_steps - 1 and not multi_path:
             action, log_action_prob, action_offset = top_k_answer_unique(log_action_dist, action_space)
         else:
             action, log_action_prob, action_offset = top_k_action(log_action_dist, action_space)

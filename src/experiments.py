@@ -189,6 +189,8 @@ def initialize_model_directory(args, random_seed=None):
     if args.remove_rs:
         model_sub_dir += '-rrs'
 
+    if args.tag:
+        model_sub_dir += '_' + args.tag
     model_dir = os.path.join(model_root_dir, model_sub_dir)
 
     if not os.path.exists(model_dir):
@@ -200,7 +202,8 @@ def initialize_model_directory(args, random_seed=None):
     args.model_dir = model_dir
 
     if args.train and not args.test_metrics and not args.case_study:
-        sys.stdout = open(os.path.join(args.model_dir, "output.txt"), "w")
+        filename="output.txt"
+        sys.stdout = open(os.path.join(args.model_dir, filename), "w")
         print (args)
 
 
@@ -415,7 +418,10 @@ def run_experiment(args):
                 if args.model_dir is None:
                     initialize_model_directory(args)
                 print ("model directory : %s" % args.model_dir)
-                sys.stdout = open(os.path.join(args.model_dir, "case_study.txt"), "w")
+                filename = "case_study.txt"
+                if args.filename is not None:
+                    filename = args.filename
+                sys.stdout = open(os.path.join(args.model_dir, filename), "w")
                 lf = construct_model(args)
                 lf.cuda()
                 case_study(lf)
@@ -423,14 +429,16 @@ def run_experiment(args):
                 if args.model_dir is None:
                     initialize_model_directory(args)
                 print ("model directory : %s" % args.model_dir)
-                filename = ""
-                if args.rollout_inference:
-                    filename = "rollout"
+                if args.filename is None:
+                    if args.rollout_inference:
+                        filename = "rollout"
+                    else:
+                        filename = "beam_search"
+                    if args.reward_as_score:
+                        filename += "_reward_as_score"
+                    filename += ".txt"
                 else:
-                    filename = "beam_search"
-                if args.reward_as_score:
-                    filename += "_reward_as_score"
-                filename += ".txt"
+                    filename = args.filename
                 sys.stdout = open(os.path.join(args.model_dir, filename), "w")
                 lf = construct_model(args)
                 lf.cuda()

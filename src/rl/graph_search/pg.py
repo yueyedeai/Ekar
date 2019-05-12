@@ -45,7 +45,6 @@ class PolicyGradient(LFramework):
         self.bias = torch.zeros(self.kg.num_entities) - 1
         self.bias[list(self.kg.item_set)] = 0
         self.bias = self.bias.cuda()
-        self.reward_as_score = args.reward_as_score
         self.rollout_inference = args.rollout_inference
 
         self.args = args
@@ -305,7 +304,8 @@ class PolicyGradient(LFramework):
             beam_search_output = search.beam_search(
                 pn, e1, r, e2, kg, self.num_rollout_steps, self.beam_size,
                 return_search_traces=case_study,
-                use_action_space_bucketing=self.args.use_action_space_bucketing)
+                use_action_space_bucketing=self.args.use_action_space_bucketing,
+                multi_path=self.args.multi_path)
             pred_e2s = beam_search_output['pred_e2s']
             if self.reward_as_score:
                 _e1 = e1.unsqueeze(1).repeat((1, pred_e2s.shape[1])).view(-1)
