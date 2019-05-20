@@ -29,7 +29,7 @@ action_dropout_rate=0.0
 action_dropout_anneal_interval=1000
 beta=0.05
 relation_only="False"
-beam_size=256
+beam_size=64
 
 num_paths_per_entity=-1
 margin=-1

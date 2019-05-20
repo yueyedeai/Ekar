@@ -25,41 +25,41 @@ DUMMY_ENTITY_ID = 0
 NO_OP_ENTITY_ID = 1
 
 
-def check_answer_ratio(examples):
-    entity_dict = {}
-    for e1, e2, r in examples:
-        if not e1 in entity_dict:
-            entity_dict[e1] = set()
-        entity_dict[e1].add(e2)
-    answer_ratio = 0
-    for e1 in entity_dict:
-        answer_ratio += len(entity_dict[e1])
-    return answer_ratio / len(entity_dict)
-
-def check_relation_answer_ratio(input_file, kg):
-    example_dict = {}
-    with open(input_file) as f:
-        for line in f:
-            e1, e2, r = line.strip().split()
-            e1 = kg.entity2id[e1]
-            e2 = kg.entity2id[e2]
-            r = kg.relation2id[r]
-            if not r in example_dict:
-                example_dict[r] = []
-            example_dict[r].append((e1, e2, r))
-    r_answer_ratio = {}
-    for r in example_dict:
-        r_answer_ratio[r] = check_answer_ratio(example_dict[r])
-    return r_answer_ratio
-
-def change_to_test_model_path(dataset, model_path):
-    model_dir = os.path.dirname(os.path.dirname(model_path))
-    model_subdir = os.path.basename(os.path.dirname(model_path))
-    file_name = os.path.basename(model_path)
-    new_model_subdir = dataset + '.test' + model_subdir[len(dataset):]
-    new_model_subdir += '-test'
-    new_model_path = os.path.join(model_dir, new_model_subdir, file_name)
-    return new_model_path
+# def check_answer_ratio(examples):
+#     entity_dict = {}
+#     for e1, e2, r in examples:
+#         if not e1 in entity_dict:
+#             entity_dict[e1] = set()
+#         entity_dict[e1].add(e2)
+#     answer_ratio = 0
+#     for e1 in entity_dict:
+#         answer_ratio += len(entity_dict[e1])
+#     return answer_ratio / len(entity_dict)
+#
+# def check_relation_answer_ratio(input_file, kg):
+#     example_dict = {}
+#     with open(input_file) as f:
+#         for line in f:
+#             e1, e2, r = line.strip().split()
+#             e1 = kg.entity2id[e1]
+#             e2 = kg.entity2id[e2]
+#             r = kg.relation2id[r]
+#             if not r in example_dict:
+#                 example_dict[r] = []
+#             example_dict[r].append((e1, e2, r))
+#     r_answer_ratio = {}
+#     for r in example_dict:
+#         r_answer_ratio[r] = check_answer_ratio(example_dict[r])
+#     return r_answer_ratio
+#
+# def change_to_test_model_path(dataset, model_path):
+#     model_dir = os.path.dirname(os.path.dirname(model_path))
+#     model_subdir = os.path.basename(os.path.dirname(model_path))
+#     file_name = os.path.basename(model_path)
+#     new_model_subdir = dataset + '.test' + model_subdir[len(dataset):]
+#     new_model_subdir += '-test'
+#     new_model_path = os.path.join(model_dir, new_model_subdir, file_name)
+#     return new_model_path
 
 def get_train_path(args):
     if args.train_raw_graph:
@@ -81,31 +81,30 @@ def load_seen_entities(adj_list_path, entity_index_path):
     print('{} seen entities loaded...'.format(len(seen_entities)))
     return seen_entities
  
-def load_triples_with_label(data_path, r, entity_index_path, relation_index_path, seen_entities=None, verbose=False):
-    entity2id, _ = load_index(entity_index_path)
-    relation2id, _ = load_index(relation_index_path)
-
-    def triple2ids(e1, e2, r):
-        return entity2id[e1], entity2id[e2], relation2id[r]
-
-    triples, labels = [], []
-    with open(data_path) as f:
-        num_skipped = 0
-        for line in f:
-            pair, label = line.strip().split(': ')
-            e1, e2 = pair.strip().split(',')
-            if seen_entities and (not e1 in seen_entities or not e2 in seen_entities):
-                num_skipped += 1
-                if verbose:
-                    print('Skip triple ({}) with unseen entity: {}'.format(num_skipped, line.strip())) 
-                continue
-            triples.append(triple2ids(e1, e2, r))
-            labels.append(label.strip())
-    return triples, labels
+# def load_triples_with_label(data_path, r, entity_index_path, relation_index_path, seen_entities=None, verbose=False):
+#     entity2id, _ = load_index(entity_index_path)
+#     relation2id, _ = load_index(relation_index_path)
+#
+#     def triple2ids(e1, e2, r):
+#         return entity2id[e1], entity2id[e2], relation2id[r]
+#
+#     triples, labels = [], []
+#     with open(data_path) as f:
+#         num_skipped = 0
+#         for line in f:
+#             pair, label = line.strip().split(': ')
+#             e1, e2 = pair.strip().split(',')
+#             if seen_entities and (not e1 in seen_entities or not e2 in seen_entities):
+#                 num_skipped += 1
+#                 if verbose:
+#                     print('Skip triple ({}) with unseen entity: {}'.format(num_skipped, line.strip()))
+#                 continue
+#             triples.append(triple2ids(e1, e2, r))
+#             labels.append(label.strip())
+#     return triples, labels
 
 def load_triples(data_path, entity_index_path, relation_index_path, group_examples_by_query=False,
-                 add_reverse_relations=False, seen_entities=None, verbose=False, raw_path=None,
-                 add_raw_path=False):
+                 add_reverse_relations=False, seen_entities=None, verbose=False):
     """
     Convert triples stored on disc into indices.
     """
@@ -170,7 +169,7 @@ def load_index(input_path):
             rev_index[i] = v
     return index, rev_index
 
-def prepare_kb_enviroment(raw_kb_path, train_path, dev_path, test_path, test_mode, add_reverse_relations=True):
+def prepare_kb_enviroment(raw_kb_path, train_path, dev_path, test_path, add_reverse_relations=True):
     """
     Process KB data which was saved as a set of triples.
         (a) Remove train and test triples from the KB envrionment.
@@ -188,13 +187,7 @@ def prepare_kb_enviroment(raw_kb_path, train_path, dev_path, test_path, test_mod
     def get_type(e_name):
         if e_name == DUMMY_ENTITY:
             return DUMMY_ENTITY
-        if 'nell-995' in data_dir.lower():
-            if '_' in e_name:
-                return e_name.split('_')[1]
-            else:
-                return 'numerical'
-        else:
-            return 'entity'
+        return 'entity'
 
     def hist_to_vocab(_dict):
         return sorted(sorted(_dict.items(), key=lambda x: x[0]), key=lambda x: x[1], reverse=True)
@@ -212,24 +205,16 @@ def prepare_kb_enviroment(raw_kb_path, train_path, dev_path, test_path, test_mod
     with open(test_path) as f:
         test_triples = [l.strip() for l in f.readlines()]
 
-    if test_mode: # In test mode, we should keep the dev_triples  (what??)
-        keep_triples = train_triples + dev_triples
-        removed_triples = test_triples
-    else:
-        keep_triples = train_triples
-        removed_triples = dev_triples + test_triples
+    keep_triples = train_triples
+    removed_triples = dev_triples + test_triples
 
     # Index entities and relations
     for line in set(raw_kb_triples + keep_triples + removed_triples):
         e1, e2, r = line.strip().split()
         entity_hist[e1] += 1
         entity_hist[e2] += 1
-        if 'nell-995' in data_dir.lower():
-            t1 = e1.split('_')[1] if '_' in e1 else 'numerical'
-            t2 = e2.split('_')[1] if '_' in e2 else 'numerical'
-        else:
-            t1 = get_type(e1)
-            t2 = get_type(e2)
+        t1 = get_type(e1)
+        t2 = get_type(e2)
         type_hist[t1] += 1
         type_hist[t2] += 1
         relation_hist[r] += 1
@@ -300,101 +285,101 @@ def prepare_kb_enviroment(raw_kb_path, train_path, dev_path, test_path, test_mod
     with open(os.path.join(data_dir, 'entity2typeid.pkl'), 'wb') as o_f:
         pickle.dump(entity2typeid, o_f)
 
-def get_seen_queries(data_dir, entity_index_path, relation_index_path):
-    entity2id, _ = load_index(entity_index_path)
-    relation2id, _ = load_index(relation_index_path)
-    seen_queries = set()
-    with open(os.path.join(data_dir, 'train.triples')) as f:
-        for line in f:
-            e1, e2, r = line.strip().split('\t')
-            e1_id = entity2id[e1]
-            r_id = relation2id[r]
-            seen_queries.add((e1_id, r_id))
+# def get_seen_queries(data_dir, entity_index_path, relation_index_path):
+#     entity2id, _ = load_index(entity_index_path)
+#     relation2id, _ = load_index(relation_index_path)
+#     seen_queries = set()
+#     with open(os.path.join(data_dir, 'train.triples')) as f:
+#         for line in f:
+#             e1, e2, r = line.strip().split('\t')
+#             e1_id = entity2id[e1]
+#             r_id = relation2id[r]
+#             seen_queries.add((e1_id, r_id))
+#
+#     seen_exps = []
+#     unseen_exps = []
+#     num_exps = 0
+#     with open(os.path.join(data_dir, 'dev.triples')) as f:
+#         for line in f:
+#             num_exps += 1
+#             e1, e2, r = line.strip().split('\t')
+#             e1_id = entity2id[e1]
+#             r_id = relation2id[r]
+#             if (e1_id, r_id) in seen_queries:
+#                 seen_exps.append(line)
+#             else:
+#                 unseen_exps.append(line)
+#     num_seen_exps = len(seen_exps) + 0.0
+#     num_unseen_exps = len(unseen_exps) + 0.0
+#     seen_ratio = num_seen_exps / num_exps
+#     unseen_ratio = num_unseen_exps / num_exps
+#     print('Seen examples: {}/{} {}'.format(num_seen_exps, num_exps, seen_ratio))
+#     print('Unseen examples: {}/{} {}'.format(num_unseen_exps, num_exps, unseen_ratio))
+#
+#     return seen_queries, (seen_ratio, unseen_ratio)
 
-    seen_exps = []
-    unseen_exps = []
-    num_exps = 0
-    with open(os.path.join(data_dir, 'dev.triples')) as f:
-        for line in f:
-            num_exps += 1
-            e1, e2, r = line.strip().split('\t')
-            e1_id = entity2id[e1]
-            r_id = relation2id[r]
-            if (e1_id, r_id) in seen_queries:
-                seen_exps.append(line)
-            else:
-                unseen_exps.append(line)
-    num_seen_exps = len(seen_exps) + 0.0
-    num_unseen_exps = len(unseen_exps) + 0.0
-    seen_ratio = num_seen_exps / num_exps
-    unseen_ratio = num_unseen_exps / num_exps
-    print('Seen examples: {}/{} {}'.format(num_seen_exps, num_exps, seen_ratio))
-    print('Unseen examples: {}/{} {}'.format(num_unseen_exps, num_exps, unseen_ratio))
-
-    return seen_queries, (seen_ratio, unseen_ratio)
-
-def get_relations_by_type(data_dir, relation_index_path):
-    with open(os.path.join(data_dir, 'raw.kb')) as f:
-        triples = list(f.readlines())
-    with open(os.path.join(data_dir, 'train.triples')) as f:
-        triples += list(f.readlines())
-    triples = list(set(triples))
-
-    query_answers = dict()
-
-    theta_1_to_M = 1.5
-
-    for triple_str in triples:
-        e1, e2, r = triple_str.strip().split('\t')
-        if not r in query_answers:
-            query_answers[r] = dict()
-        if not e1 in query_answers[r]:
-            query_answers[r][e1] = set()
-        query_answers[r][e1].add(e2)
-
-    to_M_rels = set()
-    to_1_rels = set()
-
-    dev_rels = set()
-    with open(os.path.join(data_dir, 'dev.triples')) as f:
-        for line in f:
-            e1, e2, r = line.strip().split('\t')
-            dev_rels.add(r)
-
-    relation2id, _ = load_index(relation_index_path)
-    num_rels = len(dev_rels)
-    print('{} relations in dev dataset in total'.format(num_rels))
-    for r in dev_rels:
-        ratio = np.mean([len(x) for x in query_answers[r].values()])
-        if ratio > theta_1_to_M:
-            to_M_rels.add(relation2id[r])
-        else:
-            to_1_rels.add(relation2id[r])
-    num_to_M = len(to_M_rels) + 0.0
-    num_to_1 = len(to_1_rels) + 0.0
-
-    print('to-M relations: {}/{} ({})'.format(num_to_M, num_rels, num_to_M / num_rels))
-    print('to-1 relations: {}/{} ({})'.format(num_to_1, num_rels, num_to_1 / num_rels))
-
-    to_M_examples = []
-    to_1_examples = []
-    num_exps = 0
-    with open(os.path.join(data_dir, 'dev.triples')) as f:
-        for line in f:
-            num_exps += 1
-            e1, e2, r = line.strip().split('\t')
-            if relation2id[r] in to_M_rels:
-                to_M_examples.append(line)
-            elif relation2id[r] in to_1_rels:
-                to_1_examples.append(line)
-    num_to_M_exps = len(to_M_examples) + 0.0
-    num_to_1_exps = len(to_1_examples) + 0.0
-    to_M_ratio = num_to_M_exps / num_exps
-    to_1_ratio = num_to_1_exps / num_exps
-    print('to-M examples: {}/{} ({})'.format(num_to_M_exps, num_exps, to_M_ratio))
-    print('to-1 examples: {}/{} ({})'.format(num_to_1_exps, num_exps, to_1_ratio))
-
-    return to_M_rels, to_1_rels, (to_M_ratio, to_1_ratio)
+# def get_relations_by_type(data_dir, relation_index_path):
+#     with open(os.path.join(data_dir, 'raw.kb')) as f:
+#         triples = list(f.readlines())
+#     with open(os.path.join(data_dir, 'train.triples')) as f:
+#         triples += list(f.readlines())
+#     triples = list(set(triples))
+#
+#     query_answers = dict()
+#
+#     theta_1_to_M = 1.5
+#
+#     for triple_str in triples:
+#         e1, e2, r = triple_str.strip().split('\t')
+#         if not r in query_answers:
+#             query_answers[r] = dict()
+#         if not e1 in query_answers[r]:
+#             query_answers[r][e1] = set()
+#         query_answers[r][e1].add(e2)
+#
+#     to_M_rels = set()
+#     to_1_rels = set()
+#
+#     dev_rels = set()
+#     with open(os.path.join(data_dir, 'dev.triples')) as f:
+#         for line in f:
+#             e1, e2, r = line.strip().split('\t')
+#             dev_rels.add(r)
+#
+#     relation2id, _ = load_index(relation_index_path)
+#     num_rels = len(dev_rels)
+#     print('{} relations in dev dataset in total'.format(num_rels))
+#     for r in dev_rels:
+#         ratio = np.mean([len(x) for x in query_answers[r].values()])
+#         if ratio > theta_1_to_M:
+#             to_M_rels.add(relation2id[r])
+#         else:
+#             to_1_rels.add(relation2id[r])
+#     num_to_M = len(to_M_rels) + 0.0
+#     num_to_1 = len(to_1_rels) + 0.0
+#
+#     print('to-M relations: {}/{} ({})'.format(num_to_M, num_rels, num_to_M / num_rels))
+#     print('to-1 relations: {}/{} ({})'.format(num_to_1, num_rels, num_to_1 / num_rels))
+#
+#     to_M_examples = []
+#     to_1_examples = []
+#     num_exps = 0
+#     with open(os.path.join(data_dir, 'dev.triples')) as f:
+#         for line in f:
+#             num_exps += 1
+#             e1, e2, r = line.strip().split('\t')
+#             if relation2id[r] in to_M_rels:
+#                 to_M_examples.append(line)
+#             elif relation2id[r] in to_1_rels:
+#                 to_1_examples.append(line)
+#     num_to_M_exps = len(to_M_examples) + 0.0
+#     num_to_1_exps = len(to_1_examples) + 0.0
+#     to_M_ratio = num_to_M_exps / num_exps
+#     to_1_ratio = num_to_1_exps / num_exps
+#     print('to-M examples: {}/{} ({})'.format(num_to_M_exps, num_exps, to_M_ratio))
+#     print('to-1 examples: {}/{} ({})'.format(num_to_1_exps, num_exps, to_1_ratio))
+#
+#     return to_M_rels, to_1_rels, (to_M_ratio, to_1_ratio)
 
 def load_configs(args, config_path):
     with open(config_path) as f:

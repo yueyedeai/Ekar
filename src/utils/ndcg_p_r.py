@@ -1,6 +1,6 @@
 from numpy import *
 
-def eval_NDCG_P_R(pred, label, k_list = array([10])): # k_list must in order
+def eval_NDCG_P_R(pred, label, k_list = array([10])):
     k_list = sort(k_list)
     sorted_idx = argsort(-pred)
     num_positive = sum(label==1)

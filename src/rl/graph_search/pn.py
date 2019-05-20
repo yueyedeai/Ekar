@@ -22,29 +22,22 @@ class GraphSearchPolicy(nn.Module):
     def __init__(self, args):
         super(GraphSearchPolicy, self).__init__()
         self.model = args.model
-        assert (not (args.relation_only and args.entity_only))
-        assert (not (args.relation_only and args.history_only))
-        assert (not (args.entity_only and args.history_only))
+        assert (not (args.entity_history and args.history_only))
 
-        self.relation_only = args.relation_only
-        self.entity_only = args.entity_only
+        self.entity_history = args.entity_history
         self.history_only = args.history_only
 
         self.history_dim = args.history_dim
         self.history_num_layers = args.history_num_layers
         self.entity_dim = args.entity_dim
         self.relation_dim = args.relation_dim
-        if self.relation_only:
-            self.action_dim = args.relation_dim
-        else:
-            self.action_dim = args.entity_dim + args.relation_dim
+        self.action_dim = args.entity_dim + args.relation_dim
         self.ff_dropout_rate = args.ff_dropout_rate
         self.rnn_dropout_rate = args.rnn_dropout_rate
         self.action_dropout_rate = args.action_dropout_rate
 
         self.xavier_initialization = args.xavier_initialization
 
-        self.relation_only_in_path = args.relation_only_in_path
         self.path = None
 
         # Set policy network modules
@@ -91,13 +84,7 @@ class GraphSearchPolicy(nn.Module):
         # Representation of the current state (current node and other observations)
         Q = kg.get_relation_embeddings(q)
         H = self.path[-1][0][-1, :, :]
-        if self.relation_only:
-            X = torch.cat([H, Q], dim=-1)
-        elif self.relation_only_in_path:
-            E_s = kg.get_entity_embeddings(e_s)
-            E = kg.get_entity_embeddings(e)
-            X = torch.cat([E, H, E_s, Q], dim=-1)
-        elif self.entity_only:
+        if self.entity_history:
             E = kg.get_entity_embeddings(e)
             X = torch.cat([E, H], dim=-1)
         elif self.history_only:
@@ -137,13 +124,7 @@ class GraphSearchPolicy(nn.Module):
             action_space = ((r_space, e_space), action_mask)
             return action_space
 
-        t_policy_nn_fun_0 = 0
-        t_policy_nn_fun = 0
         if use_action_space_bucketing:
-            # deprecated.   --dzj
-            """
-            
-            """
             db_outcomes = []
             entropy_list = []
             references = []
@@ -194,15 +175,12 @@ class GraphSearchPolicy(nn.Module):
 
     def initialize_path(self, init_action, kg):
         # [batch_size, action_dim]
-        if self.relation_only_in_path:
-            init_action_embedding = kg.get_relation_embeddings(init_action[0])
-        else:
-            init_action_embedding = self.get_action_embedding(init_action, kg)
+        init_action_embedding = self.get_action_embedding(init_action, kg)
         init_action_embedding.unsqueeze_(1)
         # [num_layers, batch_size, dim]
         init_h = zeros_var_cuda([self.history_num_layers, len(init_action_embedding), self.history_dim])
         init_c = zeros_var_cuda([self.history_num_layers, len(init_action_embedding), self.history_dim])
-        self.path = [self.path_encoder(init_action_embedding, (init_h, init_c))[1]] #???
+        self.path = [self.path_encoder(init_action_embedding, (init_h, init_c))[1]]
 
     def update_path(self, action, kg, offset=None):
         """
@@ -222,10 +200,7 @@ class GraphSearchPolicy(nn.Module):
                     p[i] = x[offset, :]
 
         # update action history
-        if self.relation_only_in_path:
-            action_embedding = kg.get_relation_embeddings(action[0])
-        else:
-            action_embedding = self.get_action_embedding(action, kg)
+        action_embedding = self.get_action_embedding(action, kg)
         if offset is not None:
             offset_path_history(self.path, offset)
         self.path.append(self.path_encoder(action_embedding.unsqueeze(1), self.path[-1])[1])
@@ -331,20 +306,22 @@ class GraphSearchPolicy(nn.Module):
             #     action_mask *= (1 - false_negative_mask)
             #     self.validate_action_mask(action_mask)
 
-        # Prevent the agent from stopping in the middle of a path
-        stop_mask = (last_r == NO_OP_RELATION_ID).unsqueeze(1).float()
-        action_mask = (1 - stop_mask) * action_mask + stop_mask * (r_space == NO_OP_RELATION_ID).float()
-        # Prevent loops
-        # Note: avoid duplicate removal of self-loops
-        seen_nodes_b = seen_nodes
-        loop_mask_b = (((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0) *
-             (r_space != NO_OP_RELATION_ID)).float()
-        action_mask *= (1 - loop_mask_b)
 
-        # # Prevent loops and self-loops
-        # seen_nodes_b = seen_nodes
-        # loop_mask_b = ((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0).float()
-        # action_mask *= (1 - loop_mask_b)
+        if self.args.no_self_loop:
+            # # Prevent loops and self-loops
+            seen_nodes_b = seen_nodes
+            loop_mask_b = ((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0).float()
+            action_mask *= (1 - loop_mask_b)
+        else:
+            # Prevent the agent from stopping in the middle of a path
+            stop_mask = (last_r == NO_OP_RELATION_ID).unsqueeze(1).float()
+            action_mask = (1 - stop_mask) * action_mask + stop_mask * (r_space == NO_OP_RELATION_ID).float()
+            # Prevent loops
+            # Note: avoid duplicate removal of self-loops
+            seen_nodes_b = seen_nodes
+            loop_mask_b = (((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0) *
+                 (r_space != NO_OP_RELATION_ID)).float()
+            action_mask *= (1 - loop_mask_b)
         
         return (r_space, e_space), action_mask
 
@@ -354,11 +331,10 @@ class GraphSearchPolicy(nn.Module):
         inv_q = kg.get_inv_relation_id(q)
         inv_ground_truth_edge_mask = \
             ((e == e_t).unsqueeze(1) * (r_space == inv_q.unsqueeze(1)) * (e_space == e_s.unsqueeze(1)))
-        # (e_s.unsqueeze(1) != kg.dummy_e)?? I think it is useless. --dzj
         return ((ground_truth_edge_mask + inv_ground_truth_edge_mask) * (e_s.unsqueeze(1) != kg.dummy_e)).float()
 
     def get_answer_mask(self, e_space, e_s, q, kg):
-        if kg.args.mask_test_false_negatives: # !!!
+        if kg.args.mask_test_false_negatives:
             answer_vectors = kg.all_object_vectors
         else:
             answer_vectors = kg.train_object_vectors
@@ -408,40 +384,25 @@ class GraphSearchPolicy(nn.Module):
         """
         r, e = action
         relation_embedding = kg.get_relation_embeddings(r)
-        if self.relation_only:
-            action_embedding = relation_embedding
-        else:
-            entity_embedding = kg.get_entity_embeddings(e)
-            action_embedding = torch.cat([relation_embedding, entity_embedding], dim=-1)
+        entity_embedding = kg.get_entity_embeddings(e)
+        action_embedding = torch.cat([relation_embedding, entity_embedding], dim=-1)
         return action_embedding
 
     def define_modules(self):
-        if self.relation_only:
-            input_dim = self.history_dim + self.relation_dim
-        elif self.relation_only_in_path:
-            input_dim = self.history_dim + self.entity_dim * 2 + self.relation_dim
-        elif self.entity_only:
+        if self.entity_history:
             input_dim = self.history_dim + self.entity_dim
         elif self.history_only:
             input_dim = self.history_dim
         else:
             input_dim = self.history_dim + self.entity_dim + self.relation_dim
-        # self.W1 = nn.Linear(input_dim, self.action_dim)
-        # self.W2 = nn.Linear(self.action_dim, self.action_dim)
         self.W1 = nn.Linear(input_dim, self.action_dim)
         self.W2 = nn.Linear(self.action_dim, self.action_dim)
         self.W1Dropout = nn.Dropout(p=self.ff_dropout_rate)
         self.W2Dropout = nn.Dropout(p=self.ff_dropout_rate)
-        if self.relation_only_in_path:
-            self.path_encoder = nn.LSTM(input_size=self.relation_dim,
-                                        hidden_size=self.history_dim,
-                                        num_layers=self.history_num_layers,
-                                        batch_first=True)
-        else:
-            self.path_encoder = nn.LSTM(input_size=self.action_dim,
-                                        hidden_size=self.history_dim,
-                                        num_layers=self.history_num_layers,
-                                        batch_first=True)
+        self.path_encoder = nn.LSTM(input_size=self.action_dim,
+                                    hidden_size=self.history_dim,
+                                    num_layers=self.history_num_layers,
+                                    batch_first=True)
 
     def initialize_modules(self):
         if self.xavier_initialization:

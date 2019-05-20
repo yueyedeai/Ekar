@@ -24,11 +24,10 @@ class PolicyGradient(LFramework):
         super(PolicyGradient, self).__init__(args, kg, pn)
 
         # Training hyperparameters
-        self.relation_only = args.relation_only
         self.use_action_space_bucketing = args.use_action_space_bucketing
         self.num_rollouts = args.num_rollouts
         self.num_rollout_steps = args.num_rollout_steps
-        self.baseline = args.baseline
+        # self.baseline = args.baseline
         self.beta = args.beta  # entropy regularization parameter
         self.gamma = args.gamma  # shrinking factor
         self.action_dropout_rate = args.action_dropout_rate
@@ -77,17 +76,17 @@ class PolicyGradient(LFramework):
     def loss(self, mini_batch):
         # t0 = time()
 
-        def stablize_reward(r):
-            # We don't use any baseline function yet. --dzj
-            r_2D = r.view(-1, self.num_rollouts)
-            if self.baseline == 'avg_reward':
-                stabled_r_2D = r_2D - r_2D.mean(dim=1, keepdim=True)
-            elif self.baseline == 'avg_reward_normalized':
-                stabled_r_2D = (r_2D - r_2D.mean(dim=1, keepdim=True)) / (r_2D.std(dim=1, keepdim=True) + ops.EPSILON)
-            else:
-                raise ValueError('Unrecognized baseline function: {}'.format(self.baseline))
-            stabled_r = stabled_r_2D.view(-1)
-            return stabled_r
+        # def stablize_reward(r):
+        #     # We don't use any baseline function yet. --dzj
+        #     r_2D = r.view(-1, self.num_rollouts)
+        #     if self.baseline == 'avg_reward':
+        #         stabled_r_2D = r_2D - r_2D.mean(dim=1, keepdim=True)
+        #     elif self.baseline == 'avg_reward_normalized':
+        #         stabled_r_2D = (r_2D - r_2D.mean(dim=1, keepdim=True)) / (r_2D.std(dim=1, keepdim=True) + ops.EPSILON)
+        #     else:
+        #         raise ValueError('Unrecognized baseline function: {}'.format(self.baseline))
+        #     stabled_r = stabled_r_2D.view(-1)
+        #     return stabled_r
     
         e1, e2, r = self.format_batch(mini_batch, num_labels = self.kg.num_entities, num_tiles=self.num_rollouts)
 
@@ -102,8 +101,8 @@ class PolicyGradient(LFramework):
 
         # Compute discounted reward
         final_reward = self.reward_fun(e1, r, e2, pred_e2)
-        if self.baseline != 'n/a':
-            final_reward = stablize_reward(final_reward)
+        # if self.baseline != 'n/a':
+        #     final_reward = stablize_reward(final_reward)
         cum_discounted_rewards = [0] * self.num_rollout_steps
         cum_discounted_rewards[-1] = final_reward
         R = 0
@@ -170,11 +169,6 @@ class PolicyGradient(LFramework):
         path_trace = [(r_s, e_s)]
         pn.initialize_path((r_s, e_s), kg)
 
-        t_transit = 0
-        t_transit_0 = 0
-        t_sample = 0
-        t_sample_0 = 0
-
         for t in range(num_steps):
             last_r, e = path_trace[-1]
             obs = [e_s, q, e_t, t==(num_steps-1), last_r, seen_nodes]
@@ -201,7 +195,7 @@ class PolicyGradient(LFramework):
                 path_components.append((e, top_k_action, top_k_action_prob))
 
         pred_e2 = path_trace[-1][1]
-        self.record_path_trace(path_trace)
+        # self.record_path_trace(path_trace)
 
         # print ("time for transit = %.2f" % t_transit)
         # print ("time for sample = %.2f"  % t_sample)
@@ -257,7 +251,6 @@ class PolicyGradient(LFramework):
             return sample_outcome
 
         if inv_offset is not None:
-            # deprecated.   --dzj
             next_r_list = []
             next_e_list = []
             action_dist_list = []
@@ -354,24 +347,3 @@ class PolicyGradient(LFramework):
             return pred_scores, all_meta_path_dict, pos_meta_path_dict
         return pred_scores
 
-    def record_path_trace(self, path_trace):
-        # This part of code is problematic.
-        path_length = len(path_trace)
-        flattened_path_trace = [x for t in path_trace for x in t]
-        path_trace_mat = torch.cat(flattened_path_trace).reshape(-1, path_length)
-        path_trace_mat = path_trace_mat.data.cpu().numpy()
-
-        for i in range(path_trace_mat.shape[0]):
-            path_recorder = self.path_types
-            for j in range(path_trace_mat.shape[1]):
-                e = path_trace_mat[i, j]
-                if not e in path_recorder:
-                    if j == path_trace_mat.shape[1] - 1:
-                        path_recorder[e] = 1
-                        self.num_path_types += 1
-                    else:
-                        path_recorder[e] = {}
-                else:
-                    if j == path_trace_mat.shape[1] - 1:
-                        path_recorder[e] += 1
-                path_recorder = path_recorder[e]

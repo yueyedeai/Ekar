@@ -80,7 +80,6 @@ class LFramework(nn.Module):
         # Track dev metrics changes
         best_dev_metrics = 0
         dev_metrics_history = []
-        # last_loss = 100.0
 
         t0 = time()
         t1 = t0
@@ -88,12 +87,6 @@ class LFramework(nn.Module):
         t_valid = 0
         n_valid = 0
 
-        t_loss = 0
-        t_loss_0 = 0
-        t_back = 0
-        t_back_0 = 0
-        t_step = 0
-        t_step_0 = 0
         decrease_count = 0
 
         for epoch_id in range(self.start_epoch, self.num_epochs):
@@ -103,24 +96,21 @@ class LFramework(nn.Module):
                 # Reward shaping module sanity check:
                 #   Make sure the reward shaping module output value is in the correct range
                 train_scores = self.test_fn(train_data)
-                # dev_scores = self.test_fn(dev_data)
                 print('Train set average fact score: {}'.format(float(train_scores.mean())))
-                # print('Dev set average fact score: {}'.format(float(dev_scores.mean())))
 
             # Update model parameters
             self.train()
             if self.rl_variation_tag.startswith('rs'):
                 self.fn.eval()
                 self.fn_kg.eval()
-                if self.model.endswith('hypere'):
-                    self.fn_secondary_kg.eval()
+                # if self.model.endswith('hypere'):
+                #     self.fn_secondary_kg.eval()
             self.batch_size = self.train_batch_size
             random.shuffle(train_data)
             batch_losses = []
             entropies = []
             if self.run_analysis:
                 rewards = None
-                fns = None
             t_loss = 0
             t_back = 0
             t_step = 0
@@ -153,10 +143,7 @@ class LFramework(nn.Module):
                         rewards = loss['reward']
                     else:
                         rewards = torch.cat([rewards, loss['reward']])
-                    if fns is None:# what's this? --dzj
-                        fns = loss['fn']
-                    else:
-                        fns = torch.cat([fns, loss['fn']])
+                    # print('* Analysis: # hits = {} ({})'.format(0, float(loss['reward'].mean())))
 
             print ("time for calculate loss = %.2f" % t_loss)
             print ("time for backward = %.2f"       % t_back)
@@ -170,29 +157,20 @@ class LFramework(nn.Module):
             # Check training statistics
             stdout_msg = 'Epoch {}: average training loss = {}'.format(epoch_id, np.mean(batch_losses))
 
-            # epoch_loss = np.mean(batch_losses)
-            # if (epoch_loss > last_loss):
-            #     self.learning_rate *= 0.5
-            #     print("learning rate decay to %f" % self.learning_rate)
-            #     if self.learning_rate < 1e-5:
-            #         self.num_epochs = epoch_id + 1
-            #         break
-            #     for param_group in self.optim.param_groups:
-            #         param_group['lr'] = self.learning_rate
-            # last_loss = epoch_loss
-
             if entropies:
                 stdout_msg += '\nentropy = {}'.format(np.mean(entropies))
             print(stdout_msg)
-            # self.save_checkpoint(checkpoint_id=epoch_id, epoch_id=epoch_id)
             if self.run_analysis:
-                print('* Analysis: # path types seen = {}'.format(self.num_path_types))
                 num_hits = float(rewards.sum())
                 hit_ratio = num_hits / len(rewards)
                 print('* Analysis: # hits = {} ({})'.format(num_hits, hit_ratio))
-                num_fns = float(fns.sum())
-                fn_ratio = num_fns / len(fns)
-                print('* Analysis: false negative ratio = {}'.format(fn_ratio))
+                hit_ratio_file = os.path.join(self.model_dir, 'hit_ratio.dat')
+                if epoch_id == 0:
+                    with open(hit_ratio_file, 'w') as o_f:
+                        o_f.write('{}\n'.format(hit_ratio))
+                else:
+                    with open(hit_ratio_file, 'a') as o_f:
+                        o_f.write('{}\n'.format(hit_ratio))
 
             # Check dev set performance
             if epoch_id % self.num_peek_epochs == 0:
@@ -237,28 +215,13 @@ class LFramework(nn.Module):
 
                 dev_metrics_history.append(metrics)
                 if self.run_analysis:
-                    num_path_types_file = os.path.join(self.model_dir, 'num_path_types.dat')
                     dev_metrics_file = os.path.join(self.model_dir, 'dev_metrics.dat')
-                    hit_ratio_file = os.path.join(self.model_dir, 'hit_ratio.dat')
-                    fn_ratio_file = os.path.join(self.model_dir, 'fn_ratio.dat')
                     if epoch_id == 0:
-                        with open(num_path_types_file, 'w') as o_f:
-                            o_f.write('{}\n'.format(self.num_path_types))
                         with open(dev_metrics_file, 'w') as o_f:
                             o_f.write('{}\n'.format(metrics))
-                        with open(hit_ratio_file, 'w') as o_f:
-                            o_f.write('{}\n'.format(hit_ratio))
-                        with open(fn_ratio_file, 'w') as o_f:
-                            o_f.write('{}\n'.format(fn_ratio))
                     else:
-                        with open(num_path_types_file, 'a') as o_f:
-                            o_f.write('{}\n'.format(self.num_path_types))
                         with open(dev_metrics_file, 'a') as o_f:
                             o_f.write('{}\n'.format(metrics))
-                        with open(hit_ratio_file, 'a') as o_f:
-                            o_f.write('{}\n'.format(hit_ratio))
-                        with open(fn_ratio_file, 'a') as o_f:
-                            o_f.write('{}\n'.format(fn_ratio))
                 t_valid += time() - _t_valid
 
             print ("time for epoch %d = %.1f" % (epoch_id, time() - t1))
@@ -409,15 +372,6 @@ class LFramework(nn.Module):
         checkpoint_dict['state_dict'] = self.state_dict()
         checkpoint_dict['epoch_id'] = epoch_id
 
-        # out_tar = os.path.join(self.model_dir, 'checkpoint-{}.tar'.format(checkpoint_id))
-        # if is_best:
-        #     best_path = os.path.join(self.model_dir, 'model_best.tar')
-        #     shutil.copyfile(out_tar, best_path)
-        #     print('=> best model updated \'{}\''.format(best_path))
-        # else:
-        #     torch.save(checkpoint_dict, out_tar)
-        #     print('=> saving checkpoint to \'{}\''.format(out_tar))
-
         if is_best:
             best_path = os.path.join(self.model_dir, 'model_best.tar')
             torch.save(checkpoint_dict, best_path)
@@ -438,30 +392,6 @@ class LFramework(nn.Module):
                 assert (self.start_epoch <= self.num_epochs)
         else:
             print('=> no checkpoint found at \'{}\''.format(input_file))
-
-    def export_to_embedding_projector(self):
-        """
-        Export knowledge base embeddings into .tsv files accepted by the Tensorflow Embedding Projector.
-        """
-        vector_path = os.path.join(self.model_dir, 'vector.tsv')
-        meta_data_path = os.path.join(self.model_dir, 'metadata.tsv')
-        v_o_f = open(vector_path, 'w')
-        m_o_f = open(meta_data_path, 'w')
-        for r in self.kg.relation2id:
-            if r.endswith('_inv'):
-                continue
-            r_id = self.kg.relation2id[r]
-            R = self.kg.relation_embeddings.weight[r_id]
-            r_print = ''
-            for i in range(len(R)):
-                r_print += '{}\t'.format(float(R[i]))
-            v_o_f.write('{}\n'.format(r_print.strip()))
-            m_o_f.write('{}\n'.format(r))
-            print(r, '{}'.format(float(R.norm())))
-        v_o_f.close()
-        m_o_f.close()
-        print('KG embeddings exported to {}'.format(vector_path))
-        print('KG meta data exported to {}'.format(meta_data_path))
 
     @property
     def rl_variation_tag(self):

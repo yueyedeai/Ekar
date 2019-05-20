@@ -38,19 +38,13 @@ class KnowledgeGraph(nn.Module):
 
         self.action_space = None
         self.action_space_buckets = None
-        self.unique_r_space = None
+        # self.unique_r_space = None
 
-        # self.train_subjects = None
         self.train_objects = None
-        # self.dev_subjects = None
         self.dev_objects = None
-        # self.all_subjects = None
         self.all_objects = None
-        # self.train_subject_vectors = None
         self.train_object_vectors = None
-        # self.dev_subject_vectors = None
         self.dev_object_vectors = None
-        # self.all_subject_vectors = None
         self.all_object_vectors = None
 
         self.item_set = set()
@@ -64,7 +58,6 @@ class KnowledgeGraph(nn.Module):
         self.entity_dim = args.entity_dim
         self.relation_dim = args.relation_dim
         self.emb_dropout_rate = args.emb_dropout_rate
-        self.num_graph_convolution_layers = args.num_graph_convolution_layers
         self.entity_embeddings = None
         self.DistMult = None
         self.entity_img_embeddings = None
@@ -87,7 +80,7 @@ class KnowledgeGraph(nn.Module):
         print('Sanity check: {} relations loaded'.format(len(self.relation2id)))
        
         # Load graph structures
-        if self.args.model.startswith('point'): 
+        if self.args.model.startswith('point'):
             # Base graph structure used for training and test
             adj_list_path = os.path.join(data_dir, 'adj_list.pkl')
             with open(adj_list_path, 'rb') as f:
@@ -136,12 +129,6 @@ class KnowledgeGraph(nn.Module):
             action_space.insert(0, (NO_OP_RELATION_ID, e1))
             return action_space
 
-        def get_unique_r_space(e1):
-            if e1 in self.adj_list:
-                return list(self.adj_list[e1].keys())
-            else:
-                return []
-
         def vectorize_action_space(action_space_list, action_space_size):
             bucket_size = len(action_space_list)
             r_space = torch.zeros(bucket_size, action_space_size) + self.dummy_r
@@ -153,14 +140,6 @@ class KnowledgeGraph(nn.Module):
                     e_space[i, j] = e
                     action_mask[i, j] = 1
             return (int_var_cuda(r_space), int_var_cuda(e_space)), var_cuda(action_mask)
-
-        def vectorize_unique_r_space(unique_r_space_list, unique_r_space_size, volatile):
-            bucket_size = len(unique_r_space_list)
-            unique_r_space = torch.zeros(bucket_size, unique_r_space_size) + self.dummy_r
-            for i, u_r_s in enumerate(unique_r_space_list):
-                for j, r in enumerate(u_r_s):
-                    unique_r_space[i, j] = r
-            return int_var_cuda(unique_r_space)
 
         if self.args.use_action_space_bucketing:
             """
@@ -194,24 +173,8 @@ class KnowledgeGraph(nn.Module):
                     max_num_actions = len(action_space)
             print('Vectorizing action spaces...')
             self.action_space = vectorize_action_space(action_space_list, max_num_actions)
-            
-            if self.args.model.startswith('rule'):
-                unique_r_space_list = []
-                max_num_unique_rs = 0
-                for e1 in sorted(self.adj_list.keys()):
-                    unique_r_space = get_unique_r_space(e1)
-                    unique_r_space_list.append(unique_r_space)
-                    if len(unique_r_space) > max_num_unique_rs:
-                        max_num_unique_rs = len(unique_r_space)
-                self.unique_r_space = vectorize_unique_r_space(unique_r_space_list, max_num_unique_rs)
 
     def load_all_answers(self, data_dir, add_reversed_edges=False):
-        # def add_subject(e1, e2, r, d):
-        #     if not e2 in d:
-        #         d[e2] = {}
-        #     if not r in d[e2]:
-        #         d[e2][r] = set()
-        #     d[e2][r].add(e1)
 
         def add_object(e1, e2, r, d):
             if not e1 in d:
@@ -226,9 +189,6 @@ class KnowledgeGraph(nn.Module):
         dev_subjects, dev_objects = {}, {}
         all_subjects, all_objects = {}, {}
         # include dummy examples
-        # add_subject(self.dummy_e, self.dummy_e, self.dummy_r, train_subjects)
-        # add_subject(self.dummy_e, self.dummy_e, self.dummy_r, dev_subjects)
-        # add_subject(self.dummy_e, self.dummy_e, self.dummy_r, all_subjects)
         add_object(self.dummy_e, self.dummy_e, self.dummy_r, train_objects)
         add_object(self.dummy_e, self.dummy_e, self.dummy_r, dev_objects)
         add_object(self.dummy_e, self.dummy_e, self.dummy_r, all_objects)
@@ -239,29 +199,20 @@ class KnowledgeGraph(nn.Module):
                     relation = r
                     e1, e2, r = self.triple2ids((e1, e2, r))
                     if file_name in ['raw.kb', 'train.triples']:
-                        # add_subject(e1, e2, r, train_subjects)
                         add_object(e1, e2, r, train_objects)
                         if add_reversed_edges:
-                            # add_subject(e2, e1, self.get_inv_relation_id(r), train_subjects)
                             add_object(e2, e1, self.get_inv_relation_id(r), train_objects)
                     if file_name in ['raw.kb', 'train.triples', 'dev.triples']:
-                        # add_subject(e1, e2, r, dev_subjects)
                         add_object(e1, e2, r, dev_objects)
                         if add_reversed_edges:
-                            # add_subject(e2, e1, self.get_inv_relation_id(r), dev_subjects)
                             add_object(e2, e1, self.get_inv_relation_id(r), dev_objects)
-                    # add_subject(e1, e2, r, all_subjects)
                     add_object(e1, e2, r, all_objects)
                     if relation == self.interact_relation:
                         self.item_set.add(e2)
                     if add_reversed_edges:
-                        # add_subject(e2, e1, self.get_inv_relation_id(r), all_subjects)
                         add_object(e2, e1, self.get_inv_relation_id(r), all_objects)
-        # self.train_subjects = train_subjects
         self.train_objects = train_objects
-        # self.dev_subjects = dev_subjects
         self.dev_objects = dev_objects
-        # self.all_subjects = all_subjects
         self.all_objects = all_objects
        
         # change the answer set into a variable
@@ -273,46 +224,43 @@ class KnowledgeGraph(nn.Module):
                     d_v[x][y] = int_var_cuda(v)
             return d_v
 
-        # self.train_subject_vectors = answers_to_var(train_subjects)
         self.train_object_vectors = answers_to_var(train_objects)
-        # self.dev_subject_vectors = answers_to_var(dev_subjects)
         self.dev_object_vectors = answers_to_var(dev_objects)
-        # self.all_subject_vectors = answers_to_var(all_subjects)
         self.all_object_vectors = answers_to_var(all_objects)
 
-    def load_fuzzy_facts(self):
-        # extend current adjacency list with fuzzy facts
-        dev_path = os.path.join(self.args.data_dir, 'dev.triples')
-        test_path = os.path.join(self.args.data_dir, 'test.triples')
-        with open(dev_path) as f:
-            dev_triples = [l.strip() for l in f.readlines()]
-        with open(test_path) as f:
-            test_triples = [l.strip() for l in f.readlines()]
-        removed_triples = set(dev_triples + test_triples)
-        theta = 0.5
-        fuzzy_fact_path = os.path.join(self.args.data_dir, 'train.fuzzy.triples')
-        count = 0
-        with open(fuzzy_fact_path) as f:
-            for line in f:
-                e1, e2, r, score = line.strip().split()
-                score = float(score)
-                if score < theta:
-                    continue
-                print(line)
-                if '{}\t{}\t{}'.format(e1, e2, r) in removed_triples:
-                    continue
-                e1_id = self.entity2id[e1]
-                e2_id = self.entity2id[e2]
-                r_id = self.relation2id[r]
-                if not r_id in self.adj_list[e1_id]:
-                    self.adj_list[e1_id][r_id] = set()
-                if not e2_id in self.adj_list[e1_id][r_id]:
-                    self.adj_list[e1_id][r_id].add(e2_id)
-                    count += 1
-                    if count > 0 and count % 1000 == 0:
-                        print('{} fuzzy facts added'.format(count))
-
-        self.vectorize_action_space(self.args.data_dir)
+    # def load_fuzzy_facts(self):
+    #     # extend current adjacency list with fuzzy facts
+    #     dev_path = os.path.join(self.args.data_dir, 'dev.triples')
+    #     test_path = os.path.join(self.args.data_dir, 'test.triples')
+    #     with open(dev_path) as f:
+    #         dev_triples = [l.strip() for l in f.readlines()]
+    #     with open(test_path) as f:
+    #         test_triples = [l.strip() for l in f.readlines()]
+    #     removed_triples = set(dev_triples + test_triples)
+    #     theta = 0.5
+    #     fuzzy_fact_path = os.path.join(self.args.data_dir, 'train.fuzzy.triples')
+    #     count = 0
+    #     with open(fuzzy_fact_path) as f:
+    #         for line in f:
+    #             e1, e2, r, score = line.strip().split()
+    #             score = float(score)
+    #             if score < theta:
+    #                 continue
+    #             print(line)
+    #             if '{}\t{}\t{}'.format(e1, e2, r) in removed_triples:
+    #                 continue
+    #             e1_id = self.entity2id[e1]
+    #             e2_id = self.entity2id[e2]
+    #             r_id = self.relation2id[r]
+    #             if not r_id in self.adj_list[e1_id]:
+    #                 self.adj_list[e1_id][r_id] = set()
+    #             if not e2_id in self.adj_list[e1_id][r_id]:
+    #                 self.adj_list[e1_id][r_id].add(e2_id)
+    #                 count += 1
+    #                 if count > 0 and count % 1000 == 0:
+    #                     print('{} fuzzy facts added'.format(count))
+    #
+    #     self.vectorize_action_space(self.args.data_dir)
 
     def get_inv_relation_id(self, r_id):
         return r_id + 1
@@ -338,22 +286,22 @@ class KnowledgeGraph(nn.Module):
     def get_relation_img_embeddings(self, r):
         return self.RDropout(self.relation_img_embeddings(r))
 
-    def virtual_step(self, e_set, r):
-        """
-        Given a set of entities (e_set), find the set of entities (e_set_out) which has at least one incoming edge
-        labeled r and the source entity is in e_set.
-        """
-        batch_size = len(e_set)
-        e_set_1D = e_set.view(-1)
-        r_space = self.action_space[0][0][e_set_1D]
-        e_space = self.action_space[0][1][e_set_1D]
-        e_space = (r_space.view(batch_size, -1) == r.unsqueeze(1)).long() * e_space.view(batch_size, -1)
-        e_set_out = []
-        for i in range(len(e_space)):
-            e_set_out_b = var_cuda(unique(e_space[i].data))
-            e_set_out.append(e_set_out_b.unsqueeze(0))
-        e_set_out = ops.pad_and_cat(e_set_out, padding_value=self.dummy_e)
-        return e_set_out
+    # def virtual_step(self, e_set, r):
+    #     """
+    #     Given a set of entities (e_set), find the set of entities (e_set_out) which has at least one incoming edge
+    #     labeled r and the source entity is in e_set.
+    #     """
+    #     batch_size = len(e_set)
+    #     e_set_1D = e_set.view(-1)
+    #     r_space = self.action_space[0][0][e_set_1D]
+    #     e_space = self.action_space[0][1][e_set_1D]
+    #     e_space = (r_space.view(batch_size, -1) == r.unsqueeze(1)).long() * e_space.view(batch_size, -1)
+    #     e_set_out = []
+    #     for i in range(len(e_space)):
+    #         e_set_out_b = var_cuda(unique(e_space[i].data))
+    #         e_set_out.append(e_set_out_b.unsqueeze(0))
+    #     e_set_out = ops.pad_and_cat(e_set_out, padding_value=self.dummy_e)
+    #     return e_set_out
 
     def id2triples(self, triple):
         e1, e2, r = triple
@@ -364,19 +312,17 @@ class KnowledgeGraph(nn.Module):
         return self.entity2id[e1], self.entity2id[e2], self.relation2id[r]
 
     def define_modules(self):
-        if not self.args.relation_only:
-            self.entity_embeddings = nn.Embedding(self.num_entities, self.entity_dim)
-            if self.args.model == 'complex':
-                self.entity_img_embeddings = nn.Embedding(self.num_entities, self.entity_dim)
-            self.EDropout = nn.Dropout(self.emb_dropout_rate)
+        self.entity_embeddings = nn.Embedding(self.num_entities, self.entity_dim)
+        if self.args.model == 'complex':
+            self.entity_img_embeddings = nn.Embedding(self.num_entities, self.entity_dim)
+        self.EDropout = nn.Dropout(self.emb_dropout_rate)
         self.relation_embeddings = nn.Embedding(self.num_relations, self.relation_dim)
         if self.args.model == 'complex':
             self.relation_img_embeddings = nn.Embedding(self.num_relations, self.relation_dim)
         self.RDropout = nn.Dropout(self.emb_dropout_rate)
 
     def initialize_modules(self):
-        if not self.args.relation_only:
-            nn.init.xavier_normal_(self.entity_embeddings.weight)
+        nn.init.xavier_normal_(self.entity_embeddings.weight)
         nn.init.xavier_normal_(self.relation_embeddings.weight)
 
     @property

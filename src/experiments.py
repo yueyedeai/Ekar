@@ -43,7 +43,7 @@ def process_data():
     train_path = data_utils.get_train_path(args)
     dev_path = os.path.join(data_dir, 'dev.triples')
     test_path = os.path.join(data_dir, 'test.triples')
-    data_utils.prepare_kb_enviroment(raw_kb_path, train_path, dev_path, test_path, args.test, args.add_reverse_relations)
+    data_utils.prepare_kb_enviroment(raw_kb_path, train_path, dev_path, test_path, args.add_reverse_relations)
 
 def initialize_model_directory(args, random_seed=None):
     # add model parameter info to model directory
@@ -65,27 +65,7 @@ def initialize_model_directory(args, random_seed=None):
             initialization_tag += '-fix'
 
     # Hyperparameter signature
-    if args.model in ['rule']: # not used.  --dzj
-        hyperparam_sig = '{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(
-            args.baseline,
-            args.entity_dim,
-            args.relation_dim,
-            args.history_num_layers,
-            args.learning_rate,
-            args.emb_dropout_rate,
-            args.ff_dropout_rate,
-            args.action_dropout_rate,
-            args.bandwidth,
-            args.beta
-        )
-    elif args.model.startswith('point'):
-        if args.baseline == 'avg_reward':
-            print('* Policy Gradient Baseline: average reward')
-        elif args.baseline == 'avg_reward_normalized':
-            print('* Policy Gradient Baseline: average reward baseline plus normalization')
-        else:
-            print('* Policy Gradient Baseline: None')
-            # we didn't use any baselines.  --dzj
+    if args.model.startswith('point'):
         if args.action_dropout_anneal_interval < 1000:
             hyperparam_sig = '{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(
                 args.baseline,
@@ -102,8 +82,6 @@ def initialize_model_directory(args, random_seed=None):
                 args.bandwidth,
                 args.beta
             )
-            if args.mu != 1.0:
-                hyperparam_sig += '-{}'.format(args.mu)
         else:
             hyperparam_sig = '{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}'.format(
                 args.baseline,
@@ -159,22 +137,10 @@ def initialize_model_directory(args, random_seed=None):
         initialization_tag,
         hyperparam_sig
     )
-    if args.model == 'set': # not used. --dzj
-        model_sub_dir += '-{}'.format(args.beam_size)
-        model_sub_dir += '-{}'.format(args.num_paths_per_entity)
-    if args.relation_only:
-        model_sub_dir += '-ro'
-    elif args.entity_only:
-        model_sub_dir += '-eo'
+    if args.entity_history:
+        model_sub_dir += '-eh'
     elif args.history_only:
         model_sub_dir += '-ho'
-    elif args.relation_only_in_path:
-        model_sub_dir += '-rpo'
-    elif args.type_only:
-        model_sub_dir += '-to'
-
-    if args.test:
-        model_sub_dir += '-test'
 
     if random_seed:
         model_sub_dir += '.{}'.format(random_seed)
@@ -188,6 +154,8 @@ def initialize_model_directory(args, random_seed=None):
         model_sub_dir += '-rm'
     if args.remove_rs:
         model_sub_dir += '-rrs'
+    if args.no_self_loop:
+        model_sub_dir += '-noloop'
 
     if args.tag:
         model_sub_dir += '_' + args.tag
@@ -212,10 +180,8 @@ def construct_model(args):
     Construct NN graph.
     """
     kg = KnowledgeGraph(args)
-    if args.model.endswith('.gc'):  # not used yet. --dzj
-        kg.load_fuzzy_facts()
 
-    if args.model in ['point', 'point.gc']:
+    if args.model in ['point']:
         pn = GraphSearchPolicy(args)
         lf = PolicyGradient(args, kg, pn)
     elif args.model.startswith('point.rs'):
@@ -292,13 +258,8 @@ def train(lf):
     train_data = data_utils.load_triples(
         train_path, entity_index_path, relation_index_path, group_examples_by_query=args.group_examples_by_query,
         add_reverse_relations=args.add_reversed_training_edges)
-    if 'NELL' in args.data_dir:
-        adj_list_path = os.path.join(args.data_dir, 'adj_list.pkl')
-        seen_entities = data_utils.load_seen_entities(adj_list_path, entity_index_path)
-    else:
-        seen_entities = set()
     dev_data = data_utils.load_triples(dev_path, entity_index_path, relation_index_path,
-                                       group_examples_by_query=True, seen_entities=seen_entities)
+                                       group_examples_by_query=True)
     if args.checkpoint_path is not None:
         lf.load_checkpoint(args.checkpoint_path)
 
@@ -310,9 +271,9 @@ def train(lf):
     lf.run_train(train_data, dev_data)
 
     test_metrics(lf)
-
-    lf.reward_as_score = True
-    test_metrics(lf)
+    if args.model.startswith("point.rs"):
+        lf.reward_as_score = True
+        test_metrics(lf)
 
 def get_checkpoint_path(args):
     if not args.checkpoint_path:
@@ -329,8 +290,6 @@ def run_experiment(args):
         with torch.set_grad_enabled(args.train or args.search_random_seed or args.grid_search):
             if args.grid_search:
                 # Grid search
-                # This part is not being used now, but I think we can utilize it.   --dzj
-                # search log file
                 task = os.path.basename(os.path.normpath(args.data_dir))
                 out_log = '{}.{}.gs'.format(task, args.model)
                 o_f = open(out_log, 'w')

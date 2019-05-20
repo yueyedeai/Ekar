@@ -41,15 +41,12 @@ cmd="python3 -u -m src.experiments \
     --history_num_layers $history_num_layers \
     --num_rollouts $num_rollouts \
     --num_rollout_steps $num_rollout_steps \
-    --bucket_interval $bucket_interval \
     --num_epochs $num_epochs \
     --num_peek_epochs $num_peek_epochs \
     --batch_size $batch_size \
     --train_batch_size $train_batch_size \
     --dev_batch_size $dev_batch_size \
-    --margin $margin \
     --learning_rate $learning_rate \
-    --baseline $baseline \
     --grad_norm $grad_norm \
     --emb_dropout_rate $emb_dropout_rate \
     --ff_dropout_rate $ff_dropout_rate \
@@ -61,7 +58,6 @@ cmd="python3 -u -m src.experiments \
     $history_only_flag \
     --beta $beta \
     --beam_size $beam_size \
-    --num_paths_per_entity $num_paths_per_entity \
     $group_examples_by_query_flag \
     $use_action_space_bucketing_flag \
     --distmult_state_dict_path $distmult_state_dict_path \
