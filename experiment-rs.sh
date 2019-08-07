@@ -12,17 +12,13 @@ group_examples_by_query_flag=''
 if [[ $group_examples_by_query = *"True"* ]]; then
     group_examples_by_query_flag="--group_examples_by_query"
 fi
-relation_only_flag=''
-if [[ $relation_only = *"True"* ]]; then
-    relation_only_flag="--relation_only"
-fi
 use_action_space_bucketing_flag=''
 if [[ $use_action_space_bucketing = *"True"* ]]; then
     use_action_space_bucketing_flag='--use_action_space_bucketing'
 fi
-entity_only_flag=''
-if [[ $entity_only = *"True"* ]]; then
-    entity_only_flag='--entity_only'
+entity_history_flag=''
+if [[ $entity_history = *"True"* ]]; then
+    entity_history_flag='--entity_history'
 fi
 history_only_flag=''
 if [[ $history_only = *"True"* ]]; then
@@ -38,6 +34,8 @@ cmd="python3 -u -m src.experiments \
     --entity_dim $entity_dim \
     --relation_dim $relation_dim \
     --history_dim $history_dim \
+    --emb_2D_d1 $emb_2D_d1 \
+    --emb_2D_d2 $emb_2D_d2 \
     --history_num_layers $history_num_layers \
     --num_rollouts $num_rollouts \
     --num_rollout_steps $num_rollout_steps \
@@ -53,8 +51,7 @@ cmd="python3 -u -m src.experiments \
     --action_dropout_rate $action_dropout_rate \
     --action_dropout_anneal_interval $action_dropout_anneal_interval \
     --reward_shaping_threshold $reward_shaping_threshold \
-    $relation_only_flag \
-    $entity_only_flag \
+    $entity_history_flag \
     $history_only_flag \
     --beta $beta \
     --beam_size $beam_size \
@@ -64,8 +61,6 @@ cmd="python3 -u -m src.experiments \
     --complex_state_dict_path $complex_state_dict_path \
     --conve_state_dict_path $conve_state_dict_path \
     --gpu $gpu \
-    --emb_2D_d1 $emb_2D_d1 \
-    --emb_2D_d2 $emb_2D_d2 \
     $ARGS"
 
 echo "Executing $cmd"

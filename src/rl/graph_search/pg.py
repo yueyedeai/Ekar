@@ -77,7 +77,7 @@ class PolicyGradient(LFramework):
         # t0 = time()
 
         # def stablize_reward(r):
-        #     # We don't use any baseline function yet. --dzj
+        #     # We don't use any baseline function yet.
         #     r_2D = r.view(-1, self.num_rollouts)
         #     if self.baseline == 'avg_reward':
         #         stabled_r_2D = r_2D - r_2D.mean(dim=1, keepdim=True)

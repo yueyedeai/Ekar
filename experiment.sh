@@ -38,9 +38,7 @@ cmd="python3 -u -m src.experiments \
     --batch_size $batch_size \
     --train_batch_size $train_batch_size \
     --dev_batch_size $dev_batch_size \
-    --margin $margin \
     --learning_rate $learning_rate \
-    --baseline $baseline \
     --grad_norm $grad_norm \
     --emb_dropout_rate $emb_dropout_rate \
     --ff_dropout_rate $ff_dropout_rate \
@@ -49,7 +47,6 @@ cmd="python3 -u -m src.experiments \
     $relation_only_flag \
     --beta $beta \
     --beam_size $beam_size \
-    --num_paths_per_entity $num_paths_per_entity \
     $group_examples_by_query_flag \
     $use_action_space_bucketing_flag \
     --gpu $gpu \

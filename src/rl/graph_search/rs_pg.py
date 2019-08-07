@@ -85,10 +85,15 @@ class RewardShapingPolicyGradient(PolicyGradient):
 
     def reward_fun(self, e1, r, e2, pred_e2):
         if not self.args.remove_rs:
-            if self.fn_secondary_kg:
-                real_reward = self.fn.forward_fact(e1, r, pred_e2, self.fn_kg, [self.fn_secondary_kg]).squeeze(1)
+            if self.args.sigmoid_score_function:
+                E1 = self.fn_kg.get_entity_embeddings(e1)
+                pred_E2 = self.fn_kg.get_entity_embeddings(pred_e2)
+                real_reward = torch.sigmoid(torch.sum(E1 * pred_E2, 1))
             else:
-                real_reward = self.fn.forward_fact(e1, r, pred_e2, self.fn_kg).squeeze(1)
+                if self.fn_secondary_kg:
+                    real_reward = self.fn.forward_fact(e1, r, pred_e2, self.fn_kg, [self.fn_secondary_kg]).squeeze(1)
+                else:
+                    real_reward = self.fn.forward_fact(e1, r, pred_e2, self.fn_kg).squeeze(1)
             real_reward_mask = (real_reward > self.reward_shaping_threshold).float()
             real_reward *= real_reward_mask
         else:

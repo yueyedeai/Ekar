@@ -24,15 +24,16 @@ cmd="python3 -u -m src.experiments \
     --model $model \
     --entity_dim $entity_dim \
     --relation_dim $relation_dim \
-    --num_rollouts $num_rollouts \
+    --emb_2D_d1 $emb_2D_d1 \
+    --emb_2D_d2 $emb_2D_d2 \
     --num_epochs $num_epochs \
     --batch_size $batch_size \
     --train_batch_size $train_batch_size \
     --dev_batch_size $dev_batch_size \
     --learning_rate $learning_rate \
     --grad_norm $grad_norm \
-    --emb_dropout_rate $emb_dropout_rate \
     --beam_size $beam_size \
+    --emb_dropout_rate $emb_dropout_rate \
     --hidden_dropout_rate $hidden_dropout_rate \
     --feat_dropout_rate $feat_dropout_rate \
     $group_examples_by_query_flag \

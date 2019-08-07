@@ -13,7 +13,7 @@ history_dim=32
 emb_2D_d1=4
 emb_2D_d2=8
 history_num_layers=3
-num_rollouts=20 # 20
+num_rollouts=20
 num_rollout_steps=3
 num_epochs=30
 num_peek_epochs=1
@@ -32,6 +32,6 @@ entity_history="False"
 history_only="True"
 beam_size=64
 
-distmult_state_dict_path="model/movie-one-distmult-xavier-32-32-0.01-0.0-0.1/model_best.tar"
-complex_state_dict_path="model/movie-one-complex-RV-xavier-32-32-0.003-0.0-0.1/model_best.tar"
+distmult_state_dict_path="model/"
+complex_state_dict_path="model/"
 conve_state_dict_path="model/movie-one-conve-RV-RG-xavier-32-32-0.01-32-3-0.1-0.1-0.1-0.1/model_best.tar"

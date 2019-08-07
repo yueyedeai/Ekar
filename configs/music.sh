@@ -3,6 +3,7 @@
 data_dir="data/music"
 model="point"
 group_examples_by_query="False"
+interact_relation="music.user.interacted_artist"
 
 bandwidth=256
 entity_dim=32
@@ -13,8 +14,8 @@ num_rollouts=20
 num_rollout_steps=3
 num_epochs=100
 num_peek_epochs=1
-batch_size=1024
-train_batch_size=1024
+batch_size=512
+train_batch_size=512
 dev_batch_size=1
 learning_rate=0.01
 grad_norm=5

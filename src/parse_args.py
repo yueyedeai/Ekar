@@ -236,6 +236,7 @@ parser.add_argument('--multi_path', action='store_true')
 parser.add_argument('--tag', type=str, default=None)
 parser.add_argument('--filename', type=str, default=None)
 parser.add_argument('--no_self_loop', action='store_true')
+parser.add_argument('--sigmoid_score_function', action='store_true')
 
 def str2list(v):
     v=v.split(',')

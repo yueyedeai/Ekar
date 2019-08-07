@@ -306,8 +306,7 @@ class GraphSearchPolicy(nn.Module):
             #     action_mask *= (1 - false_negative_mask)
             #     self.validate_action_mask(action_mask)
 
-
-        if self.args.no_self_loop:
+        if self.args.no_self_loop or seen_nodes.shape[1] == 2:
             # # Prevent loops and self-loops
             seen_nodes_b = seen_nodes
             loop_mask_b = ((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0).float()
