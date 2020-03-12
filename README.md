@@ -25,18 +25,18 @@ run the following command to preprocess the data
 
 * Train embedding-based models.
 ```bash
->./run.sh <dataset> <embedding models> <gpu-ID>
+./run.sh <dataset> <embedding models> <gpu-ID>
 ```
 `<embedding models>` include `conve`, `complex` and `distmult`. 
 
 * Train naive RL model. (policy gradient)
 ```bash
->./run.sh <dataset> rl <gpu-ID>
+./run.sh <dataset> rl <gpu-ID>
 ```
 
 * Train Ekar. (policy gradient + reward shaping)
 ```bash
->./run.sh <dataset> rl.rs <gpu-ID>
+./run.sh <dataset> rl.rs <gpu-ID>
 ```
 
 * Note
