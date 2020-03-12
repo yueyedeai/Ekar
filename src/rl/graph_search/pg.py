@@ -336,7 +336,10 @@ class PolicyGradient(LFramework):
                     all_meta_path_dict[meta_path] += 1
                     if (e2[i][pred_e2s[i][j]] != 0):
                         pos_meta_path_dict[meta_path] += 1
-                        if (show_case and j <= 20):
+                        threshold = 20
+                        if self.args.multi_path:
+                            threshold = 100
+                        if (show_case and j <= threshold):
                             show_case_f.write('beam {}: score = {} \n<PATH> {}\n'.format(
                                 j, score, path))
         with torch.no_grad():

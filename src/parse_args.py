@@ -169,7 +169,7 @@ parser.add_argument('--theta', type=float, default=0.2,
 # Reinforcement Learning
 parser.add_argument('--num_rollouts', type=int, default=20,
                     help='number of rollouts (default: 20)')
-parser.add_argument('--num_rollout_steps', type=int, default=3,
+parser.add_argument('--num_rollout_steps', '-T', type=int, default=3,
                     help='maximum path length (default: 3)')
 parser.add_argument('--bandwidth', type=int, default=300,
                     help='maximum number of outgoing edges to explore at each step (default: 300)')
@@ -237,6 +237,8 @@ parser.add_argument('--tag', type=str, default=None)
 parser.add_argument('--filename', type=str, default=None)
 parser.add_argument('--no_self_loop', action='store_true')
 parser.add_argument('--sigmoid_score_function', action='store_true')
+parser.add_argument('--stdout', action='store_true')
+parser.add_argument('--show_recommend', action='store_true')
 
 def str2list(v):
     v=v.split(',')

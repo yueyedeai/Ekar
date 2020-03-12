@@ -249,7 +249,8 @@ class LFramework(nn.Module):
             print ("*********rollout inference*******")
         else:
             print ("*********default score***********")
-        NDCG, Precison, Recall = src.eval.NDCG_Precision_Recall(test_data, test_scores, self.kg.all_objects, self.kg.item_set, K=self.K, verbose=True)
+        NDCG, Precison, Recall = src.eval.NDCG_Precision_Recall(test_data, test_scores, self.kg.all_objects, self.kg.item_set, K=self.K, verbose=True,
+                                                                show_recommend=self.args.show_recommend, kg=self.kg)
         metrics = dict()
         metrics['K']    = self.K
         metrics['NDCG'] = NDCG
@@ -273,10 +274,8 @@ class LFramework(nn.Module):
         all_meta_path_sum  = 0
         pos_meta_path_dict = defaultdict(int)
         pos_meta_path_sum  = 0
-        if self.args.filename:
-            show_case_f = open(os.path.join(self.args.model_dir, self.args.filename + "_detail"), "w")
-        else:
-            show_case_f = open(os.path.join(self.args.model_dir, "show_case.txt"), "w")
+        show_case_f = open(os.path.join(self.args.model_dir,
+                                        self.args.filename[:self.args.filename.rfind(".txt")] + "_detail.txt"), "w")
         for example_id in tqdm(range(0, len(examples), self.batch_size)):
             mini_batch = examples[example_id:example_id + self.batch_size]
             mini_batch_size = len(mini_batch)

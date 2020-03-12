@@ -377,9 +377,12 @@ def run_experiment(args):
                 if args.model_dir is None:
                     initialize_model_directory(args)
                 print ("model directory : %s" % args.model_dir)
-                filename = "case_study.txt"
-                if args.filename is not None:
-                    filename = args.filename
+                filename = "case_study"
+                if args.multi_path:
+                    filename += "_multi_path"
+                filename += ".txt"
+                if args.filename is None:
+                    args.filename = filename
                 sys.stdout = open(os.path.join(args.model_dir, filename), "w")
                 lf = construct_model(args)
                 lf.cuda()
@@ -398,7 +401,8 @@ def run_experiment(args):
                     filename += ".txt"
                 else:
                     filename = args.filename
-                sys.stdout = open(os.path.join(args.model_dir, filename), "w")
+                if not args.stdout:
+                    sys.stdout = open(os.path.join(args.model_dir, filename), "w")
                 lf = construct_model(args)
                 lf.cuda()
                 test_metrics(lf)

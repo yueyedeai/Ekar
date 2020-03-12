@@ -321,6 +321,7 @@ class GraphSearchPolicy(nn.Module):
             loop_mask_b = (((seen_nodes_b.unsqueeze(1) == e_space.unsqueeze(2)).sum(2) > 0) *
                  (r_space != NO_OP_RELATION_ID)).float()
             action_mask *= (1 - loop_mask_b)
+
         
         return (r_space, e_space), action_mask
 

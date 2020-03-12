@@ -17,8 +17,9 @@ from src.parse_args import args
 from src.data_utils import NO_OP_ENTITY_ID, DUMMY_ENTITY_ID
 from src.utils.ndcg_p_r import eval_NDCG_P_R
 
+
 def NDCG_Precision_Recall(examples, scores, all_answers, item_set, verbose=False,
-                          K=np.array([10]), phase="test"):
+                          K=np.array([10]), show_recommend=False, kg=None):
     """
     Compute ranking based metrics.
     """
@@ -65,13 +66,24 @@ def NDCG_Precision_Recall(examples, scores, all_answers, item_set, verbose=False
     Recall    /= len(examples)
 
     if verbose:
+        if show_recommend:
+            for i, example in enumerate(examples):
+                e1, e2, r = example
+                sorted_idx = np.argsort(-scores[i].cpu().numpy())
+                print ("user %s: " % kg.id2entity[e1], end='')
+                for k in range(K[-1]):
+                    print (kg.id2entity[sorted_idx[k]], end=' ')
+                print ("")
+
         for k in range(len(K)):
             print ('NDCG@%d = %.4f' % (K[k], NDCG[k]))
         for k in range(len(K)):
             print ('Precision@%d = %.4f' % (K[k], Precision[k]))
         for k in range(len(K)):
             print ('Recall@%d = %.4f' % (K[k], Recall[k]))
-        print ("Average Arrive cnt = %.1f" % average_arrive)
-        print ("Average Answer cnt = %.1f" % average_answer)
+        # print ("Average Arrive cnt = %.1f" % average_arrive)
+        # print ("Average Answer cnt = %.1f" % average_answer)
+
+
 
     return NDCG, Precision, Recall
