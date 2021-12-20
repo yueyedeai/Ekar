@@ -1,6 +1,7 @@
 # Ekar
 
-This is a pytorch implement of Ekar for Knowledge Graph-based Recommendation.
+This is a pytorch implement of [Explainable Knowledge Graph-based
+Recommendation via Deep Reinforcement Learning](https://arxiv.org/pdf/1906.09506.pdf).
 
 ## Requirements
 
